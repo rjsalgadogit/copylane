@@ -15,11 +15,13 @@ namespace Copylane.Services
 	{
 		public string Server { get; set; }
 		public string Database { get; set; }
+		public string ConnectionString { get; set; }
 
 		public ItemService()
 		{
 			Server = "localhost\\SQLEXPRESS";
 			Database = "CopyLane";
+			ConnectionString = $"Data Source={Server};Initial Catalog={Database};Integrated Security=True";
 		}
 
 		public bool Connected()
@@ -47,7 +49,6 @@ namespace Copylane.Services
 
 		public List<ItemModel> GetItems()
 		{
-			var connString = $"Data Source={Server};Initial Catalog={Database};Integrated Security=True";
 			var query = @"SELECT * FROM dbo.Items";
 
 			SqlDataReader sqlReader;
@@ -55,7 +56,7 @@ namespace Copylane.Services
 
 			try
 			{
-				using (SqlConnection conn = new SqlConnection(connString))
+				using (SqlConnection conn = new SqlConnection(ConnectionString))
 				{
 					conn.Open();
 
@@ -84,12 +85,11 @@ namespace Copylane.Services
 
 		public bool SaveItem(ItemModel item)
 		{
-			var connString = $"Data Source={Server};Initial Catalog={Database};Integrated Security=True";
 			var sp = "SaveItem";
 
 			try
 			{
-				using (SqlConnection conn = new SqlConnection(connString))
+				using (SqlConnection conn = new SqlConnection(ConnectionString))
 				{
 					conn.Open();
 
@@ -99,6 +99,78 @@ namespace Copylane.Services
 						comm.Parameters.AddWithValue("@Id", item.Id);
 						comm.Parameters.AddWithValue("@Description", item.Description);
 						comm.Parameters.AddWithValue("@Price", item.Price);
+
+						int rowAffected = comm.ExecuteNonQuery();
+						conn.Close();
+					}
+				}
+
+				return true;
+			}
+			catch (Exception ex)
+			{
+				MessageBox.Show(ex.Message
+					, "Error"
+					, MessageBoxButtons.OK
+					, MessageBoxIcon.Error);
+
+				return false;
+			}
+		}
+
+		public List<ItemModel> SearchItem(string description)
+		{
+			var sp = "SearchItem";
+
+			SqlDataReader sqlReader;
+			DataTable dataTable = new DataTable();
+
+			try
+			{
+				using (SqlConnection conn = new SqlConnection(ConnectionString))
+				{
+					conn.Open();
+
+					using (SqlCommand comm = new SqlCommand(sp, conn))
+					{
+						comm.CommandType = CommandType.StoredProcedure;
+						comm.Parameters.AddWithValue("@Description", description);
+
+						sqlReader = comm.ExecuteReader();
+						dataTable.Load(sqlReader);
+						sqlReader.Close();
+						conn.Close();
+					}
+				}
+			}
+			catch (Exception ex)
+			{
+				MessageBox.Show(ex.Message
+					, "Error"
+					, MessageBoxButtons.OK
+					, MessageBoxIcon.Error);
+			}
+
+			var records = new List<ItemModel>();
+			records = JsonConvert.DeserializeObject<List<ItemModel>>(JsonConvert.SerializeObject(dataTable));
+
+			return records;
+		}
+
+		public bool DeleteItem(ItemModel item)
+		{
+			var sp = "DeleteItem";
+
+			try
+			{
+				using (SqlConnection conn = new SqlConnection(ConnectionString))
+				{
+					conn.Open();
+
+					using (SqlCommand comm = new SqlCommand(sp, conn))
+					{
+						comm.CommandType = CommandType.StoredProcedure;
+						comm.Parameters.AddWithValue("@Id", item.Id);
 
 						int rowAffected = comm.ExecuteNonQuery();
 						conn.Close();
