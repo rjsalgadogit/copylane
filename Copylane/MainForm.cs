@@ -26,6 +26,28 @@ namespace Copylane
 			LoadItemGrid();
 		}
 
+		private void MainForm_KeyDown(object sender, KeyEventArgs e)
+		{
+			switch (e.KeyCode)
+			{
+				case Keys.F1:
+					F1_Click(this, new EventArgs());
+					break;
+
+				case Keys.F2:
+					F2_Click(this, new EventArgs());
+					break;
+
+				case Keys.F3:
+					F3_Click(this, new EventArgs());
+					break;
+
+				case Keys.F4:
+					F4_Click(this, new EventArgs());
+					break;
+			}
+		}
+
 		private void Add_Click(object sender, EventArgs e)
 		{
 			if (!string.IsNullOrEmpty(Description_Textbox.Text))
@@ -63,13 +85,8 @@ namespace Copylane
 		{
 			var bindingSource = new BindingSource();
 
-			bindingSource.DataSource = SearchItem(Search_Textbox.Text);
+			bindingSource.DataSource = SearchItem(SearchTextbox.Text);
 			ItemGrid.DataSource = bindingSource;
-		}
-
-		private void Search_Textbox_KeyDown(object sender, KeyEventArgs e)
-		{
-			Search_Click(this, new EventArgs());
 		}
 
 		private void ItemGrid_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
@@ -135,6 +152,31 @@ namespace Copylane
 					, "Error"
 					, MessageBoxButtons.OK
 					, MessageBoxIcon.Error);
+		}
+
+		private void SearchTextbox_KeyDown(object sender, KeyEventArgs e)
+		{
+			Search_Click(this, new EventArgs());
+		}
+
+		private void F1_Click(object sender, EventArgs e)
+		{
+			MessageBox.Show("F1");
+		}
+
+		private void F2_Click(object sender, EventArgs e)
+		{
+			MessageBox.Show("F2");
+		}
+
+		private void F3_Click(object sender, EventArgs e)
+		{
+			MessageBox.Show("F3");
+		}
+
+		private void F4_Click(object sender, EventArgs e)
+		{
+			MessageBox.Show("F4");
 		}
 
 		#endregion

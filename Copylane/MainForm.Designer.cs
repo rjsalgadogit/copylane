@@ -32,11 +32,15 @@ namespace Copylane
 			this.ItemGrid = new System.Windows.Forms.DataGridView();
 			this.Main_Tab = new System.Windows.Forms.TabControl();
 			this.Invoice_TabPage = new System.Windows.Forms.TabPage();
+			this.F4 = new System.Windows.Forms.Button();
+			this.F3 = new System.Windows.Forms.Button();
+			this.F2 = new System.Windows.Forms.Button();
+			this.F1 = new System.Windows.Forms.Button();
 			this.Item_TabPage = new System.Windows.Forms.TabPage();
 			this.label3 = new System.Windows.Forms.Label();
 			this.label1 = new System.Windows.Forms.Label();
 			this.Search = new System.Windows.Forms.Button();
-			this.Search_Textbox = new System.Windows.Forms.TextBox();
+			this.SearchTextbox = new System.Windows.Forms.TextBox();
 			this.groupBox1 = new System.Windows.Forms.GroupBox();
 			this.label4 = new System.Windows.Forms.Label();
 			this.Delete = new System.Windows.Forms.Button();
@@ -49,10 +53,6 @@ namespace Copylane
 			this.Add = new System.Windows.Forms.Button();
 			this.Price_Label = new System.Windows.Forms.Label();
 			this.Description_Textbox = new System.Windows.Forms.TextBox();
-			this.F1 = new System.Windows.Forms.Button();
-			this.F2 = new System.Windows.Forms.Button();
-			this.F3 = new System.Windows.Forms.Button();
-			this.F4 = new System.Windows.Forms.Button();
 			((System.ComponentModel.ISupportInitialize)(this.ItemGrid)).BeginInit();
 			this.Main_Tab.SuspendLayout();
 			this.Invoice_TabPage.SuspendLayout();
@@ -83,11 +83,11 @@ namespace Copylane
 			// 
 			this.Main_Tab.Controls.Add(this.Invoice_TabPage);
 			this.Main_Tab.Controls.Add(this.Item_TabPage);
-			this.Main_Tab.Location = new System.Drawing.Point(15, 14);
+			this.Main_Tab.Location = new System.Drawing.Point(13, 14);
 			this.Main_Tab.Margin = new System.Windows.Forms.Padding(4);
 			this.Main_Tab.Name = "Main_Tab";
 			this.Main_Tab.SelectedIndex = 0;
-			this.Main_Tab.Size = new System.Drawing.Size(835, 745);
+			this.Main_Tab.Size = new System.Drawing.Size(837, 745);
 			this.Main_Tab.TabIndex = 7;
 			// 
 			// Invoice_TabPage
@@ -100,24 +100,64 @@ namespace Copylane
 			this.Invoice_TabPage.Margin = new System.Windows.Forms.Padding(4);
 			this.Invoice_TabPage.Name = "Invoice_TabPage";
 			this.Invoice_TabPage.Padding = new System.Windows.Forms.Padding(4);
-			this.Invoice_TabPage.Size = new System.Drawing.Size(827, 716);
+			this.Invoice_TabPage.Size = new System.Drawing.Size(829, 716);
 			this.Invoice_TabPage.TabIndex = 0;
 			this.Invoice_TabPage.Text = "Invoice";
 			this.Invoice_TabPage.UseVisualStyleBackColor = true;
+			// 
+			// F4
+			// 
+			this.F4.Location = new System.Drawing.Point(262, 7);
+			this.F4.Name = "F4";
+			this.F4.Size = new System.Drawing.Size(79, 67);
+			this.F4.TabIndex = 3;
+			this.F4.Text = "F4";
+			this.F4.UseVisualStyleBackColor = true;
+			this.F4.Click += new System.EventHandler(this.F4_Click);
+			// 
+			// F3
+			// 
+			this.F3.Location = new System.Drawing.Point(177, 7);
+			this.F3.Name = "F3";
+			this.F3.Size = new System.Drawing.Size(79, 67);
+			this.F3.TabIndex = 2;
+			this.F3.Text = "F3";
+			this.F3.UseVisualStyleBackColor = true;
+			this.F3.Click += new System.EventHandler(this.F3_Click);
+			// 
+			// F2
+			// 
+			this.F2.Location = new System.Drawing.Point(92, 7);
+			this.F2.Name = "F2";
+			this.F2.Size = new System.Drawing.Size(79, 67);
+			this.F2.TabIndex = 1;
+			this.F2.Text = "F2";
+			this.F2.UseVisualStyleBackColor = true;
+			this.F2.Click += new System.EventHandler(this.F2_Click);
+			// 
+			// F1
+			// 
+			this.F1.Location = new System.Drawing.Point(7, 7);
+			this.F1.Name = "F1";
+			this.F1.Size = new System.Drawing.Size(79, 67);
+			this.F1.TabIndex = 0;
+			this.F1.Text = "F1";
+			this.F1.UseVisualStyleBackColor = true;
+			this.F1.Click += new System.EventHandler(this.F1_Click);
 			// 
 			// Item_TabPage
 			// 
 			this.Item_TabPage.Controls.Add(this.label3);
 			this.Item_TabPage.Controls.Add(this.label1);
 			this.Item_TabPage.Controls.Add(this.Search);
-			this.Item_TabPage.Controls.Add(this.Search_Textbox);
+			this.Item_TabPage.Controls.Add(this.SearchTextbox);
 			this.Item_TabPage.Controls.Add(this.groupBox1);
 			this.Item_TabPage.Controls.Add(this.ItemGrid);
 			this.Item_TabPage.Location = new System.Drawing.Point(4, 25);
 			this.Item_TabPage.Margin = new System.Windows.Forms.Padding(4);
 			this.Item_TabPage.Name = "Item_TabPage";
 			this.Item_TabPage.Padding = new System.Windows.Forms.Padding(4);
-			this.Item_TabPage.Size = new System.Drawing.Size(827, 716);
+			this.Item_TabPage.Size = new System.Drawing.Size(829, 716);
 			this.Item_TabPage.TabIndex = 1;
 			this.Item_TabPage.Text = "Items";
 			this.Item_TabPage.UseVisualStyleBackColor = true;
@@ -155,13 +195,13 @@ namespace Copylane
 			this.Search.Visible = false;
 			this.Search.Click += new System.EventHandler(this.Search_Click);
 			// 
-			// Search_Textbox
+			// SearchTextbox
 			// 
-			this.Search_Textbox.Location = new System.Drawing.Point(96, 20);
-			this.Search_Textbox.Name = "Search_Textbox";
-			this.Search_Textbox.Size = new System.Drawing.Size(210, 23);
-			this.Search_Textbox.TabIndex = 1;
-			this.Search_Textbox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Search_Textbox_KeyDown);
+			this.SearchTextbox.Location = new System.Drawing.Point(96, 20);
+			this.SearchTextbox.Name = "SearchTextbox";
+			this.SearchTextbox.Size = new System.Drawing.Size(210, 23);
+			this.SearchTextbox.TabIndex = 1;
+			this.SearchTextbox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.SearchTextbox_KeyDown);
 			// 
 			// groupBox1
 			// 
@@ -320,42 +360,6 @@ namespace Copylane
 			this.Description_Textbox.Size = new System.Drawing.Size(312, 21);
 			this.Description_Textbox.TabIndex = 2;
 			// 
-			// F1
-			// 
-			this.F1.Location = new System.Drawing.Point(7, 7);
-			this.F1.Name = "F1";
-			this.F1.Size = new System.Drawing.Size(79, 67);
-			this.F1.TabIndex = 0;
-			this.F1.Text = "F1";
-			this.F1.UseVisualStyleBackColor = true;
-			// 
-			// F2
-			// 
-			this.F2.Location = new System.Drawing.Point(92, 7);
-			this.F2.Name = "F2";
-			this.F2.Size = new System.Drawing.Size(79, 67);
-			this.F2.TabIndex = 1;
-			this.F2.Text = "F2";
-			this.F2.UseVisualStyleBackColor = true;
-			// 
-			// F3
-			// 
-			this.F3.Location = new System.Drawing.Point(177, 7);
-			this.F3.Name = "F3";
-			this.F3.Size = new System.Drawing.Size(79, 67);
-			this.F3.TabIndex = 2;
-			this.F3.Text = "F3";
-			this.F3.UseVisualStyleBackColor = true;
-			// 
-			// F4
-			// 
-			this.F4.Location = new System.Drawing.Point(262, 7);
-			this.F4.Name = "F4";
-			this.F4.Size = new System.Drawing.Size(79, 67);
-			this.F4.TabIndex = 3;
-			this.F4.Text = "F4";
-			this.F4.UseVisualStyleBackColor = true;
-			// 
 			// MainForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -363,6 +367,7 @@ namespace Copylane
 			this.ClientSize = new System.Drawing.Size(861, 772);
 			this.Controls.Add(this.Main_Tab);
 			this.Font = new System.Drawing.Font("Arial", 10.2F);
+			this.KeyPreview = true;
 			this.Location = new System.Drawing.Point(328, -907);
 			this.Margin = new System.Windows.Forms.Padding(4);
 			this.Name = "MainForm";
@@ -370,6 +375,7 @@ namespace Copylane
 			this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
 			this.Text = "Main Form";
 			this.Load += new System.EventHandler(this.MainForm_Load);
+			this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.MainForm_KeyDown);
 			((System.ComponentModel.ISupportInitialize)(this.ItemGrid)).EndInit();
 			this.Main_Tab.ResumeLayout(false);
 			this.Invoice_TabPage.ResumeLayout(false);
@@ -386,7 +392,7 @@ namespace Copylane
 		private System.Windows.Forms.TabControl Main_Tab;
 		private System.Windows.Forms.TabPage Invoice_TabPage;
 		private System.Windows.Forms.TabPage Item_TabPage;
-		private System.Windows.Forms.TextBox Search_Textbox;
+		private System.Windows.Forms.TextBox SearchTextbox;
 		private System.Windows.Forms.Label label1;
 		private System.Windows.Forms.Button Search;
 		private System.Windows.Forms.GroupBox groupBox1;
