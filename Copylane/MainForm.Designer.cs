@@ -33,24 +33,29 @@ namespace Copylane
 			this.Main_Tab = new System.Windows.Forms.TabControl();
 			this.Invoice_TabPage = new System.Windows.Forms.TabPage();
 			this.Item_TabPage = new System.Windows.Forms.TabPage();
+			this.label3 = new System.Windows.Forms.Label();
 			this.label1 = new System.Windows.Forms.Label();
 			this.Search = new System.Windows.Forms.Button();
 			this.Search_Textbox = new System.Windows.Forms.TextBox();
 			this.groupBox1 = new System.Windows.Forms.GroupBox();
+			this.label4 = new System.Windows.Forms.Label();
+			this.Delete = new System.Windows.Forms.Button();
+			this.Cancel = new System.Windows.Forms.Button();
+			this.Save = new System.Windows.Forms.Button();
+			this.label2 = new System.Windows.Forms.Label();
+			this.HiddenId_Textbox = new System.Windows.Forms.TextBox();
 			this.Description_Label = new System.Windows.Forms.Label();
 			this.Price_Textbox = new System.Windows.Forms.TextBox();
 			this.Add = new System.Windows.Forms.Button();
 			this.Price_Label = new System.Windows.Forms.Label();
 			this.Description_Textbox = new System.Windows.Forms.TextBox();
-			this.HiddenId_Textbox = new System.Windows.Forms.TextBox();
-			this.label2 = new System.Windows.Forms.Label();
-			this.Save = new System.Windows.Forms.Button();
-			this.Cancel = new System.Windows.Forms.Button();
-			this.label3 = new System.Windows.Forms.Label();
-			this.Delete = new System.Windows.Forms.Button();
-			this.label4 = new System.Windows.Forms.Label();
+			this.F1 = new System.Windows.Forms.Button();
+			this.F2 = new System.Windows.Forms.Button();
+			this.F3 = new System.Windows.Forms.Button();
+			this.F4 = new System.Windows.Forms.Button();
 			((System.ComponentModel.ISupportInitialize)(this.ItemGrid)).BeginInit();
 			this.Main_Tab.SuspendLayout();
+			this.Invoice_TabPage.SuspendLayout();
 			this.Item_TabPage.SuspendLayout();
 			this.groupBox1.SuspendLayout();
 			this.SuspendLayout();
@@ -71,7 +76,7 @@ namespace Copylane
 			this.ItemGrid.RowTemplate.Height = 24;
 			this.ItemGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
 			this.ItemGrid.Size = new System.Drawing.Size(811, 326);
-			this.ItemGrid.TabIndex = 1;
+			this.ItemGrid.TabIndex = 100;
 			this.ItemGrid.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.ItemGrid_CellMouseDoubleClick);
 			// 
 			// Main_Tab
@@ -87,11 +92,15 @@ namespace Copylane
 			// 
 			// Invoice_TabPage
 			// 
+			this.Invoice_TabPage.Controls.Add(this.F4);
+			this.Invoice_TabPage.Controls.Add(this.F3);
+			this.Invoice_TabPage.Controls.Add(this.F2);
+			this.Invoice_TabPage.Controls.Add(this.F1);
 			this.Invoice_TabPage.Location = new System.Drawing.Point(4, 25);
 			this.Invoice_TabPage.Margin = new System.Windows.Forms.Padding(4);
 			this.Invoice_TabPage.Name = "Invoice_TabPage";
 			this.Invoice_TabPage.Padding = new System.Windows.Forms.Padding(4);
-			this.Invoice_TabPage.Size = new System.Drawing.Size(1142, 716);
+			this.Invoice_TabPage.Size = new System.Drawing.Size(827, 716);
 			this.Invoice_TabPage.TabIndex = 0;
 			this.Invoice_TabPage.Text = "Invoice";
 			this.Invoice_TabPage.UseVisualStyleBackColor = true;
@@ -113,6 +122,18 @@ namespace Copylane
 			this.Item_TabPage.Text = "Items";
 			this.Item_TabPage.UseVisualStyleBackColor = true;
 			// 
+			// label3
+			// 
+			this.label3.AutoSize = true;
+			this.label3.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label3.ForeColor = System.Drawing.Color.OrangeRed;
+			this.label3.Location = new System.Drawing.Point(478, 389);
+			this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+			this.label3.Name = "label3";
+			this.label3.Size = new System.Drawing.Size(340, 15);
+			this.label3.TabIndex = 13;
+			this.label3.Text = "* Double click on the table row to update (edit) or delete item.";
+			// 
 			// label1
 			// 
 			this.label1.AutoSize = true;
@@ -128,7 +149,7 @@ namespace Copylane
 			this.Search.Location = new System.Drawing.Point(695, 18);
 			this.Search.Name = "Search";
 			this.Search.Size = new System.Drawing.Size(123, 27);
-			this.Search.TabIndex = 9;
+			this.Search.TabIndex = 100;
 			this.Search.Text = "Search";
 			this.Search.UseVisualStyleBackColor = true;
 			this.Search.Visible = false;
@@ -139,7 +160,7 @@ namespace Copylane
 			this.Search_Textbox.Location = new System.Drawing.Point(96, 20);
 			this.Search_Textbox.Name = "Search_Textbox";
 			this.Search_Textbox.Size = new System.Drawing.Size(210, 23);
-			this.Search_Textbox.TabIndex = 7;
+			this.Search_Textbox.TabIndex = 1;
 			this.Search_Textbox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Search_Textbox_KeyDown);
 			// 
 			// groupBox1
@@ -165,6 +186,84 @@ namespace Copylane
 			this.groupBox1.TabStop = false;
 			this.groupBox1.Text = "Item Details";
 			// 
+			// label4
+			// 
+			this.label4.AutoSize = true;
+			this.label4.Font = new System.Drawing.Font("Arial", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label4.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+			this.label4.Location = new System.Drawing.Point(501, 96);
+			this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+			this.label4.Name = "label4";
+			this.label4.Size = new System.Drawing.Size(23, 33);
+			this.label4.TabIndex = 16;
+			this.label4.Text = "|";
+			// 
+			// Delete
+			// 
+			this.Delete.BackColor = System.Drawing.Color.OrangeRed;
+			this.Delete.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+			this.Delete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.Delete.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.Delete.ForeColor = System.Drawing.Color.White;
+			this.Delete.Location = new System.Drawing.Point(527, 98);
+			this.Delete.Margin = new System.Windows.Forms.Padding(4);
+			this.Delete.Name = "Delete";
+			this.Delete.Size = new System.Drawing.Size(84, 35);
+			this.Delete.TabIndex = 5;
+			this.Delete.Text = "Delete";
+			this.Delete.UseVisualStyleBackColor = false;
+			this.Delete.Click += new System.EventHandler(this.Delete_Click);
+			// 
+			// Cancel
+			// 
+			this.Cancel.BackColor = System.Drawing.Color.LightGray;
+			this.Cancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.Cancel.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.Cancel.Location = new System.Drawing.Point(711, 98);
+			this.Cancel.Margin = new System.Windows.Forms.Padding(4);
+			this.Cancel.Name = "Cancel";
+			this.Cancel.Size = new System.Drawing.Size(84, 35);
+			this.Cancel.TabIndex = 7;
+			this.Cancel.Text = "Cancel";
+			this.Cancel.UseVisualStyleBackColor = false;
+			this.Cancel.Click += new System.EventHandler(this.Cancel_Click);
+			// 
+			// Save
+			// 
+			this.Save.BackColor = System.Drawing.Color.ForestGreen;
+			this.Save.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+			this.Save.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.Save.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.Save.ForeColor = System.Drawing.Color.White;
+			this.Save.Location = new System.Drawing.Point(619, 98);
+			this.Save.Margin = new System.Windows.Forms.Padding(4);
+			this.Save.Name = "Save";
+			this.Save.Size = new System.Drawing.Size(84, 35);
+			this.Save.TabIndex = 6;
+			this.Save.Text = "Save";
+			this.Save.UseVisualStyleBackColor = false;
+			this.Save.Click += new System.EventHandler(this.Save_Click);
+			// 
+			// label2
+			// 
+			this.label2.AutoSize = true;
+			this.label2.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label2.Location = new System.Drawing.Point(609, 35);
+			this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+			this.label2.Name = "label2";
+			this.label2.Size = new System.Drawing.Size(60, 15);
+			this.label2.TabIndex = 12;
+			this.label2.Text = "Hidden Id";
+			this.label2.Visible = false;
+			// 
+			// HiddenId_Textbox
+			// 
+			this.HiddenId_Textbox.Location = new System.Drawing.Point(695, 31);
+			this.HiddenId_Textbox.Name = "HiddenId_Textbox";
+			this.HiddenId_Textbox.Size = new System.Drawing.Size(100, 23);
+			this.HiddenId_Textbox.TabIndex = 100;
+			this.HiddenId_Textbox.Visible = false;
+			// 
 			// Description_Label
 			// 
 			this.Description_Label.AutoSize = true;
@@ -183,7 +282,7 @@ namespace Copylane
 			this.Price_Textbox.Margin = new System.Windows.Forms.Padding(4);
 			this.Price_Textbox.Name = "Price_Textbox";
 			this.Price_Textbox.Size = new System.Drawing.Size(100, 21);
-			this.Price_Textbox.TabIndex = 5;
+			this.Price_Textbox.TabIndex = 3;
 			// 
 			// Add
 			// 
@@ -196,7 +295,7 @@ namespace Copylane
 			this.Add.Margin = new System.Windows.Forms.Padding(4);
 			this.Add.Name = "Add";
 			this.Add.Size = new System.Drawing.Size(84, 35);
-			this.Add.TabIndex = 0;
+			this.Add.TabIndex = 4;
 			this.Add.Text = "Add";
 			this.Add.UseVisualStyleBackColor = false;
 			this.Add.Click += new System.EventHandler(this.Add_Click);
@@ -219,97 +318,43 @@ namespace Copylane
 			this.Description_Textbox.Margin = new System.Windows.Forms.Padding(4);
 			this.Description_Textbox.Name = "Description_Textbox";
 			this.Description_Textbox.Size = new System.Drawing.Size(312, 21);
-			this.Description_Textbox.TabIndex = 4;
+			this.Description_Textbox.TabIndex = 2;
 			// 
-			// HiddenId_Textbox
+			// F1
 			// 
-			this.HiddenId_Textbox.Location = new System.Drawing.Point(695, 31);
-			this.HiddenId_Textbox.Name = "HiddenId_Textbox";
-			this.HiddenId_Textbox.Size = new System.Drawing.Size(100, 23);
-			this.HiddenId_Textbox.TabIndex = 11;
-			this.HiddenId_Textbox.Visible = false;
+			this.F1.Location = new System.Drawing.Point(7, 7);
+			this.F1.Name = "F1";
+			this.F1.Size = new System.Drawing.Size(79, 67);
+			this.F1.TabIndex = 0;
+			this.F1.Text = "F1";
+			this.F1.UseVisualStyleBackColor = true;
 			// 
-			// label2
+			// F2
 			// 
-			this.label2.AutoSize = true;
-			this.label2.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label2.Location = new System.Drawing.Point(609, 35);
-			this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-			this.label2.Name = "label2";
-			this.label2.Size = new System.Drawing.Size(60, 15);
-			this.label2.TabIndex = 12;
-			this.label2.Text = "Hidden Id";
-			this.label2.Visible = false;
+			this.F2.Location = new System.Drawing.Point(92, 7);
+			this.F2.Name = "F2";
+			this.F2.Size = new System.Drawing.Size(79, 67);
+			this.F2.TabIndex = 1;
+			this.F2.Text = "F2";
+			this.F2.UseVisualStyleBackColor = true;
 			// 
-			// Save
+			// F3
 			// 
-			this.Save.BackColor = System.Drawing.Color.ForestGreen;
-			this.Save.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-			this.Save.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.Save.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.Save.ForeColor = System.Drawing.Color.White;
-			this.Save.Location = new System.Drawing.Point(619, 98);
-			this.Save.Margin = new System.Windows.Forms.Padding(4);
-			this.Save.Name = "Save";
-			this.Save.Size = new System.Drawing.Size(84, 35);
-			this.Save.TabIndex = 13;
-			this.Save.Text = "Save";
-			this.Save.UseVisualStyleBackColor = false;
-			this.Save.Click += new System.EventHandler(this.Save_Click);
+			this.F3.Location = new System.Drawing.Point(177, 7);
+			this.F3.Name = "F3";
+			this.F3.Size = new System.Drawing.Size(79, 67);
+			this.F3.TabIndex = 2;
+			this.F3.Text = "F3";
+			this.F3.UseVisualStyleBackColor = true;
 			// 
-			// Cancel
+			// F4
 			// 
-			this.Cancel.BackColor = System.Drawing.Color.LightGray;
-			this.Cancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.Cancel.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.Cancel.Location = new System.Drawing.Point(711, 98);
-			this.Cancel.Margin = new System.Windows.Forms.Padding(4);
-			this.Cancel.Name = "Cancel";
-			this.Cancel.Size = new System.Drawing.Size(84, 35);
-			this.Cancel.TabIndex = 14;
-			this.Cancel.Text = "Cancel";
-			this.Cancel.UseVisualStyleBackColor = false;
-			this.Cancel.Click += new System.EventHandler(this.Cancel_Click);
-			// 
-			// label3
-			// 
-			this.label3.AutoSize = true;
-			this.label3.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label3.ForeColor = System.Drawing.Color.OrangeRed;
-			this.label3.Location = new System.Drawing.Point(478, 389);
-			this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-			this.label3.Name = "label3";
-			this.label3.Size = new System.Drawing.Size(340, 15);
-			this.label3.TabIndex = 13;
-			this.label3.Text = "* Double click on the table row to update (edit) or delete item.";
-			// 
-			// Delete
-			// 
-			this.Delete.BackColor = System.Drawing.Color.OrangeRed;
-			this.Delete.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-			this.Delete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.Delete.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.Delete.ForeColor = System.Drawing.Color.White;
-			this.Delete.Location = new System.Drawing.Point(527, 98);
-			this.Delete.Margin = new System.Windows.Forms.Padding(4);
-			this.Delete.Name = "Delete";
-			this.Delete.Size = new System.Drawing.Size(84, 35);
-			this.Delete.TabIndex = 15;
-			this.Delete.Text = "Delete";
-			this.Delete.UseVisualStyleBackColor = false;
-			this.Delete.Click += new System.EventHandler(this.Delete_Click);
-			// 
-			// label4
-			// 
-			this.label4.AutoSize = true;
-			this.label4.Font = new System.Drawing.Font("Arial", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label4.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-			this.label4.Location = new System.Drawing.Point(501, 96);
-			this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-			this.label4.Name = "label4";
-			this.label4.Size = new System.Drawing.Size(23, 33);
-			this.label4.TabIndex = 16;
-			this.label4.Text = "|";
+			this.F4.Location = new System.Drawing.Point(262, 7);
+			this.F4.Name = "F4";
+			this.F4.Size = new System.Drawing.Size(79, 67);
+			this.F4.TabIndex = 3;
+			this.F4.Text = "F4";
+			this.F4.UseVisualStyleBackColor = true;
 			// 
 			// MainForm
 			// 
@@ -327,6 +372,7 @@ namespace Copylane
 			this.Load += new System.EventHandler(this.MainForm_Load);
 			((System.ComponentModel.ISupportInitialize)(this.ItemGrid)).EndInit();
 			this.Main_Tab.ResumeLayout(false);
+			this.Invoice_TabPage.ResumeLayout(false);
 			this.Item_TabPage.ResumeLayout(false);
 			this.Item_TabPage.PerformLayout();
 			this.groupBox1.ResumeLayout(false);
@@ -356,6 +402,10 @@ namespace Copylane
 		private System.Windows.Forms.Label label3;
 		private System.Windows.Forms.Label label4;
 		private System.Windows.Forms.Button Delete;
+		private System.Windows.Forms.Button F4;
+		private System.Windows.Forms.Button F3;
+		private System.Windows.Forms.Button F2;
+		private System.Windows.Forms.Button F1;
 	}
 }
 

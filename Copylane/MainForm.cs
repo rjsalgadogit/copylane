@@ -123,10 +123,12 @@ namespace Copylane
 				var isSuccessful = DeleteItem(itemId);
 
 				if (isSuccessful)
-					MessageBox.Show(" Item has been successfully deleted."
-						, "Error"
-						, MessageBoxButtons.OK
-						, MessageBoxIcon.Error);
+				{
+					MessageBox.Show(" Item has been successfully deleted.");
+					LoadItemGrid();
+					Cancel_Click(this, new EventArgs());
+				}
+					
 			}
 			else
 				MessageBox.Show(" No Selected Item (Double click on item)."
