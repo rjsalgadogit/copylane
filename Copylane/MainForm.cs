@@ -179,6 +179,11 @@ namespace Copylane
 			MessageBox.Show("F4");
 		}
 
+		private void ChargePanel_Click(object sender, EventArgs e)
+		{
+			MessageBox.Show("Paid");
+		}
+
 		#endregion
 
 		#region Private Methods

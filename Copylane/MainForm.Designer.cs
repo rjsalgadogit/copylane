@@ -30,13 +30,10 @@ namespace Copylane
 		private void InitializeComponent()
 		{
 			this.ItemGrid = new System.Windows.Forms.DataGridView();
-			this.Main_Tab = new System.Windows.Forms.TabControl();
-			this.Invoice_TabPage = new System.Windows.Forms.TabPage();
 			this.F4 = new System.Windows.Forms.Button();
 			this.F3 = new System.Windows.Forms.Button();
 			this.F2 = new System.Windows.Forms.Button();
 			this.F1 = new System.Windows.Forms.Button();
-			this.Item_TabPage = new System.Windows.Forms.TabPage();
 			this.label3 = new System.Windows.Forms.Label();
 			this.label1 = new System.Windows.Forms.Label();
 			this.Search = new System.Windows.Forms.Button();
@@ -53,11 +50,28 @@ namespace Copylane
 			this.Add = new System.Windows.Forms.Button();
 			this.Price_Label = new System.Windows.Forms.Label();
 			this.Description_Textbox = new System.Windows.Forms.TextBox();
+			this.DragPanel = new System.Windows.Forms.Panel();
+			this.panel2 = new System.Windows.Forms.Panel();
+			this.ItemButton = new System.Windows.Forms.Button();
+			this.POSButton = new System.Windows.Forms.Button();
+			this.panel3 = new System.Windows.Forms.Panel();
+			this.panel4 = new System.Windows.Forms.Panel();
+			this.panel5 = new System.Windows.Forms.Panel();
+			this.panel6 = new System.Windows.Forms.Panel();
+			this.panel8 = new System.Windows.Forms.Panel();
+			this.label7 = new System.Windows.Forms.Label();
+			this.label6 = new System.Windows.Forms.Label();
+			this.ChargePanel = new System.Windows.Forms.Panel();
+			this.label5 = new System.Windows.Forms.Label();
+			this.ChargeAmount = new System.Windows.Forms.Label();
 			((System.ComponentModel.ISupportInitialize)(this.ItemGrid)).BeginInit();
-			this.Main_Tab.SuspendLayout();
-			this.Invoice_TabPage.SuspendLayout();
-			this.Item_TabPage.SuspendLayout();
 			this.groupBox1.SuspendLayout();
+			this.panel2.SuspendLayout();
+			this.panel4.SuspendLayout();
+			this.panel5.SuspendLayout();
+			this.panel6.SuspendLayout();
+			this.panel8.SuspendLayout();
+			this.ChargePanel.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// ItemGrid
@@ -67,7 +81,7 @@ namespace Copylane
 			this.ItemGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
 			this.ItemGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
 			this.ItemGrid.Font = new System.Drawing.Font("Arial", 9.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.ItemGrid.Location = new System.Drawing.Point(7, 53);
+			this.ItemGrid.Location = new System.Drawing.Point(12, 47);
 			this.ItemGrid.Margin = new System.Windows.Forms.Padding(4);
 			this.ItemGrid.MultiSelect = false;
 			this.ItemGrid.Name = "ItemGrid";
@@ -79,35 +93,9 @@ namespace Copylane
 			this.ItemGrid.TabIndex = 100;
 			this.ItemGrid.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.ItemGrid_CellMouseDoubleClick);
 			// 
-			// Main_Tab
-			// 
-			this.Main_Tab.Controls.Add(this.Invoice_TabPage);
-			this.Main_Tab.Controls.Add(this.Item_TabPage);
-			this.Main_Tab.Location = new System.Drawing.Point(13, 14);
-			this.Main_Tab.Margin = new System.Windows.Forms.Padding(4);
-			this.Main_Tab.Name = "Main_Tab";
-			this.Main_Tab.SelectedIndex = 0;
-			this.Main_Tab.Size = new System.Drawing.Size(837, 745);
-			this.Main_Tab.TabIndex = 7;
-			// 
-			// Invoice_TabPage
-			// 
-			this.Invoice_TabPage.Controls.Add(this.F4);
-			this.Invoice_TabPage.Controls.Add(this.F3);
-			this.Invoice_TabPage.Controls.Add(this.F2);
-			this.Invoice_TabPage.Controls.Add(this.F1);
-			this.Invoice_TabPage.Location = new System.Drawing.Point(4, 25);
-			this.Invoice_TabPage.Margin = new System.Windows.Forms.Padding(4);
-			this.Invoice_TabPage.Name = "Invoice_TabPage";
-			this.Invoice_TabPage.Padding = new System.Windows.Forms.Padding(4);
-			this.Invoice_TabPage.Size = new System.Drawing.Size(829, 716);
-			this.Invoice_TabPage.TabIndex = 0;
-			this.Invoice_TabPage.Text = "Invoice";
-			this.Invoice_TabPage.UseVisualStyleBackColor = true;
-			// 
 			// F4
 			// 
-			this.F4.Location = new System.Drawing.Point(262, 7);
+			this.F4.Location = new System.Drawing.Point(271, 12);
 			this.F4.Name = "F4";
 			this.F4.Size = new System.Drawing.Size(79, 67);
 			this.F4.TabIndex = 3;
@@ -117,7 +105,7 @@ namespace Copylane
 			// 
 			// F3
 			// 
-			this.F3.Location = new System.Drawing.Point(177, 7);
+			this.F3.Location = new System.Drawing.Point(186, 12);
 			this.F3.Name = "F3";
 			this.F3.Size = new System.Drawing.Size(79, 67);
 			this.F3.TabIndex = 2;
@@ -127,7 +115,7 @@ namespace Copylane
 			// 
 			// F2
 			// 
-			this.F2.Location = new System.Drawing.Point(92, 7);
+			this.F2.Location = new System.Drawing.Point(101, 12);
 			this.F2.Name = "F2";
 			this.F2.Size = new System.Drawing.Size(79, 67);
 			this.F2.TabIndex = 1;
@@ -137,7 +125,7 @@ namespace Copylane
 			// 
 			// F1
 			// 
-			this.F1.Location = new System.Drawing.Point(7, 7);
+			this.F1.Location = new System.Drawing.Point(16, 12);
 			this.F1.Name = "F1";
 			this.F1.Size = new System.Drawing.Size(79, 67);
 			this.F1.TabIndex = 0;
@@ -145,29 +133,12 @@ namespace Copylane
 			this.F1.UseVisualStyleBackColor = true;
 			this.F1.Click += new System.EventHandler(this.F1_Click);
 			// 
-			// Item_TabPage
-			// 
-			this.Item_TabPage.Controls.Add(this.label3);
-			this.Item_TabPage.Controls.Add(this.label1);
-			this.Item_TabPage.Controls.Add(this.Search);
-			this.Item_TabPage.Controls.Add(this.SearchTextbox);
-			this.Item_TabPage.Controls.Add(this.groupBox1);
-			this.Item_TabPage.Controls.Add(this.ItemGrid);
-			this.Item_TabPage.Location = new System.Drawing.Point(4, 25);
-			this.Item_TabPage.Margin = new System.Windows.Forms.Padding(4);
-			this.Item_TabPage.Name = "Item_TabPage";
-			this.Item_TabPage.Padding = new System.Windows.Forms.Padding(4);
-			this.Item_TabPage.Size = new System.Drawing.Size(829, 716);
-			this.Item_TabPage.TabIndex = 1;
-			this.Item_TabPage.Text = "Items";
-			this.Item_TabPage.UseVisualStyleBackColor = true;
-			// 
 			// label3
 			// 
 			this.label3.AutoSize = true;
 			this.label3.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.label3.ForeColor = System.Drawing.Color.OrangeRed;
-			this.label3.Location = new System.Drawing.Point(478, 389);
+			this.label3.Location = new System.Drawing.Point(483, 383);
 			this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
 			this.label3.Name = "label3";
 			this.label3.Size = new System.Drawing.Size(340, 15);
@@ -177,7 +148,7 @@ namespace Copylane
 			// label1
 			// 
 			this.label1.AutoSize = true;
-			this.label1.Location = new System.Drawing.Point(7, 23);
+			this.label1.Location = new System.Drawing.Point(12, 17);
 			this.label1.Name = "label1";
 			this.label1.Size = new System.Drawing.Size(83, 16);
 			this.label1.TabIndex = 10;
@@ -186,7 +157,7 @@ namespace Copylane
 			// Search
 			// 
 			this.Search.Font = new System.Drawing.Font("Arial", 10.2F);
-			this.Search.Location = new System.Drawing.Point(695, 18);
+			this.Search.Location = new System.Drawing.Point(700, 12);
 			this.Search.Name = "Search";
 			this.Search.Size = new System.Drawing.Size(123, 27);
 			this.Search.TabIndex = 100;
@@ -197,7 +168,7 @@ namespace Copylane
 			// 
 			// SearchTextbox
 			// 
-			this.SearchTextbox.Location = new System.Drawing.Point(96, 20);
+			this.SearchTextbox.Location = new System.Drawing.Point(101, 14);
 			this.SearchTextbox.Name = "SearchTextbox";
 			this.SearchTextbox.Size = new System.Drawing.Size(210, 23);
 			this.SearchTextbox.TabIndex = 1;
@@ -217,7 +188,7 @@ namespace Copylane
 			this.groupBox1.Controls.Add(this.Price_Label);
 			this.groupBox1.Controls.Add(this.Description_Textbox);
 			this.groupBox1.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.groupBox1.Location = new System.Drawing.Point(8, 425);
+			this.groupBox1.Location = new System.Drawing.Point(13, 419);
 			this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
 			this.groupBox1.Name = "groupBox1";
 			this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
@@ -360,13 +331,183 @@ namespace Copylane
 			this.Description_Textbox.Size = new System.Drawing.Size(312, 21);
 			this.Description_Textbox.TabIndex = 2;
 			// 
+			// DragPanel
+			// 
+			this.DragPanel.Dock = System.Windows.Forms.DockStyle.Top;
+			this.DragPanel.Location = new System.Drawing.Point(0, 0);
+			this.DragPanel.Name = "DragPanel";
+			this.DragPanel.Size = new System.Drawing.Size(1100, 26);
+			this.DragPanel.TabIndex = 8;
+			// 
+			// panel2
+			// 
+			this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+			this.panel2.Controls.Add(this.ItemButton);
+			this.panel2.Controls.Add(this.POSButton);
+			this.panel2.Controls.Add(this.panel3);
+			this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
+			this.panel2.Location = new System.Drawing.Point(0, 26);
+			this.panel2.Name = "panel2";
+			this.panel2.Size = new System.Drawing.Size(299, 746);
+			this.panel2.TabIndex = 9;
+			// 
+			// ItemButton
+			// 
+			this.ItemButton.Cursor = System.Windows.Forms.Cursors.Hand;
+			this.ItemButton.Dock = System.Windows.Forms.DockStyle.Top;
+			this.ItemButton.FlatAppearance.BorderSize = 0;
+			this.ItemButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.ItemButton.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.ItemButton.ForeColor = System.Drawing.Color.White;
+			this.ItemButton.Location = new System.Drawing.Point(0, 233);
+			this.ItemButton.Name = "ItemButton";
+			this.ItemButton.Size = new System.Drawing.Size(299, 46);
+			this.ItemButton.TabIndex = 2;
+			this.ItemButton.Text = "Items";
+			this.ItemButton.UseVisualStyleBackColor = true;
+			// 
+			// POSButton
+			// 
+			this.POSButton.Cursor = System.Windows.Forms.Cursors.Hand;
+			this.POSButton.Dock = System.Windows.Forms.DockStyle.Top;
+			this.POSButton.FlatAppearance.BorderSize = 0;
+			this.POSButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.POSButton.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.POSButton.ForeColor = System.Drawing.Color.White;
+			this.POSButton.Location = new System.Drawing.Point(0, 187);
+			this.POSButton.Name = "POSButton";
+			this.POSButton.Size = new System.Drawing.Size(299, 46);
+			this.POSButton.TabIndex = 1;
+			this.POSButton.Text = "Point of Sale";
+			this.POSButton.UseVisualStyleBackColor = true;
+			// 
+			// panel3
+			// 
+			this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(38)))));
+			this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
+			this.panel3.Location = new System.Drawing.Point(0, 0);
+			this.panel3.Name = "panel3";
+			this.panel3.Size = new System.Drawing.Size(299, 187);
+			this.panel3.TabIndex = 0;
+			// 
+			// panel4
+			// 
+			this.panel4.Controls.Add(this.panel5);
+			this.panel4.Controls.Add(this.panel6);
+			this.panel4.Controls.Add(this.F4);
+			this.panel4.Controls.Add(this.F1);
+			this.panel4.Controls.Add(this.F3);
+			this.panel4.Controls.Add(this.F2);
+			this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.panel4.Location = new System.Drawing.Point(299, 26);
+			this.panel4.Name = "panel4";
+			this.panel4.Size = new System.Drawing.Size(801, 746);
+			this.panel4.TabIndex = 10;
+			// 
+			// panel5
+			// 
+			this.panel5.Controls.Add(this.label3);
+			this.panel5.Controls.Add(this.label1);
+			this.panel5.Controls.Add(this.ItemGrid);
+			this.panel5.Controls.Add(this.Search);
+			this.panel5.Controls.Add(this.groupBox1);
+			this.panel5.Controls.Add(this.SearchTextbox);
+			this.panel5.Location = new System.Drawing.Point(16, 634);
+			this.panel5.Name = "panel5";
+			this.panel5.Size = new System.Drawing.Size(342, 100);
+			this.panel5.TabIndex = 11;
+			this.panel5.Visible = false;
+			// 
+			// panel6
+			// 
+			this.panel6.BackColor = System.Drawing.Color.White;
+			this.panel6.Controls.Add(this.panel8);
+			this.panel6.Controls.Add(this.ChargePanel);
+			this.panel6.Dock = System.Windows.Forms.DockStyle.Right;
+			this.panel6.Location = new System.Drawing.Point(367, 0);
+			this.panel6.Name = "panel6";
+			this.panel6.Size = new System.Drawing.Size(434, 746);
+			this.panel6.TabIndex = 4;
+			// 
+			// panel8
+			// 
+			this.panel8.Controls.Add(this.label7);
+			this.panel8.Controls.Add(this.label6);
+			this.panel8.Dock = System.Windows.Forms.DockStyle.Bottom;
+			this.panel8.Location = new System.Drawing.Point(0, 595);
+			this.panel8.Name = "panel8";
+			this.panel8.Size = new System.Drawing.Size(434, 56);
+			this.panel8.TabIndex = 1;
+			// 
+			// label7
+			// 
+			this.label7.AutoSize = true;
+			this.label7.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label7.ForeColor = System.Drawing.Color.Black;
+			this.label7.Location = new System.Drawing.Point(308, 18);
+			this.label7.Name = "label7";
+			this.label7.Size = new System.Drawing.Size(104, 22);
+			this.label7.TabIndex = 1;
+			this.label7.Text = "P 1,200.15";
+			// 
+			// label6
+			// 
+			this.label6.AutoSize = true;
+			this.label6.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label6.ForeColor = System.Drawing.Color.Blue;
+			this.label6.Location = new System.Drawing.Point(24, 20);
+			this.label6.Name = "label6";
+			this.label6.Size = new System.Drawing.Size(69, 19);
+			this.label6.TabIndex = 0;
+			this.label6.Text = "Change";
+			// 
+			// ChargePanel
+			// 
+			this.ChargePanel.BackColor = System.Drawing.Color.ForestGreen;
+			this.ChargePanel.Controls.Add(this.label5);
+			this.ChargePanel.Controls.Add(this.ChargeAmount);
+			this.ChargePanel.Cursor = System.Windows.Forms.Cursors.Hand;
+			this.ChargePanel.Dock = System.Windows.Forms.DockStyle.Bottom;
+			this.ChargePanel.Location = new System.Drawing.Point(0, 651);
+			this.ChargePanel.Name = "ChargePanel";
+			this.ChargePanel.Size = new System.Drawing.Size(434, 95);
+			this.ChargePanel.TabIndex = 0;
+			this.ChargePanel.Click += new System.EventHandler(this.ChargePanel_Click);
+			// 
+			// label5
+			// 
+			this.label5.AutoSize = true;
+			this.label5.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label5.ForeColor = System.Drawing.Color.White;
+			this.label5.Location = new System.Drawing.Point(22, 30);
+			this.label5.Name = "label5";
+			this.label5.Size = new System.Drawing.Size(131, 32);
+			this.label5.TabIndex = 2;
+			this.label5.Text = "CHARGE";
+			// 
+			// ChargeAmount
+			// 
+			this.ChargeAmount.AutoSize = true;
+			this.ChargeAmount.BackColor = System.Drawing.Color.Transparent;
+			this.ChargeAmount.Cursor = System.Windows.Forms.Cursors.Hand;
+			this.ChargeAmount.Font = new System.Drawing.Font("Arial", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.ChargeAmount.ForeColor = System.Drawing.Color.White;
+			this.ChargeAmount.Location = new System.Drawing.Point(224, 25);
+			this.ChargeAmount.Name = "ChargeAmount";
+			this.ChargeAmount.Size = new System.Drawing.Size(200, 44);
+			this.ChargeAmount.TabIndex = 1;
+			this.ChargeAmount.Text = "P 1,200.15";
+			// 
 			// MainForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(861, 772);
-			this.Controls.Add(this.Main_Tab);
+			this.ClientSize = new System.Drawing.Size(1100, 772);
+			this.Controls.Add(this.panel4);
+			this.Controls.Add(this.panel2);
+			this.Controls.Add(this.DragPanel);
 			this.Font = new System.Drawing.Font("Arial", 10.2F);
+			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
 			this.KeyPreview = true;
 			this.Location = new System.Drawing.Point(328, -907);
 			this.Margin = new System.Windows.Forms.Padding(4);
@@ -377,21 +518,23 @@ namespace Copylane
 			this.Load += new System.EventHandler(this.MainForm_Load);
 			this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.MainForm_KeyDown);
 			((System.ComponentModel.ISupportInitialize)(this.ItemGrid)).EndInit();
-			this.Main_Tab.ResumeLayout(false);
-			this.Invoice_TabPage.ResumeLayout(false);
-			this.Item_TabPage.ResumeLayout(false);
-			this.Item_TabPage.PerformLayout();
 			this.groupBox1.ResumeLayout(false);
 			this.groupBox1.PerformLayout();
+			this.panel2.ResumeLayout(false);
+			this.panel4.ResumeLayout(false);
+			this.panel5.ResumeLayout(false);
+			this.panel5.PerformLayout();
+			this.panel6.ResumeLayout(false);
+			this.panel8.ResumeLayout(false);
+			this.panel8.PerformLayout();
+			this.ChargePanel.ResumeLayout(false);
+			this.ChargePanel.PerformLayout();
 			this.ResumeLayout(false);
 
 		}
 
 		#endregion
 		private System.Windows.Forms.DataGridView ItemGrid;
-		private System.Windows.Forms.TabControl Main_Tab;
-		private System.Windows.Forms.TabPage Invoice_TabPage;
-		private System.Windows.Forms.TabPage Item_TabPage;
 		private System.Windows.Forms.TextBox SearchTextbox;
 		private System.Windows.Forms.Label label1;
 		private System.Windows.Forms.Button Search;
@@ -412,6 +555,20 @@ namespace Copylane
 		private System.Windows.Forms.Button F3;
 		private System.Windows.Forms.Button F2;
 		private System.Windows.Forms.Button F1;
+		private System.Windows.Forms.Panel DragPanel;
+		private System.Windows.Forms.Panel panel2;
+		private System.Windows.Forms.Panel panel3;
+		private System.Windows.Forms.Panel panel4;
+		private System.Windows.Forms.Panel panel5;
+		private System.Windows.Forms.Panel panel6;
+		private System.Windows.Forms.Panel panel8;
+		private System.Windows.Forms.Label label7;
+		private System.Windows.Forms.Label label6;
+		private System.Windows.Forms.Panel ChargePanel;
+		private System.Windows.Forms.Label ChargeAmount;
+		private System.Windows.Forms.Label label5;
+		private System.Windows.Forms.Button ItemButton;
+		private System.Windows.Forms.Button POSButton;
 	}
 }
 
