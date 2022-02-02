@@ -99,6 +99,7 @@ namespace Copylane.Services
 						comm.Parameters.AddWithValue("@Id", item.Id);
 						comm.Parameters.AddWithValue("@Description", item.Description);
 						comm.Parameters.AddWithValue("@Price", item.Price);
+						comm.Parameters.AddWithValue("@ShortcutKey", item.ShortcutKey);
 
 						int rowAffected = comm.ExecuteNonQuery();
 						conn.Close();

@@ -55,21 +55,23 @@ namespace Copylane
 			this.ItemButton = new System.Windows.Forms.Button();
 			this.POSButton = new System.Windows.Forms.Button();
 			this.panel3 = new System.Windows.Forms.Panel();
-			this.panel4 = new System.Windows.Forms.Panel();
-			this.panel5 = new System.Windows.Forms.Panel();
+			this.POSPanel = new System.Windows.Forms.Panel();
+			this.ItemsPanel = new System.Windows.Forms.Panel();
 			this.panel6 = new System.Windows.Forms.Panel();
+			this.listView1 = new System.Windows.Forms.ListView();
 			this.panel8 = new System.Windows.Forms.Panel();
 			this.label7 = new System.Windows.Forms.Label();
 			this.label6 = new System.Windows.Forms.Label();
 			this.ChargePanel = new System.Windows.Forms.Panel();
 			this.label5 = new System.Windows.Forms.Label();
 			this.ChargeAmount = new System.Windows.Forms.Label();
-			this.listView1 = new System.Windows.Forms.ListView();
+			this.label8 = new System.Windows.Forms.Label();
+			this.KeysCombo = new System.Windows.Forms.ComboBox();
 			((System.ComponentModel.ISupportInitialize)(this.ItemGrid)).BeginInit();
 			this.groupBox1.SuspendLayout();
 			this.panel2.SuspendLayout();
-			this.panel4.SuspendLayout();
-			this.panel5.SuspendLayout();
+			this.POSPanel.SuspendLayout();
+			this.ItemsPanel.SuspendLayout();
 			this.panel6.SuspendLayout();
 			this.panel8.SuspendLayout();
 			this.ChargePanel.SuspendLayout();
@@ -82,7 +84,7 @@ namespace Copylane
 			this.ItemGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
 			this.ItemGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
 			this.ItemGrid.Font = new System.Drawing.Font("Arial", 9.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.ItemGrid.Location = new System.Drawing.Point(12, 47);
+			this.ItemGrid.Location = new System.Drawing.Point(17, 63);
 			this.ItemGrid.Margin = new System.Windows.Forms.Padding(4);
 			this.ItemGrid.MultiSelect = false;
 			this.ItemGrid.Name = "ItemGrid";
@@ -143,26 +145,26 @@ namespace Copylane
 			this.label3.AutoSize = true;
 			this.label3.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.label3.ForeColor = System.Drawing.Color.OrangeRed;
-			this.label3.Location = new System.Drawing.Point(483, 383);
+			this.label3.Location = new System.Drawing.Point(488, 399);
 			this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
 			this.label3.Name = "label3";
-			this.label3.Size = new System.Drawing.Size(400, 17);
+			this.label3.Size = new System.Drawing.Size(340, 15);
 			this.label3.TabIndex = 13;
 			this.label3.Text = "* Double click on the table row to update (edit) or delete item.";
 			// 
 			// label1
 			// 
 			this.label1.AutoSize = true;
-			this.label1.Location = new System.Drawing.Point(12, 17);
+			this.label1.Location = new System.Drawing.Point(17, 33);
 			this.label1.Name = "label1";
-			this.label1.Size = new System.Drawing.Size(98, 19);
+			this.label1.Size = new System.Drawing.Size(83, 16);
 			this.label1.TabIndex = 10;
 			this.label1.Text = "Search Item";
 			// 
 			// Search
 			// 
 			this.Search.Font = new System.Drawing.Font("Arial", 10.2F);
-			this.Search.Location = new System.Drawing.Point(700, 12);
+			this.Search.Location = new System.Drawing.Point(705, 28);
 			this.Search.Name = "Search";
 			this.Search.Size = new System.Drawing.Size(123, 27);
 			this.Search.TabIndex = 100;
@@ -173,14 +175,16 @@ namespace Copylane
 			// 
 			// SearchTextbox
 			// 
-			this.SearchTextbox.Location = new System.Drawing.Point(101, 14);
+			this.SearchTextbox.Location = new System.Drawing.Point(106, 30);
 			this.SearchTextbox.Name = "SearchTextbox";
-			this.SearchTextbox.Size = new System.Drawing.Size(210, 27);
+			this.SearchTextbox.Size = new System.Drawing.Size(210, 23);
 			this.SearchTextbox.TabIndex = 1;
 			this.SearchTextbox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.SearchTextbox_KeyDown);
 			// 
 			// groupBox1
 			// 
+			this.groupBox1.Controls.Add(this.KeysCombo);
+			this.groupBox1.Controls.Add(this.label8);
 			this.groupBox1.Controls.Add(this.label4);
 			this.groupBox1.Controls.Add(this.Delete);
 			this.groupBox1.Controls.Add(this.Cancel);
@@ -193,11 +197,11 @@ namespace Copylane
 			this.groupBox1.Controls.Add(this.Price_Label);
 			this.groupBox1.Controls.Add(this.Description_Textbox);
 			this.groupBox1.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.groupBox1.Location = new System.Drawing.Point(13, 419);
+			this.groupBox1.Location = new System.Drawing.Point(18, 435);
 			this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
 			this.groupBox1.Name = "groupBox1";
 			this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
-			this.groupBox1.Size = new System.Drawing.Size(810, 143);
+			this.groupBox1.Size = new System.Drawing.Size(810, 160);
 			this.groupBox1.TabIndex = 6;
 			this.groupBox1.TabStop = false;
 			this.groupBox1.Text = "Item Details";
@@ -207,10 +211,10 @@ namespace Copylane
 			this.label4.AutoSize = true;
 			this.label4.Font = new System.Drawing.Font("Arial", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.label4.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-			this.label4.Location = new System.Drawing.Point(501, 96);
+			this.label4.Location = new System.Drawing.Point(507, 108);
 			this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
 			this.label4.Name = "label4";
-			this.label4.Size = new System.Drawing.Size(27, 42);
+			this.label4.Size = new System.Drawing.Size(23, 33);
 			this.label4.TabIndex = 16;
 			this.label4.Text = "|";
 			// 
@@ -221,7 +225,7 @@ namespace Copylane
 			this.Delete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
 			this.Delete.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.Delete.ForeColor = System.Drawing.Color.White;
-			this.Delete.Location = new System.Drawing.Point(527, 98);
+			this.Delete.Location = new System.Drawing.Point(533, 110);
 			this.Delete.Margin = new System.Windows.Forms.Padding(4);
 			this.Delete.Name = "Delete";
 			this.Delete.Size = new System.Drawing.Size(84, 35);
@@ -235,7 +239,7 @@ namespace Copylane
 			this.Cancel.BackColor = System.Drawing.Color.LightGray;
 			this.Cancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
 			this.Cancel.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.Cancel.Location = new System.Drawing.Point(711, 98);
+			this.Cancel.Location = new System.Drawing.Point(717, 110);
 			this.Cancel.Margin = new System.Windows.Forms.Padding(4);
 			this.Cancel.Name = "Cancel";
 			this.Cancel.Size = new System.Drawing.Size(84, 35);
@@ -251,7 +255,7 @@ namespace Copylane
 			this.Save.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
 			this.Save.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.Save.ForeColor = System.Drawing.Color.White;
-			this.Save.Location = new System.Drawing.Point(619, 98);
+			this.Save.Location = new System.Drawing.Point(625, 110);
 			this.Save.Margin = new System.Windows.Forms.Padding(4);
 			this.Save.Name = "Save";
 			this.Save.Size = new System.Drawing.Size(84, 35);
@@ -264,19 +268,19 @@ namespace Copylane
 			// 
 			this.label2.AutoSize = true;
 			this.label2.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label2.Location = new System.Drawing.Point(609, 35);
+			this.label2.Location = new System.Drawing.Point(12, 93);
 			this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
 			this.label2.Name = "label2";
-			this.label2.Size = new System.Drawing.Size(68, 17);
+			this.label2.Size = new System.Drawing.Size(60, 15);
 			this.label2.TabIndex = 12;
 			this.label2.Text = "Hidden Id";
 			this.label2.Visible = false;
 			// 
 			// HiddenId_Textbox
 			// 
-			this.HiddenId_Textbox.Location = new System.Drawing.Point(695, 31);
+			this.HiddenId_Textbox.Location = new System.Drawing.Point(99, 89);
 			this.HiddenId_Textbox.Name = "HiddenId_Textbox";
-			this.HiddenId_Textbox.Size = new System.Drawing.Size(100, 27);
+			this.HiddenId_Textbox.Size = new System.Drawing.Size(100, 23);
 			this.HiddenId_Textbox.TabIndex = 100;
 			this.HiddenId_Textbox.Visible = false;
 			// 
@@ -287,17 +291,17 @@ namespace Copylane
 			this.Description_Label.Location = new System.Drawing.Point(12, 35);
 			this.Description_Label.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
 			this.Description_Label.Name = "Description_Label";
-			this.Description_Label.Size = new System.Drawing.Size(82, 17);
+			this.Description_Label.Size = new System.Drawing.Size(70, 15);
 			this.Description_Label.TabIndex = 2;
 			this.Description_Label.Text = "Description";
 			// 
 			// Price_Textbox
 			// 
 			this.Price_Textbox.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.Price_Textbox.Location = new System.Drawing.Point(98, 61);
+			this.Price_Textbox.Location = new System.Drawing.Point(99, 61);
 			this.Price_Textbox.Margin = new System.Windows.Forms.Padding(4);
 			this.Price_Textbox.Name = "Price_Textbox";
-			this.Price_Textbox.Size = new System.Drawing.Size(100, 25);
+			this.Price_Textbox.Size = new System.Drawing.Size(100, 21);
 			this.Price_Textbox.TabIndex = 3;
 			// 
 			// Add
@@ -307,7 +311,7 @@ namespace Copylane
 			this.Add.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
 			this.Add.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.Add.ForeColor = System.Drawing.Color.White;
-			this.Add.Location = new System.Drawing.Point(410, 98);
+			this.Add.Location = new System.Drawing.Point(416, 110);
 			this.Add.Margin = new System.Windows.Forms.Padding(4);
 			this.Add.Name = "Add";
 			this.Add.Size = new System.Drawing.Size(84, 35);
@@ -323,17 +327,17 @@ namespace Copylane
 			this.Price_Label.Location = new System.Drawing.Point(12, 64);
 			this.Price_Label.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
 			this.Price_Label.Name = "Price_Label";
-			this.Price_Label.Size = new System.Drawing.Size(42, 17);
+			this.Price_Label.Size = new System.Drawing.Size(35, 15);
 			this.Price_Label.TabIndex = 3;
 			this.Price_Label.Text = "Price";
 			// 
 			// Description_Textbox
 			// 
 			this.Description_Textbox.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.Description_Textbox.Location = new System.Drawing.Point(98, 32);
+			this.Description_Textbox.Location = new System.Drawing.Point(99, 32);
 			this.Description_Textbox.Margin = new System.Windows.Forms.Padding(4);
 			this.Description_Textbox.Name = "Description_Textbox";
-			this.Description_Textbox.Size = new System.Drawing.Size(312, 25);
+			this.Description_Textbox.Size = new System.Drawing.Size(312, 21);
 			this.Description_Textbox.TabIndex = 2;
 			// 
 			// DragPanel
@@ -341,7 +345,7 @@ namespace Copylane
 			this.DragPanel.Dock = System.Windows.Forms.DockStyle.Top;
 			this.DragPanel.Location = new System.Drawing.Point(0, 0);
 			this.DragPanel.Name = "DragPanel";
-			this.DragPanel.Size = new System.Drawing.Size(1100, 26);
+			this.DragPanel.Size = new System.Drawing.Size(1144, 26);
 			this.DragPanel.TabIndex = 8;
 			// 
 			// panel2
@@ -370,6 +374,7 @@ namespace Copylane
 			this.ItemButton.TabIndex = 2;
 			this.ItemButton.Text = "Items";
 			this.ItemButton.UseVisualStyleBackColor = true;
+			this.ItemButton.Click += new System.EventHandler(this.ItemButton_Click);
 			// 
 			// POSButton
 			// 
@@ -385,6 +390,7 @@ namespace Copylane
 			this.POSButton.TabIndex = 1;
 			this.POSButton.Text = "Point of Sale";
 			this.POSButton.UseVisualStyleBackColor = true;
+			this.POSButton.Click += new System.EventHandler(this.POSButton_Click);
 			// 
 			// panel3
 			// 
@@ -395,33 +401,33 @@ namespace Copylane
 			this.panel3.Size = new System.Drawing.Size(299, 187);
 			this.panel3.TabIndex = 0;
 			// 
-			// panel4
+			// POSPanel
 			// 
-			this.panel4.Controls.Add(this.panel5);
-			this.panel4.Controls.Add(this.panel6);
-			this.panel4.Controls.Add(this.F4);
-			this.panel4.Controls.Add(this.F1);
-			this.panel4.Controls.Add(this.F3);
-			this.panel4.Controls.Add(this.F2);
-			this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.panel4.Location = new System.Drawing.Point(299, 26);
-			this.panel4.Name = "panel4";
-			this.panel4.Size = new System.Drawing.Size(801, 746);
-			this.panel4.TabIndex = 10;
+			this.POSPanel.Controls.Add(this.panel6);
+			this.POSPanel.Controls.Add(this.F4);
+			this.POSPanel.Controls.Add(this.F1);
+			this.POSPanel.Controls.Add(this.F3);
+			this.POSPanel.Controls.Add(this.F2);
+			this.POSPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.POSPanel.Location = new System.Drawing.Point(299, 26);
+			this.POSPanel.Name = "POSPanel";
+			this.POSPanel.Size = new System.Drawing.Size(845, 746);
+			this.POSPanel.TabIndex = 10;
 			// 
-			// panel5
+			// ItemsPanel
 			// 
-			this.panel5.Controls.Add(this.label3);
-			this.panel5.Controls.Add(this.label1);
-			this.panel5.Controls.Add(this.ItemGrid);
-			this.panel5.Controls.Add(this.Search);
-			this.panel5.Controls.Add(this.groupBox1);
-			this.panel5.Controls.Add(this.SearchTextbox);
-			this.panel5.Location = new System.Drawing.Point(16, 634);
-			this.panel5.Name = "panel5";
-			this.panel5.Size = new System.Drawing.Size(342, 100);
-			this.panel5.TabIndex = 11;
-			this.panel5.Visible = false;
+			this.ItemsPanel.Controls.Add(this.label3);
+			this.ItemsPanel.Controls.Add(this.label1);
+			this.ItemsPanel.Controls.Add(this.ItemGrid);
+			this.ItemsPanel.Controls.Add(this.Search);
+			this.ItemsPanel.Controls.Add(this.groupBox1);
+			this.ItemsPanel.Controls.Add(this.SearchTextbox);
+			this.ItemsPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.ItemsPanel.Location = new System.Drawing.Point(299, 26);
+			this.ItemsPanel.Name = "ItemsPanel";
+			this.ItemsPanel.Size = new System.Drawing.Size(845, 746);
+			this.ItemsPanel.TabIndex = 11;
+			this.ItemsPanel.Visible = false;
 			// 
 			// panel6
 			// 
@@ -430,10 +436,21 @@ namespace Copylane
 			this.panel6.Controls.Add(this.panel8);
 			this.panel6.Controls.Add(this.ChargePanel);
 			this.panel6.Dock = System.Windows.Forms.DockStyle.Right;
-			this.panel6.Location = new System.Drawing.Point(367, 0);
+			this.panel6.Location = new System.Drawing.Point(411, 0);
 			this.panel6.Name = "panel6";
 			this.panel6.Size = new System.Drawing.Size(434, 746);
 			this.panel6.TabIndex = 4;
+			// 
+			// listView1
+			// 
+			this.listView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+			this.listView1.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.listView1.HideSelection = false;
+			this.listView1.Location = new System.Drawing.Point(0, 0);
+			this.listView1.Name = "listView1";
+			this.listView1.Size = new System.Drawing.Size(434, 595);
+			this.listView1.TabIndex = 2;
+			this.listView1.UseCompatibleStateImageBehavior = false;
 			// 
 			// panel8
 			// 
@@ -452,7 +469,7 @@ namespace Copylane
 			this.label7.ForeColor = System.Drawing.Color.Black;
 			this.label7.Location = new System.Drawing.Point(308, 18);
 			this.label7.Name = "label7";
-			this.label7.Size = new System.Drawing.Size(128, 29);
+			this.label7.Size = new System.Drawing.Size(104, 22);
 			this.label7.TabIndex = 1;
 			this.label7.Text = "P 1,200.15";
 			// 
@@ -463,7 +480,7 @@ namespace Copylane
 			this.label6.ForeColor = System.Drawing.Color.Blue;
 			this.label6.Location = new System.Drawing.Point(24, 20);
 			this.label6.Name = "label6";
-			this.label6.Size = new System.Drawing.Size(82, 24);
+			this.label6.Size = new System.Drawing.Size(69, 19);
 			this.label6.TabIndex = 0;
 			this.label6.Text = "Change";
 			// 
@@ -487,7 +504,7 @@ namespace Copylane
 			this.label5.ForeColor = System.Drawing.Color.White;
 			this.label5.Location = new System.Drawing.Point(22, 30);
 			this.label5.Name = "label5";
-			this.label5.Size = new System.Drawing.Size(164, 39);
+			this.label5.Size = new System.Drawing.Size(131, 32);
 			this.label5.TabIndex = 2;
 			this.label5.Text = "CHARGE";
 			// 
@@ -500,26 +517,41 @@ namespace Copylane
 			this.ChargeAmount.ForeColor = System.Drawing.Color.White;
 			this.ChargeAmount.Location = new System.Drawing.Point(224, 25);
 			this.ChargeAmount.Name = "ChargeAmount";
-			this.ChargeAmount.Size = new System.Drawing.Size(249, 55);
+			this.ChargeAmount.Size = new System.Drawing.Size(200, 44);
 			this.ChargeAmount.TabIndex = 1;
 			this.ChargeAmount.Text = "P 1,200.15";
 			// 
-			// listView1
+			// label8
 			// 
-			this.listView1.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.listView1.HideSelection = false;
-			this.listView1.Location = new System.Drawing.Point(0, 0);
-			this.listView1.Name = "listView1";
-			this.listView1.Size = new System.Drawing.Size(434, 595);
-			this.listView1.TabIndex = 2;
-			this.listView1.UseCompatibleStateImageBehavior = false;
+			this.label8.AutoSize = true;
+			this.label8.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label8.Location = new System.Drawing.Point(449, 35);
+			this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+			this.label8.Name = "label8";
+			this.label8.Size = new System.Drawing.Size(75, 15);
+			this.label8.TabIndex = 101;
+			this.label8.Text = "Shortcut Key";
+			// 
+			// KeysCombo
+			// 
+			this.KeysCombo.FormattingEnabled = true;
+			this.KeysCombo.Items.AddRange(new object[] {
+            "F1",
+            "F2",
+            "F3",
+            "F4"});
+			this.KeysCombo.Location = new System.Drawing.Point(536, 31);
+			this.KeysCombo.Name = "KeysCombo";
+			this.KeysCombo.Size = new System.Drawing.Size(121, 24);
+			this.KeysCombo.TabIndex = 103;
 			// 
 			// MainForm
 			// 
-			this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
+			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(1100, 772);
-			this.Controls.Add(this.panel4);
+			this.ClientSize = new System.Drawing.Size(1144, 772);
+			this.Controls.Add(this.ItemsPanel);
+			this.Controls.Add(this.POSPanel);
 			this.Controls.Add(this.panel2);
 			this.Controls.Add(this.DragPanel);
 			this.Font = new System.Drawing.Font("Arial", 10.2F);
@@ -537,9 +569,9 @@ namespace Copylane
 			this.groupBox1.ResumeLayout(false);
 			this.groupBox1.PerformLayout();
 			this.panel2.ResumeLayout(false);
-			this.panel4.ResumeLayout(false);
-			this.panel5.ResumeLayout(false);
-			this.panel5.PerformLayout();
+			this.POSPanel.ResumeLayout(false);
+			this.ItemsPanel.ResumeLayout(false);
+			this.ItemsPanel.PerformLayout();
 			this.panel6.ResumeLayout(false);
 			this.panel8.ResumeLayout(false);
 			this.panel8.PerformLayout();
@@ -574,8 +606,8 @@ namespace Copylane
 		private System.Windows.Forms.Panel DragPanel;
 		private System.Windows.Forms.Panel panel2;
 		private System.Windows.Forms.Panel panel3;
-		private System.Windows.Forms.Panel panel4;
-		private System.Windows.Forms.Panel panel5;
+		private System.Windows.Forms.Panel POSPanel;
+		private System.Windows.Forms.Panel ItemsPanel;
 		private System.Windows.Forms.Panel panel6;
 		private System.Windows.Forms.Panel panel8;
 		private System.Windows.Forms.Label label7;
@@ -586,6 +618,8 @@ namespace Copylane
 		private System.Windows.Forms.Button ItemButton;
 		private System.Windows.Forms.Button POSButton;
 		private System.Windows.Forms.ListView listView1;
+		private System.Windows.Forms.Label label8;
+		private System.Windows.Forms.ComboBox KeysCombo;
 	}
 }
 

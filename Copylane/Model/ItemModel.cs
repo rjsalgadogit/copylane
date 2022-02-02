@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,8 +15,13 @@ namespace Copylane.Model
 
 		public decimal Price { get; set; }
 
+		[DisplayName("Shortcut Key")]
+		public string ShortcutKey { get; set; }
+
+		[DisplayName("Created Date")]
 		public DateTime? CreatedDate { get; set; }
 
+		[DisplayName("Modified Date")]
 		public DateTime? ModifiedDate { get; set; }
 	}
 }

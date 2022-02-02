@@ -66,7 +66,8 @@ namespace Copylane
 					SaveItem(new ItemModel
 					{
 						Description = Description_Textbox.Text,
-						Price = Convert.ToDecimal(Price_Textbox.Text)
+						Price = Convert.ToDecimal(Price_Textbox.Text),
+						ShortcutKey = KeysCombo.Text
 					});
 
 					LoadItemGrid();
@@ -81,30 +82,6 @@ namespace Copylane
 			}
 		}
 
-		private void Search_Click(object sender, EventArgs e)
-		{
-			var bindingSource = new BindingSource();
-
-			bindingSource.DataSource = SearchItem(SearchTextbox.Text);
-			ItemGrid.DataSource = bindingSource;
-		}
-
-		private void ItemGrid_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
-		{
-			DataGridViewRow row = ItemGrid.Rows[e.RowIndex];
-
-			HiddenId_Textbox.Text = row.Cells[0].Value.ToString();
-			Description_Textbox.Text = row.Cells[1].Value.ToString();
-			Price_Textbox.Text = row.Cells[2].Value.ToString();
-		}
-
-		private void Cancel_Click(object sender, EventArgs e)
-		{
-			HiddenId_Textbox.Clear();
-			Description_Textbox.Clear();
-			Price_Textbox.Clear();
-		}
-
 		private void Save_Click(object sender, EventArgs e)
 		{
 			var itemId = string.IsNullOrEmpty(HiddenId_Textbox.Text) ? 0 : Convert.ToInt32(HiddenId_Textbox.Text);
@@ -115,7 +92,8 @@ namespace Copylane
 				{
 					Id = Convert.ToInt32(HiddenId_Textbox.Text),
 					Description = Description_Textbox.Text,
-					Price = Convert.ToDecimal(Price_Textbox.Text)
+					Price = Convert.ToDecimal(Price_Textbox.Text),
+					ShortcutKey = KeysCombo.Text
 				});
 
 				if (isSuccessful)
@@ -145,13 +123,38 @@ namespace Copylane
 					LoadItemGrid();
 					Cancel_Click(this, new EventArgs());
 				}
-					
+
 			}
 			else
 				MessageBox.Show(" No Selected Item (Double click on item)."
 					, "Error"
 					, MessageBoxButtons.OK
 					, MessageBoxIcon.Error);
+		}
+
+		private void Cancel_Click(object sender, EventArgs e)
+		{
+			HiddenId_Textbox.Clear();
+			Description_Textbox.Clear();
+			Price_Textbox.Clear();
+			KeysCombo.Text = "";
+		}
+
+		private void Search_Click(object sender, EventArgs e)
+		{
+			var bindingSource = new BindingSource();
+
+			bindingSource.DataSource = SearchItem(SearchTextbox.Text);
+			ItemGrid.DataSource = bindingSource;
+		}
+
+		private void ItemGrid_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+		{
+			DataGridViewRow row = ItemGrid.Rows[e.RowIndex];
+
+			HiddenId_Textbox.Text = row.Cells[0].Value.ToString();
+			Description_Textbox.Text = row.Cells[1].Value.ToString();
+			Price_Textbox.Text = row.Cells[2].Value.ToString();
 		}
 
 		private void SearchTextbox_KeyDown(object sender, KeyEventArgs e)
@@ -182,6 +185,18 @@ namespace Copylane
 		private void ChargePanel_Click(object sender, EventArgs e)
 		{
 			MessageBox.Show("Paid");
+		}
+
+		private void POSButton_Click(object sender, EventArgs e)
+		{
+			POSPanel.Visible = true;
+			ItemsPanel.Visible = false;
+		}
+
+		private void ItemButton_Click(object sender, EventArgs e)
+		{
+			POSPanel.Visible = false;
+			ItemsPanel.Visible = true;
 		}
 
 		#endregion
