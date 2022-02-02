@@ -64,6 +64,7 @@ namespace Copylane
 			this.ChargePanel = new System.Windows.Forms.Panel();
 			this.label5 = new System.Windows.Forms.Label();
 			this.ChargeAmount = new System.Windows.Forms.Label();
+			this.listView1 = new System.Windows.Forms.ListView();
 			((System.ComponentModel.ISupportInitialize)(this.ItemGrid)).BeginInit();
 			this.groupBox1.SuspendLayout();
 			this.panel2.SuspendLayout();
@@ -95,6 +96,7 @@ namespace Copylane
 			// 
 			// F4
 			// 
+			this.F4.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.F4.Location = new System.Drawing.Point(271, 12);
 			this.F4.Name = "F4";
 			this.F4.Size = new System.Drawing.Size(79, 67);
@@ -105,6 +107,7 @@ namespace Copylane
 			// 
 			// F3
 			// 
+			this.F3.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.F3.Location = new System.Drawing.Point(186, 12);
 			this.F3.Name = "F3";
 			this.F3.Size = new System.Drawing.Size(79, 67);
@@ -115,6 +118,7 @@ namespace Copylane
 			// 
 			// F2
 			// 
+			this.F2.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.F2.Location = new System.Drawing.Point(101, 12);
 			this.F2.Name = "F2";
 			this.F2.Size = new System.Drawing.Size(79, 67);
@@ -125,6 +129,7 @@ namespace Copylane
 			// 
 			// F1
 			// 
+			this.F1.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.F1.Location = new System.Drawing.Point(16, 12);
 			this.F1.Name = "F1";
 			this.F1.Size = new System.Drawing.Size(79, 67);
@@ -141,7 +146,7 @@ namespace Copylane
 			this.label3.Location = new System.Drawing.Point(483, 383);
 			this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
 			this.label3.Name = "label3";
-			this.label3.Size = new System.Drawing.Size(340, 15);
+			this.label3.Size = new System.Drawing.Size(400, 17);
 			this.label3.TabIndex = 13;
 			this.label3.Text = "* Double click on the table row to update (edit) or delete item.";
 			// 
@@ -150,7 +155,7 @@ namespace Copylane
 			this.label1.AutoSize = true;
 			this.label1.Location = new System.Drawing.Point(12, 17);
 			this.label1.Name = "label1";
-			this.label1.Size = new System.Drawing.Size(83, 16);
+			this.label1.Size = new System.Drawing.Size(98, 19);
 			this.label1.TabIndex = 10;
 			this.label1.Text = "Search Item";
 			// 
@@ -170,7 +175,7 @@ namespace Copylane
 			// 
 			this.SearchTextbox.Location = new System.Drawing.Point(101, 14);
 			this.SearchTextbox.Name = "SearchTextbox";
-			this.SearchTextbox.Size = new System.Drawing.Size(210, 23);
+			this.SearchTextbox.Size = new System.Drawing.Size(210, 27);
 			this.SearchTextbox.TabIndex = 1;
 			this.SearchTextbox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.SearchTextbox_KeyDown);
 			// 
@@ -205,7 +210,7 @@ namespace Copylane
 			this.label4.Location = new System.Drawing.Point(501, 96);
 			this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
 			this.label4.Name = "label4";
-			this.label4.Size = new System.Drawing.Size(23, 33);
+			this.label4.Size = new System.Drawing.Size(27, 42);
 			this.label4.TabIndex = 16;
 			this.label4.Text = "|";
 			// 
@@ -262,7 +267,7 @@ namespace Copylane
 			this.label2.Location = new System.Drawing.Point(609, 35);
 			this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
 			this.label2.Name = "label2";
-			this.label2.Size = new System.Drawing.Size(60, 15);
+			this.label2.Size = new System.Drawing.Size(68, 17);
 			this.label2.TabIndex = 12;
 			this.label2.Text = "Hidden Id";
 			this.label2.Visible = false;
@@ -271,7 +276,7 @@ namespace Copylane
 			// 
 			this.HiddenId_Textbox.Location = new System.Drawing.Point(695, 31);
 			this.HiddenId_Textbox.Name = "HiddenId_Textbox";
-			this.HiddenId_Textbox.Size = new System.Drawing.Size(100, 23);
+			this.HiddenId_Textbox.Size = new System.Drawing.Size(100, 27);
 			this.HiddenId_Textbox.TabIndex = 100;
 			this.HiddenId_Textbox.Visible = false;
 			// 
@@ -282,7 +287,7 @@ namespace Copylane
 			this.Description_Label.Location = new System.Drawing.Point(12, 35);
 			this.Description_Label.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
 			this.Description_Label.Name = "Description_Label";
-			this.Description_Label.Size = new System.Drawing.Size(70, 15);
+			this.Description_Label.Size = new System.Drawing.Size(82, 17);
 			this.Description_Label.TabIndex = 2;
 			this.Description_Label.Text = "Description";
 			// 
@@ -292,7 +297,7 @@ namespace Copylane
 			this.Price_Textbox.Location = new System.Drawing.Point(98, 61);
 			this.Price_Textbox.Margin = new System.Windows.Forms.Padding(4);
 			this.Price_Textbox.Name = "Price_Textbox";
-			this.Price_Textbox.Size = new System.Drawing.Size(100, 21);
+			this.Price_Textbox.Size = new System.Drawing.Size(100, 25);
 			this.Price_Textbox.TabIndex = 3;
 			// 
 			// Add
@@ -318,7 +323,7 @@ namespace Copylane
 			this.Price_Label.Location = new System.Drawing.Point(12, 64);
 			this.Price_Label.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
 			this.Price_Label.Name = "Price_Label";
-			this.Price_Label.Size = new System.Drawing.Size(35, 15);
+			this.Price_Label.Size = new System.Drawing.Size(42, 17);
 			this.Price_Label.TabIndex = 3;
 			this.Price_Label.Text = "Price";
 			// 
@@ -328,7 +333,7 @@ namespace Copylane
 			this.Description_Textbox.Location = new System.Drawing.Point(98, 32);
 			this.Description_Textbox.Margin = new System.Windows.Forms.Padding(4);
 			this.Description_Textbox.Name = "Description_Textbox";
-			this.Description_Textbox.Size = new System.Drawing.Size(312, 21);
+			this.Description_Textbox.Size = new System.Drawing.Size(312, 25);
 			this.Description_Textbox.TabIndex = 2;
 			// 
 			// DragPanel
@@ -421,6 +426,7 @@ namespace Copylane
 			// panel6
 			// 
 			this.panel6.BackColor = System.Drawing.Color.White;
+			this.panel6.Controls.Add(this.listView1);
 			this.panel6.Controls.Add(this.panel8);
 			this.panel6.Controls.Add(this.ChargePanel);
 			this.panel6.Dock = System.Windows.Forms.DockStyle.Right;
@@ -446,7 +452,7 @@ namespace Copylane
 			this.label7.ForeColor = System.Drawing.Color.Black;
 			this.label7.Location = new System.Drawing.Point(308, 18);
 			this.label7.Name = "label7";
-			this.label7.Size = new System.Drawing.Size(104, 22);
+			this.label7.Size = new System.Drawing.Size(128, 29);
 			this.label7.TabIndex = 1;
 			this.label7.Text = "P 1,200.15";
 			// 
@@ -457,7 +463,7 @@ namespace Copylane
 			this.label6.ForeColor = System.Drawing.Color.Blue;
 			this.label6.Location = new System.Drawing.Point(24, 20);
 			this.label6.Name = "label6";
-			this.label6.Size = new System.Drawing.Size(69, 19);
+			this.label6.Size = new System.Drawing.Size(82, 24);
 			this.label6.TabIndex = 0;
 			this.label6.Text = "Change";
 			// 
@@ -481,7 +487,7 @@ namespace Copylane
 			this.label5.ForeColor = System.Drawing.Color.White;
 			this.label5.Location = new System.Drawing.Point(22, 30);
 			this.label5.Name = "label5";
-			this.label5.Size = new System.Drawing.Size(131, 32);
+			this.label5.Size = new System.Drawing.Size(164, 39);
 			this.label5.TabIndex = 2;
 			this.label5.Text = "CHARGE";
 			// 
@@ -494,13 +500,23 @@ namespace Copylane
 			this.ChargeAmount.ForeColor = System.Drawing.Color.White;
 			this.ChargeAmount.Location = new System.Drawing.Point(224, 25);
 			this.ChargeAmount.Name = "ChargeAmount";
-			this.ChargeAmount.Size = new System.Drawing.Size(200, 44);
+			this.ChargeAmount.Size = new System.Drawing.Size(249, 55);
 			this.ChargeAmount.TabIndex = 1;
 			this.ChargeAmount.Text = "P 1,200.15";
 			// 
+			// listView1
+			// 
+			this.listView1.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.listView1.HideSelection = false;
+			this.listView1.Location = new System.Drawing.Point(0, 0);
+			this.listView1.Name = "listView1";
+			this.listView1.Size = new System.Drawing.Size(434, 595);
+			this.listView1.TabIndex = 2;
+			this.listView1.UseCompatibleStateImageBehavior = false;
+			// 
 			// MainForm
 			// 
-			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+			this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(1100, 772);
 			this.Controls.Add(this.panel4);
@@ -569,6 +585,7 @@ namespace Copylane
 		private System.Windows.Forms.Label label5;
 		private System.Windows.Forms.Button ItemButton;
 		private System.Windows.Forms.Button POSButton;
+		private System.Windows.Forms.ListView listView1;
 	}
 }
 
