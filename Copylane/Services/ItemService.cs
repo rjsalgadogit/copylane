@@ -190,5 +190,44 @@ namespace Copylane.Services
 				return false;
 			}
 		}
+
+		public ItemModel GetItemByKey(ItemModel item)
+		{
+			var sp = "GetItemByKey";
+
+			SqlDataReader sqlReader;
+			DataTable dataTable = new DataTable();
+
+			try
+			{
+				using (SqlConnection conn = new SqlConnection(ConnectionString))
+				{
+					conn.Open();
+
+					using (SqlCommand comm = new SqlCommand(sp, conn))
+					{
+						comm.CommandType = CommandType.StoredProcedure;
+						comm.Parameters.AddWithValue("@ShortcutKey", item.ShortcutKey);
+
+						sqlReader = comm.ExecuteReader();
+						dataTable.Load(sqlReader);
+						sqlReader.Close();
+						conn.Close();
+					}
+				}
+			}
+			catch (Exception ex)
+			{
+				MessageBox.Show(ex.Message
+					, "Error"
+					, MessageBoxButtons.OK
+					, MessageBoxIcon.Error);
+			}
+
+			var records = new List<ItemModel>();
+			records = JsonConvert.DeserializeObject<List<ItemModel>>(JsonConvert.SerializeObject(dataTable));
+
+			return records.FirstOrDefault();
+		}
 	}
 }

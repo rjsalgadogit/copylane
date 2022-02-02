@@ -58,7 +58,7 @@ namespace Copylane
 			this.POSPanel = new System.Windows.Forms.Panel();
 			this.ItemsPanel = new System.Windows.Forms.Panel();
 			this.panel6 = new System.Windows.Forms.Panel();
-			this.listView1 = new System.Windows.Forms.ListView();
+			this.ItemListView = new System.Windows.Forms.ListView();
 			this.panel8 = new System.Windows.Forms.Panel();
 			this.label7 = new System.Windows.Forms.Label();
 			this.label6 = new System.Windows.Forms.Label();
@@ -422,17 +422,16 @@ namespace Copylane
 			this.ItemsPanel.Controls.Add(this.Search);
 			this.ItemsPanel.Controls.Add(this.groupBox1);
 			this.ItemsPanel.Controls.Add(this.SearchTextbox);
-			this.ItemsPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.ItemsPanel.Location = new System.Drawing.Point(299, 26);
+			this.ItemsPanel.Location = new System.Drawing.Point(305, 173);
 			this.ItemsPanel.Name = "ItemsPanel";
-			this.ItemsPanel.Size = new System.Drawing.Size(845, 746);
+			this.ItemsPanel.Size = new System.Drawing.Size(785, 96);
 			this.ItemsPanel.TabIndex = 11;
 			this.ItemsPanel.Visible = false;
 			// 
 			// panel6
 			// 
 			this.panel6.BackColor = System.Drawing.Color.White;
-			this.panel6.Controls.Add(this.listView1);
+			this.panel6.Controls.Add(this.ItemListView);
 			this.panel6.Controls.Add(this.panel8);
 			this.panel6.Controls.Add(this.ChargePanel);
 			this.panel6.Dock = System.Windows.Forms.DockStyle.Right;
@@ -441,16 +440,17 @@ namespace Copylane
 			this.panel6.Size = new System.Drawing.Size(434, 746);
 			this.panel6.TabIndex = 4;
 			// 
-			// listView1
+			// ItemListView
 			// 
-			this.listView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-			this.listView1.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.listView1.HideSelection = false;
-			this.listView1.Location = new System.Drawing.Point(0, 0);
-			this.listView1.Name = "listView1";
-			this.listView1.Size = new System.Drawing.Size(434, 595);
-			this.listView1.TabIndex = 2;
-			this.listView1.UseCompatibleStateImageBehavior = false;
+			this.ItemListView.BorderStyle = System.Windows.Forms.BorderStyle.None;
+			this.ItemListView.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.ItemListView.HideSelection = false;
+			this.ItemListView.Location = new System.Drawing.Point(0, 0);
+			this.ItemListView.Name = "ItemListView";
+			this.ItemListView.Size = new System.Drawing.Size(434, 595);
+			this.ItemListView.TabIndex = 2;
+			this.ItemListView.UseCompatibleStateImageBehavior = false;
+			this.ItemListView.View = System.Windows.Forms.View.List;
 			// 
 			// panel8
 			// 
@@ -617,7 +617,7 @@ namespace Copylane
 		private System.Windows.Forms.Label label5;
 		private System.Windows.Forms.Button ItemButton;
 		private System.Windows.Forms.Button POSButton;
-		private System.Windows.Forms.ListView listView1;
+		private System.Windows.Forms.ListView ItemListView;
 		private System.Windows.Forms.Label label8;
 		private System.Windows.Forms.ComboBox KeysCombo;
 	}

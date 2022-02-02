@@ -1,4 +1,5 @@
 ﻿using Copylane.Model;
+using Copylane.Model.Global;
 using Copylane.Services;
 using System;
 using System.Collections.Generic;
@@ -24,6 +25,13 @@ namespace Copylane
 		private void MainForm_Load(object sender, EventArgs e)
 		{
 			LoadItemGrid();
+
+			ListViewItem item1 = new ListViewItem("item1", 0);
+			item1.SubItems.Add("1");
+			item1.SubItems.Add("2");
+			item1.SubItems.Add("3");
+
+			ItemListView.Items.Add(item1);
 		}
 
 		private void MainForm_KeyDown(object sender, KeyEventArgs e)
@@ -164,22 +172,34 @@ namespace Copylane
 
 		private void F1_Click(object sender, EventArgs e)
 		{
-			MessageBox.Show("F1");
+			var itemService = new ItemService();
+			var item = itemService.GetItemByKey(new ItemModel { ShortcutKey = "F1" });
+
+			GlobalVariable.POSList.Add(item);
 		}
 
 		private void F2_Click(object sender, EventArgs e)
 		{
-			MessageBox.Show("F2");
+			var itemService = new ItemService();
+			var item = itemService.GetItemByKey(new ItemModel { ShortcutKey = "F2" });
+
+			GlobalVariable.POSList.Add(item);
 		}
 
 		private void F3_Click(object sender, EventArgs e)
 		{
-			MessageBox.Show("F3");
+			var itemService = new ItemService();
+			var item = itemService.GetItemByKey(new ItemModel { ShortcutKey = "F3" });
+
+			GlobalVariable.POSList.Add(item);
 		}
 
 		private void F4_Click(object sender, EventArgs e)
 		{
-			MessageBox.Show("F4");
+			var itemService = new ItemService();
+			var item = itemService.GetItemByKey(new ItemModel { ShortcutKey = "F4" });
+
+			GlobalVariable.POSList.Add(item);
 		}
 
 		private void ChargePanel_Click(object sender, EventArgs e)
