@@ -39,6 +39,8 @@ namespace Copylane
 			this.Search = new System.Windows.Forms.Button();
 			this.SearchTextbox = new System.Windows.Forms.TextBox();
 			this.groupBox1 = new System.Windows.Forms.GroupBox();
+			this.KeysCombo = new System.Windows.Forms.ComboBox();
+			this.label8 = new System.Windows.Forms.Label();
 			this.label4 = new System.Windows.Forms.Label();
 			this.Delete = new System.Windows.Forms.Button();
 			this.Cancel = new System.Windows.Forms.Button();
@@ -56,25 +58,23 @@ namespace Copylane
 			this.POSButton = new System.Windows.Forms.Button();
 			this.panel3 = new System.Windows.Forms.Panel();
 			this.POSPanel = new System.Windows.Forms.Panel();
-			this.ItemsPanel = new System.Windows.Forms.Panel();
-			this.panel6 = new System.Windows.Forms.Panel();
-			this.ItemListView = new System.Windows.Forms.ListView();
+			this.CashOutPanel = new System.Windows.Forms.Panel();
+			this.ItemListPanel = new System.Windows.Forms.Panel();
 			this.panel8 = new System.Windows.Forms.Panel();
 			this.label7 = new System.Windows.Forms.Label();
 			this.label6 = new System.Windows.Forms.Label();
 			this.ChargePanel = new System.Windows.Forms.Panel();
 			this.label5 = new System.Windows.Forms.Label();
 			this.ChargeAmount = new System.Windows.Forms.Label();
-			this.label8 = new System.Windows.Forms.Label();
-			this.KeysCombo = new System.Windows.Forms.ComboBox();
+			this.ItemsPanel = new System.Windows.Forms.Panel();
 			((System.ComponentModel.ISupportInitialize)(this.ItemGrid)).BeginInit();
 			this.groupBox1.SuspendLayout();
 			this.panel2.SuspendLayout();
 			this.POSPanel.SuspendLayout();
-			this.ItemsPanel.SuspendLayout();
-			this.panel6.SuspendLayout();
+			this.CashOutPanel.SuspendLayout();
 			this.panel8.SuspendLayout();
 			this.ChargePanel.SuspendLayout();
+			this.ItemsPanel.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// ItemGrid
@@ -205,6 +205,30 @@ namespace Copylane
 			this.groupBox1.TabIndex = 6;
 			this.groupBox1.TabStop = false;
 			this.groupBox1.Text = "Item Details";
+			// 
+			// KeysCombo
+			// 
+			this.KeysCombo.FormattingEnabled = true;
+			this.KeysCombo.Items.AddRange(new object[] {
+            "F1",
+            "F2",
+            "F3",
+            "F4"});
+			this.KeysCombo.Location = new System.Drawing.Point(536, 31);
+			this.KeysCombo.Name = "KeysCombo";
+			this.KeysCombo.Size = new System.Drawing.Size(121, 24);
+			this.KeysCombo.TabIndex = 103;
+			// 
+			// label8
+			// 
+			this.label8.AutoSize = true;
+			this.label8.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label8.Location = new System.Drawing.Point(449, 35);
+			this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+			this.label8.Name = "label8";
+			this.label8.Size = new System.Drawing.Size(75, 15);
+			this.label8.TabIndex = 101;
+			this.label8.Text = "Shortcut Key";
 			// 
 			// label4
 			// 
@@ -403,7 +427,7 @@ namespace Copylane
 			// 
 			// POSPanel
 			// 
-			this.POSPanel.Controls.Add(this.panel6);
+			this.POSPanel.Controls.Add(this.CashOutPanel);
 			this.POSPanel.Controls.Add(this.F4);
 			this.POSPanel.Controls.Add(this.F1);
 			this.POSPanel.Controls.Add(this.F3);
@@ -414,46 +438,32 @@ namespace Copylane
 			this.POSPanel.Size = new System.Drawing.Size(845, 746);
 			this.POSPanel.TabIndex = 10;
 			// 
-			// ItemsPanel
+			// CashOutPanel
 			// 
-			this.ItemsPanel.Controls.Add(this.label3);
-			this.ItemsPanel.Controls.Add(this.label1);
-			this.ItemsPanel.Controls.Add(this.ItemGrid);
-			this.ItemsPanel.Controls.Add(this.Search);
-			this.ItemsPanel.Controls.Add(this.groupBox1);
-			this.ItemsPanel.Controls.Add(this.SearchTextbox);
-			this.ItemsPanel.Location = new System.Drawing.Point(305, 173);
-			this.ItemsPanel.Name = "ItemsPanel";
-			this.ItemsPanel.Size = new System.Drawing.Size(785, 96);
-			this.ItemsPanel.TabIndex = 11;
-			this.ItemsPanel.Visible = false;
+			this.CashOutPanel.BackColor = System.Drawing.Color.White;
+			this.CashOutPanel.Controls.Add(this.ItemListPanel);
+			this.CashOutPanel.Controls.Add(this.panel8);
+			this.CashOutPanel.Controls.Add(this.ChargePanel);
+			this.CashOutPanel.Dock = System.Windows.Forms.DockStyle.Right;
+			this.CashOutPanel.Location = new System.Drawing.Point(411, 0);
+			this.CashOutPanel.Name = "CashOutPanel";
+			this.CashOutPanel.Size = new System.Drawing.Size(434, 746);
+			this.CashOutPanel.TabIndex = 4;
 			// 
-			// panel6
+			// ItemListPanel
 			// 
-			this.panel6.BackColor = System.Drawing.Color.White;
-			this.panel6.Controls.Add(this.ItemListView);
-			this.panel6.Controls.Add(this.panel8);
-			this.panel6.Controls.Add(this.ChargePanel);
-			this.panel6.Dock = System.Windows.Forms.DockStyle.Right;
-			this.panel6.Location = new System.Drawing.Point(411, 0);
-			this.panel6.Name = "panel6";
-			this.panel6.Size = new System.Drawing.Size(434, 746);
-			this.panel6.TabIndex = 4;
-			// 
-			// ItemListView
-			// 
-			this.ItemListView.BorderStyle = System.Windows.Forms.BorderStyle.None;
-			this.ItemListView.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.ItemListView.HideSelection = false;
-			this.ItemListView.Location = new System.Drawing.Point(0, 0);
-			this.ItemListView.Name = "ItemListView";
-			this.ItemListView.Size = new System.Drawing.Size(434, 595);
-			this.ItemListView.TabIndex = 2;
-			this.ItemListView.UseCompatibleStateImageBehavior = false;
-			this.ItemListView.View = System.Windows.Forms.View.List;
+			this.ItemListPanel.AutoScroll = true;
+			this.ItemListPanel.AutoScrollMinSize = new System.Drawing.Size(0, 595);
+			this.ItemListPanel.BackColor = System.Drawing.Color.Transparent;
+			this.ItemListPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.ItemListPanel.Location = new System.Drawing.Point(0, 0);
+			this.ItemListPanel.Name = "ItemListPanel";
+			this.ItemListPanel.Size = new System.Drawing.Size(434, 595);
+			this.ItemListPanel.TabIndex = 2;
 			// 
 			// panel8
 			// 
+			this.panel8.BackColor = System.Drawing.Color.Transparent;
 			this.panel8.Controls.Add(this.label7);
 			this.panel8.Controls.Add(this.label6);
 			this.panel8.Dock = System.Windows.Forms.DockStyle.Bottom;
@@ -521,29 +531,19 @@ namespace Copylane
 			this.ChargeAmount.TabIndex = 1;
 			this.ChargeAmount.Text = "P 1,200.15";
 			// 
-			// label8
+			// ItemsPanel
 			// 
-			this.label8.AutoSize = true;
-			this.label8.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label8.Location = new System.Drawing.Point(449, 35);
-			this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-			this.label8.Name = "label8";
-			this.label8.Size = new System.Drawing.Size(75, 15);
-			this.label8.TabIndex = 101;
-			this.label8.Text = "Shortcut Key";
-			// 
-			// KeysCombo
-			// 
-			this.KeysCombo.FormattingEnabled = true;
-			this.KeysCombo.Items.AddRange(new object[] {
-            "F1",
-            "F2",
-            "F3",
-            "F4"});
-			this.KeysCombo.Location = new System.Drawing.Point(536, 31);
-			this.KeysCombo.Name = "KeysCombo";
-			this.KeysCombo.Size = new System.Drawing.Size(121, 24);
-			this.KeysCombo.TabIndex = 103;
+			this.ItemsPanel.Controls.Add(this.label3);
+			this.ItemsPanel.Controls.Add(this.label1);
+			this.ItemsPanel.Controls.Add(this.ItemGrid);
+			this.ItemsPanel.Controls.Add(this.Search);
+			this.ItemsPanel.Controls.Add(this.groupBox1);
+			this.ItemsPanel.Controls.Add(this.SearchTextbox);
+			this.ItemsPanel.Location = new System.Drawing.Point(305, 173);
+			this.ItemsPanel.Name = "ItemsPanel";
+			this.ItemsPanel.Size = new System.Drawing.Size(785, 96);
+			this.ItemsPanel.TabIndex = 11;
+			this.ItemsPanel.Visible = false;
 			// 
 			// MainForm
 			// 
@@ -570,13 +570,13 @@ namespace Copylane
 			this.groupBox1.PerformLayout();
 			this.panel2.ResumeLayout(false);
 			this.POSPanel.ResumeLayout(false);
-			this.ItemsPanel.ResumeLayout(false);
-			this.ItemsPanel.PerformLayout();
-			this.panel6.ResumeLayout(false);
+			this.CashOutPanel.ResumeLayout(false);
 			this.panel8.ResumeLayout(false);
 			this.panel8.PerformLayout();
 			this.ChargePanel.ResumeLayout(false);
 			this.ChargePanel.PerformLayout();
+			this.ItemsPanel.ResumeLayout(false);
+			this.ItemsPanel.PerformLayout();
 			this.ResumeLayout(false);
 
 		}
@@ -608,7 +608,7 @@ namespace Copylane
 		private System.Windows.Forms.Panel panel3;
 		private System.Windows.Forms.Panel POSPanel;
 		private System.Windows.Forms.Panel ItemsPanel;
-		private System.Windows.Forms.Panel panel6;
+		private System.Windows.Forms.Panel CashOutPanel;
 		private System.Windows.Forms.Panel panel8;
 		private System.Windows.Forms.Label label7;
 		private System.Windows.Forms.Label label6;
@@ -617,9 +617,9 @@ namespace Copylane
 		private System.Windows.Forms.Label label5;
 		private System.Windows.Forms.Button ItemButton;
 		private System.Windows.Forms.Button POSButton;
-		private System.Windows.Forms.ListView ItemListView;
 		private System.Windows.Forms.Label label8;
 		private System.Windows.Forms.ComboBox KeysCombo;
+		private System.Windows.Forms.Panel ItemListPanel;
 	}
 }
 
