@@ -18,6 +18,7 @@ namespace Copylane.CustomControls
 			InitializeComponent();
 
 			this.label1.Text = item.Description;
+			this.Dock = DockStyle.Top;
 		}
 	}
 }
