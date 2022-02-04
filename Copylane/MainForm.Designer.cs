@@ -99,7 +99,7 @@ namespace Copylane
 			// F4
 			// 
 			this.F4.Cursor = System.Windows.Forms.Cursors.Hand;
-			this.F4.Location = new System.Drawing.Point(271, 12);
+			this.F4.Location = new System.Drawing.Point(306, 15);
 			this.F4.Name = "F4";
 			this.F4.Size = new System.Drawing.Size(79, 67);
 			this.F4.TabIndex = 3;
@@ -110,7 +110,7 @@ namespace Copylane
 			// F3
 			// 
 			this.F3.Cursor = System.Windows.Forms.Cursors.Hand;
-			this.F3.Location = new System.Drawing.Point(186, 12);
+			this.F3.Location = new System.Drawing.Point(210, 15);
 			this.F3.Name = "F3";
 			this.F3.Size = new System.Drawing.Size(79, 67);
 			this.F3.TabIndex = 2;
@@ -121,7 +121,7 @@ namespace Copylane
 			// F2
 			// 
 			this.F2.Cursor = System.Windows.Forms.Cursors.Hand;
-			this.F2.Location = new System.Drawing.Point(101, 12);
+			this.F2.Location = new System.Drawing.Point(114, 15);
 			this.F2.Name = "F2";
 			this.F2.Size = new System.Drawing.Size(79, 67);
 			this.F2.TabIndex = 1;
@@ -132,7 +132,7 @@ namespace Copylane
 			// F1
 			// 
 			this.F1.Cursor = System.Windows.Forms.Cursors.Hand;
-			this.F1.Location = new System.Drawing.Point(16, 12);
+			this.F1.Location = new System.Drawing.Point(17, 15);
 			this.F1.Name = "F1";
 			this.F1.Size = new System.Drawing.Size(79, 67);
 			this.F1.TabIndex = 0;
@@ -366,6 +366,7 @@ namespace Copylane
 			// 
 			// DragPanel
 			// 
+			this.DragPanel.BackColor = System.Drawing.Color.ForestGreen;
 			this.DragPanel.Dock = System.Windows.Forms.DockStyle.Top;
 			this.DragPanel.Location = new System.Drawing.Point(0, 0);
 			this.DragPanel.Name = "DragPanel";
@@ -390,11 +391,11 @@ namespace Copylane
 			this.ItemButton.Dock = System.Windows.Forms.DockStyle.Top;
 			this.ItemButton.FlatAppearance.BorderSize = 0;
 			this.ItemButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.ItemButton.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.ItemButton.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.ItemButton.ForeColor = System.Drawing.Color.White;
-			this.ItemButton.Location = new System.Drawing.Point(0, 233);
+			this.ItemButton.Location = new System.Drawing.Point(0, 243);
 			this.ItemButton.Name = "ItemButton";
-			this.ItemButton.Size = new System.Drawing.Size(299, 46);
+			this.ItemButton.Size = new System.Drawing.Size(299, 56);
 			this.ItemButton.TabIndex = 2;
 			this.ItemButton.Text = "Items";
 			this.ItemButton.UseVisualStyleBackColor = true;
@@ -406,11 +407,11 @@ namespace Copylane
 			this.POSButton.Dock = System.Windows.Forms.DockStyle.Top;
 			this.POSButton.FlatAppearance.BorderSize = 0;
 			this.POSButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.POSButton.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.POSButton.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.POSButton.ForeColor = System.Drawing.Color.White;
 			this.POSButton.Location = new System.Drawing.Point(0, 187);
 			this.POSButton.Name = "POSButton";
-			this.POSButton.Size = new System.Drawing.Size(299, 46);
+			this.POSButton.Size = new System.Drawing.Size(299, 56);
 			this.POSButton.TabIndex = 1;
 			this.POSButton.Text = "Point of Sale";
 			this.POSButton.UseVisualStyleBackColor = true;
@@ -486,11 +487,11 @@ namespace Copylane
 			// label6
 			// 
 			this.label6.AutoSize = true;
-			this.label6.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label6.ForeColor = System.Drawing.Color.Blue;
-			this.label6.Location = new System.Drawing.Point(24, 20);
+			this.label6.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+			this.label6.Location = new System.Drawing.Point(24, 16);
 			this.label6.Name = "label6";
-			this.label6.Size = new System.Drawing.Size(69, 19);
+			this.label6.Size = new System.Drawing.Size(76, 22);
 			this.label6.TabIndex = 0;
 			this.label6.Text = "Change";
 			// 

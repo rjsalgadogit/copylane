@@ -20,5 +20,11 @@ namespace Copylane.CustomControls
 			this.label1.Text = item.Description;
 			this.Dock = DockStyle.Top;
 		}
+
+		private void ItemPreview_DoubleClick(object sender, EventArgs e)
+		{
+			var popup = new formPopupQty();
+			popup.ShowDialog();
+		}
 	}
 }

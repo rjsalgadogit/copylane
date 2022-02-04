@@ -86,6 +86,12 @@
     <Compile Include="CustomControls\ItemPreview.Designer.cs">
       <DependentUpon>ItemPreview.cs</DependentUpon>
     </Compile>
+    <Compile Include="formPopupQty.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formPopupQty.Designer.cs">
+      <DependentUpon>formPopupQty.cs</DependentUpon>
+    </Compile>
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -99,6 +105,9 @@
     <Compile Include="Services\ItemService.cs" />
     <EmbeddedResource Include="CustomControls\ItemPreview.resx">
       <DependentUpon>ItemPreview.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formPopupQty.resx">
+      <DependentUpon>formPopupQty.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>

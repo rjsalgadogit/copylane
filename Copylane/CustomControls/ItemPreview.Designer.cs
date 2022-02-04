@@ -54,7 +54,7 @@ namespace Copylane.CustomControls
 			this.label2.Name = "label2";
 			this.label2.Size = new System.Drawing.Size(28, 19);
 			this.label2.TabIndex = 1;
-			this.label2.Text = "x 3";
+			this.label2.Text = "x 1";
 			// 
 			// label3
 			// 
@@ -85,10 +85,12 @@ namespace Copylane.CustomControls
 			this.Controls.Add(this.label3);
 			this.Controls.Add(this.label2);
 			this.Controls.Add(this.label1);
+			this.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
 			this.Name = "ItemPreview";
 			this.Size = new System.Drawing.Size(434, 77);
+			this.DoubleClick += new System.EventHandler(this.ItemPreview_DoubleClick);
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
