@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Copylane.CustomControls
+namespace CopyLane.CustomControls.Contents
 {
-	public partial class ItemPanel : UserControl
+	public partial class POSPanel : UserControl
 	{
-		public ItemPanel()
+		public POSPanel()
 		{
 			InitializeComponent();
 		}

@@ -8,18 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Copylane
+namespace CopyLane.CustomControls.Contents
 {
-	public partial class formPopupQty : Form
+	public partial class ProductPanel : UserControl
 	{
-		public formPopupQty()
+		public ProductPanel()
 		{
 			InitializeComponent();
-		}
-
-		private void formPopupQty_Load(object sender, EventArgs e)
-		{
-			numericUpDown1.Focus();
 		}
 	}
 }
