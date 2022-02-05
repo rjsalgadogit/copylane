@@ -29,29 +29,10 @@ namespace Copylane
 		/// </summary>
 		private void InitializeComponent()
 		{
-			this.ItemGrid = new System.Windows.Forms.DataGridView();
 			this.F4 = new System.Windows.Forms.Button();
 			this.F3 = new System.Windows.Forms.Button();
 			this.F2 = new System.Windows.Forms.Button();
 			this.F1 = new System.Windows.Forms.Button();
-			this.label3 = new System.Windows.Forms.Label();
-			this.label1 = new System.Windows.Forms.Label();
-			this.Search = new System.Windows.Forms.Button();
-			this.SearchTextbox = new System.Windows.Forms.TextBox();
-			this.groupBox1 = new System.Windows.Forms.GroupBox();
-			this.KeysCombo = new System.Windows.Forms.ComboBox();
-			this.label8 = new System.Windows.Forms.Label();
-			this.label4 = new System.Windows.Forms.Label();
-			this.Delete = new System.Windows.Forms.Button();
-			this.Cancel = new System.Windows.Forms.Button();
-			this.Save = new System.Windows.Forms.Button();
-			this.label2 = new System.Windows.Forms.Label();
-			this.HiddenId_Textbox = new System.Windows.Forms.TextBox();
-			this.Description_Label = new System.Windows.Forms.Label();
-			this.Price_Textbox = new System.Windows.Forms.TextBox();
-			this.Add = new System.Windows.Forms.Button();
-			this.Price_Label = new System.Windows.Forms.Label();
-			this.Description_Textbox = new System.Windows.Forms.TextBox();
 			this.DragPanel = new System.Windows.Forms.Panel();
 			this.panel2 = new System.Windows.Forms.Panel();
 			this.ItemButton = new System.Windows.Forms.Button();
@@ -66,42 +47,48 @@ namespace Copylane
 			this.ChargePanel = new System.Windows.Forms.Panel();
 			this.label5 = new System.Windows.Forms.Label();
 			this.ChargeAmount = new System.Windows.Forms.Label();
+			this.ChoicesPanel = new System.Windows.Forms.Panel();
+			this.F5 = new System.Windows.Forms.Button();
+			this.F6 = new System.Windows.Forms.Button();
+			this.F8 = new System.Windows.Forms.Button();
+			this.F7 = new System.Windows.Forms.Button();
 			this.ItemsPanel = new System.Windows.Forms.Panel();
-			((System.ComponentModel.ISupportInitialize)(this.ItemGrid)).BeginInit();
-			this.groupBox1.SuspendLayout();
+			this.label3 = new System.Windows.Forms.Label();
+			this.label1 = new System.Windows.Forms.Label();
+			this.ItemGrid = new System.Windows.Forms.DataGridView();
+			this.Search = new System.Windows.Forms.Button();
+			this.groupBox1 = new System.Windows.Forms.GroupBox();
+			this.KeysCombo = new System.Windows.Forms.ComboBox();
+			this.label8 = new System.Windows.Forms.Label();
+			this.label4 = new System.Windows.Forms.Label();
+			this.Delete = new System.Windows.Forms.Button();
+			this.Cancel = new System.Windows.Forms.Button();
+			this.Save = new System.Windows.Forms.Button();
+			this.label2 = new System.Windows.Forms.Label();
+			this.HiddenId_Textbox = new System.Windows.Forms.TextBox();
+			this.Description_Label = new System.Windows.Forms.Label();
+			this.Price_Textbox = new System.Windows.Forms.TextBox();
+			this.Add = new System.Windows.Forms.Button();
+			this.Price_Label = new System.Windows.Forms.Label();
+			this.Description_Textbox = new System.Windows.Forms.TextBox();
+			this.SearchTextbox = new System.Windows.Forms.TextBox();
 			this.panel2.SuspendLayout();
 			this.POSPanel.SuspendLayout();
 			this.CashOutPanel.SuspendLayout();
 			this.panel8.SuspendLayout();
 			this.ChargePanel.SuspendLayout();
+			this.ChoicesPanel.SuspendLayout();
 			this.ItemsPanel.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)(this.ItemGrid)).BeginInit();
+			this.groupBox1.SuspendLayout();
 			this.SuspendLayout();
-			// 
-			// ItemGrid
-			// 
-			this.ItemGrid.AllowUserToAddRows = false;
-			this.ItemGrid.AllowUserToDeleteRows = false;
-			this.ItemGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-			this.ItemGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-			this.ItemGrid.Font = new System.Drawing.Font("Arial", 9.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.ItemGrid.Location = new System.Drawing.Point(17, 63);
-			this.ItemGrid.Margin = new System.Windows.Forms.Padding(4);
-			this.ItemGrid.MultiSelect = false;
-			this.ItemGrid.Name = "ItemGrid";
-			this.ItemGrid.ReadOnly = true;
-			this.ItemGrid.RowHeadersWidth = 51;
-			this.ItemGrid.RowTemplate.Height = 24;
-			this.ItemGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-			this.ItemGrid.Size = new System.Drawing.Size(811, 326);
-			this.ItemGrid.TabIndex = 100;
-			this.ItemGrid.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.ItemGrid_CellMouseDoubleClick);
 			// 
 			// F4
 			// 
 			this.F4.Cursor = System.Windows.Forms.Cursors.Hand;
-			this.F4.Location = new System.Drawing.Point(306, 15);
+			this.F4.Location = new System.Drawing.Point(309, 6);
 			this.F4.Name = "F4";
-			this.F4.Size = new System.Drawing.Size(79, 67);
+			this.F4.Size = new System.Drawing.Size(95, 67);
 			this.F4.TabIndex = 3;
 			this.F4.Text = "F4";
 			this.F4.UseVisualStyleBackColor = true;
@@ -110,9 +97,9 @@ namespace Copylane
 			// F3
 			// 
 			this.F3.Cursor = System.Windows.Forms.Cursors.Hand;
-			this.F3.Location = new System.Drawing.Point(210, 15);
+			this.F3.Location = new System.Drawing.Point(208, 6);
 			this.F3.Name = "F3";
-			this.F3.Size = new System.Drawing.Size(79, 67);
+			this.F3.Size = new System.Drawing.Size(95, 67);
 			this.F3.TabIndex = 2;
 			this.F3.Text = "F3";
 			this.F3.UseVisualStyleBackColor = true;
@@ -121,9 +108,9 @@ namespace Copylane
 			// F2
 			// 
 			this.F2.Cursor = System.Windows.Forms.Cursors.Hand;
-			this.F2.Location = new System.Drawing.Point(114, 15);
+			this.F2.Location = new System.Drawing.Point(107, 6);
 			this.F2.Name = "F2";
-			this.F2.Size = new System.Drawing.Size(79, 67);
+			this.F2.Size = new System.Drawing.Size(95, 67);
 			this.F2.TabIndex = 1;
 			this.F2.Text = "F2";
 			this.F2.UseVisualStyleBackColor = true;
@@ -132,237 +119,13 @@ namespace Copylane
 			// F1
 			// 
 			this.F1.Cursor = System.Windows.Forms.Cursors.Hand;
-			this.F1.Location = new System.Drawing.Point(17, 15);
+			this.F1.Location = new System.Drawing.Point(6, 6);
 			this.F1.Name = "F1";
-			this.F1.Size = new System.Drawing.Size(79, 67);
+			this.F1.Size = new System.Drawing.Size(95, 67);
 			this.F1.TabIndex = 0;
 			this.F1.Text = "F1";
 			this.F1.UseVisualStyleBackColor = true;
 			this.F1.Click += new System.EventHandler(this.F1_Click);
-			// 
-			// label3
-			// 
-			this.label3.AutoSize = true;
-			this.label3.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label3.ForeColor = System.Drawing.Color.OrangeRed;
-			this.label3.Location = new System.Drawing.Point(488, 399);
-			this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-			this.label3.Name = "label3";
-			this.label3.Size = new System.Drawing.Size(340, 15);
-			this.label3.TabIndex = 13;
-			this.label3.Text = "* Double click on the table row to update (edit) or delete item.";
-			// 
-			// label1
-			// 
-			this.label1.AutoSize = true;
-			this.label1.Location = new System.Drawing.Point(17, 33);
-			this.label1.Name = "label1";
-			this.label1.Size = new System.Drawing.Size(83, 16);
-			this.label1.TabIndex = 10;
-			this.label1.Text = "Search Item";
-			// 
-			// Search
-			// 
-			this.Search.Font = new System.Drawing.Font("Arial", 10.2F);
-			this.Search.Location = new System.Drawing.Point(705, 28);
-			this.Search.Name = "Search";
-			this.Search.Size = new System.Drawing.Size(123, 27);
-			this.Search.TabIndex = 100;
-			this.Search.Text = "Search";
-			this.Search.UseVisualStyleBackColor = true;
-			this.Search.Visible = false;
-			this.Search.Click += new System.EventHandler(this.Search_Click);
-			// 
-			// SearchTextbox
-			// 
-			this.SearchTextbox.Location = new System.Drawing.Point(106, 30);
-			this.SearchTextbox.Name = "SearchTextbox";
-			this.SearchTextbox.Size = new System.Drawing.Size(210, 23);
-			this.SearchTextbox.TabIndex = 1;
-			this.SearchTextbox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.SearchTextbox_KeyDown);
-			// 
-			// groupBox1
-			// 
-			this.groupBox1.Controls.Add(this.KeysCombo);
-			this.groupBox1.Controls.Add(this.label8);
-			this.groupBox1.Controls.Add(this.label4);
-			this.groupBox1.Controls.Add(this.Delete);
-			this.groupBox1.Controls.Add(this.Cancel);
-			this.groupBox1.Controls.Add(this.Save);
-			this.groupBox1.Controls.Add(this.label2);
-			this.groupBox1.Controls.Add(this.HiddenId_Textbox);
-			this.groupBox1.Controls.Add(this.Description_Label);
-			this.groupBox1.Controls.Add(this.Price_Textbox);
-			this.groupBox1.Controls.Add(this.Add);
-			this.groupBox1.Controls.Add(this.Price_Label);
-			this.groupBox1.Controls.Add(this.Description_Textbox);
-			this.groupBox1.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.groupBox1.Location = new System.Drawing.Point(18, 423);
-			this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
-			this.groupBox1.Name = "groupBox1";
-			this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
-			this.groupBox1.Size = new System.Drawing.Size(810, 160);
-			this.groupBox1.TabIndex = 6;
-			this.groupBox1.TabStop = false;
-			this.groupBox1.Text = "Item Details";
-			// 
-			// KeysCombo
-			// 
-			this.KeysCombo.FormattingEnabled = true;
-			this.KeysCombo.Items.AddRange(new object[] {
-            "F1",
-            "F2",
-            "F3",
-            "F4"});
-			this.KeysCombo.Location = new System.Drawing.Point(536, 31);
-			this.KeysCombo.Name = "KeysCombo";
-			this.KeysCombo.Size = new System.Drawing.Size(121, 24);
-			this.KeysCombo.TabIndex = 103;
-			// 
-			// label8
-			// 
-			this.label8.AutoSize = true;
-			this.label8.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label8.Location = new System.Drawing.Point(449, 35);
-			this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-			this.label8.Name = "label8";
-			this.label8.Size = new System.Drawing.Size(75, 15);
-			this.label8.TabIndex = 101;
-			this.label8.Text = "Shortcut Key";
-			// 
-			// label4
-			// 
-			this.label4.AutoSize = true;
-			this.label4.Font = new System.Drawing.Font("Arial", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label4.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-			this.label4.Location = new System.Drawing.Point(507, 108);
-			this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-			this.label4.Name = "label4";
-			this.label4.Size = new System.Drawing.Size(23, 33);
-			this.label4.TabIndex = 16;
-			this.label4.Text = "|";
-			// 
-			// Delete
-			// 
-			this.Delete.BackColor = System.Drawing.Color.OrangeRed;
-			this.Delete.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-			this.Delete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.Delete.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.Delete.ForeColor = System.Drawing.Color.White;
-			this.Delete.Location = new System.Drawing.Point(533, 110);
-			this.Delete.Margin = new System.Windows.Forms.Padding(4);
-			this.Delete.Name = "Delete";
-			this.Delete.Size = new System.Drawing.Size(84, 35);
-			this.Delete.TabIndex = 5;
-			this.Delete.Text = "Delete";
-			this.Delete.UseVisualStyleBackColor = false;
-			this.Delete.Click += new System.EventHandler(this.Delete_Click);
-			// 
-			// Cancel
-			// 
-			this.Cancel.BackColor = System.Drawing.Color.LightGray;
-			this.Cancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.Cancel.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.Cancel.Location = new System.Drawing.Point(717, 110);
-			this.Cancel.Margin = new System.Windows.Forms.Padding(4);
-			this.Cancel.Name = "Cancel";
-			this.Cancel.Size = new System.Drawing.Size(84, 35);
-			this.Cancel.TabIndex = 7;
-			this.Cancel.Text = "Cancel";
-			this.Cancel.UseVisualStyleBackColor = false;
-			this.Cancel.Click += new System.EventHandler(this.Cancel_Click);
-			// 
-			// Save
-			// 
-			this.Save.BackColor = System.Drawing.Color.ForestGreen;
-			this.Save.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-			this.Save.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.Save.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.Save.ForeColor = System.Drawing.Color.White;
-			this.Save.Location = new System.Drawing.Point(625, 110);
-			this.Save.Margin = new System.Windows.Forms.Padding(4);
-			this.Save.Name = "Save";
-			this.Save.Size = new System.Drawing.Size(84, 35);
-			this.Save.TabIndex = 6;
-			this.Save.Text = "Save";
-			this.Save.UseVisualStyleBackColor = false;
-			this.Save.Click += new System.EventHandler(this.Save_Click);
-			// 
-			// label2
-			// 
-			this.label2.AutoSize = true;
-			this.label2.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label2.Location = new System.Drawing.Point(12, 93);
-			this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-			this.label2.Name = "label2";
-			this.label2.Size = new System.Drawing.Size(60, 15);
-			this.label2.TabIndex = 12;
-			this.label2.Text = "Hidden Id";
-			this.label2.Visible = false;
-			// 
-			// HiddenId_Textbox
-			// 
-			this.HiddenId_Textbox.Location = new System.Drawing.Point(99, 89);
-			this.HiddenId_Textbox.Name = "HiddenId_Textbox";
-			this.HiddenId_Textbox.Size = new System.Drawing.Size(100, 23);
-			this.HiddenId_Textbox.TabIndex = 100;
-			this.HiddenId_Textbox.Visible = false;
-			// 
-			// Description_Label
-			// 
-			this.Description_Label.AutoSize = true;
-			this.Description_Label.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.Description_Label.Location = new System.Drawing.Point(12, 35);
-			this.Description_Label.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-			this.Description_Label.Name = "Description_Label";
-			this.Description_Label.Size = new System.Drawing.Size(70, 15);
-			this.Description_Label.TabIndex = 2;
-			this.Description_Label.Text = "Description";
-			// 
-			// Price_Textbox
-			// 
-			this.Price_Textbox.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.Price_Textbox.Location = new System.Drawing.Point(99, 61);
-			this.Price_Textbox.Margin = new System.Windows.Forms.Padding(4);
-			this.Price_Textbox.Name = "Price_Textbox";
-			this.Price_Textbox.Size = new System.Drawing.Size(100, 21);
-			this.Price_Textbox.TabIndex = 3;
-			// 
-			// Add
-			// 
-			this.Add.BackColor = System.Drawing.Color.SteelBlue;
-			this.Add.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-			this.Add.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.Add.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.Add.ForeColor = System.Drawing.Color.White;
-			this.Add.Location = new System.Drawing.Point(416, 110);
-			this.Add.Margin = new System.Windows.Forms.Padding(4);
-			this.Add.Name = "Add";
-			this.Add.Size = new System.Drawing.Size(84, 35);
-			this.Add.TabIndex = 4;
-			this.Add.Text = "Add";
-			this.Add.UseVisualStyleBackColor = false;
-			this.Add.Click += new System.EventHandler(this.Add_Click);
-			// 
-			// Price_Label
-			// 
-			this.Price_Label.AutoSize = true;
-			this.Price_Label.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.Price_Label.Location = new System.Drawing.Point(12, 64);
-			this.Price_Label.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-			this.Price_Label.Name = "Price_Label";
-			this.Price_Label.Size = new System.Drawing.Size(35, 15);
-			this.Price_Label.TabIndex = 3;
-			this.Price_Label.Text = "Price";
-			// 
-			// Description_Textbox
-			// 
-			this.Description_Textbox.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.Description_Textbox.Location = new System.Drawing.Point(99, 32);
-			this.Description_Textbox.Margin = new System.Windows.Forms.Padding(4);
-			this.Description_Textbox.Name = "Description_Textbox";
-			this.Description_Textbox.Size = new System.Drawing.Size(312, 21);
-			this.Description_Textbox.TabIndex = 2;
 			// 
 			// DragPanel
 			// 
@@ -428,11 +191,8 @@ namespace Copylane
 			// 
 			// POSPanel
 			// 
+			this.POSPanel.Controls.Add(this.ChoicesPanel);
 			this.POSPanel.Controls.Add(this.CashOutPanel);
-			this.POSPanel.Controls.Add(this.F4);
-			this.POSPanel.Controls.Add(this.F1);
-			this.POSPanel.Controls.Add(this.F3);
-			this.POSPanel.Controls.Add(this.F2);
 			this.POSPanel.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.POSPanel.Location = new System.Drawing.Point(299, 26);
 			this.POSPanel.Name = "POSPanel";
@@ -515,9 +275,9 @@ namespace Copylane
 			this.label5.ForeColor = System.Drawing.Color.White;
 			this.label5.Location = new System.Drawing.Point(22, 30);
 			this.label5.Name = "label5";
-			this.label5.Size = new System.Drawing.Size(131, 32);
+			this.label5.Size = new System.Drawing.Size(154, 32);
 			this.label5.TabIndex = 2;
-			this.label5.Text = "CHARGE";
+			this.label5.Text = "SUBTOTAL";
 			// 
 			// ChargeAmount
 			// 
@@ -532,6 +292,61 @@ namespace Copylane
 			this.ChargeAmount.TabIndex = 1;
 			this.ChargeAmount.Text = "P 1,200.15";
 			// 
+			// ChoicesPanel
+			// 
+			this.ChoicesPanel.Controls.Add(this.F5);
+			this.ChoicesPanel.Controls.Add(this.F6);
+			this.ChoicesPanel.Controls.Add(this.F8);
+			this.ChoicesPanel.Controls.Add(this.F7);
+			this.ChoicesPanel.Controls.Add(this.F1);
+			this.ChoicesPanel.Controls.Add(this.F2);
+			this.ChoicesPanel.Controls.Add(this.F4);
+			this.ChoicesPanel.Controls.Add(this.F3);
+			this.ChoicesPanel.Location = new System.Drawing.Point(0, 0);
+			this.ChoicesPanel.Name = "ChoicesPanel";
+			this.ChoicesPanel.Size = new System.Drawing.Size(411, 161);
+			this.ChoicesPanel.TabIndex = 5;
+			// 
+			// F5
+			// 
+			this.F5.Cursor = System.Windows.Forms.Cursors.Hand;
+			this.F5.Location = new System.Drawing.Point(6, 79);
+			this.F5.Name = "F5";
+			this.F5.Size = new System.Drawing.Size(95, 67);
+			this.F5.TabIndex = 4;
+			this.F5.Text = "F5";
+			this.F5.UseVisualStyleBackColor = true;
+			// 
+			// F6
+			// 
+			this.F6.Cursor = System.Windows.Forms.Cursors.Hand;
+			this.F6.Location = new System.Drawing.Point(107, 79);
+			this.F6.Name = "F6";
+			this.F6.Size = new System.Drawing.Size(95, 67);
+			this.F6.TabIndex = 5;
+			this.F6.Text = "F6";
+			this.F6.UseVisualStyleBackColor = true;
+			// 
+			// F8
+			// 
+			this.F8.Cursor = System.Windows.Forms.Cursors.Hand;
+			this.F8.Location = new System.Drawing.Point(309, 79);
+			this.F8.Name = "F8";
+			this.F8.Size = new System.Drawing.Size(95, 67);
+			this.F8.TabIndex = 7;
+			this.F8.Text = "F8";
+			this.F8.UseVisualStyleBackColor = true;
+			// 
+			// F7
+			// 
+			this.F7.Cursor = System.Windows.Forms.Cursors.Hand;
+			this.F7.Location = new System.Drawing.Point(208, 79);
+			this.F7.Name = "F7";
+			this.F7.Size = new System.Drawing.Size(95, 67);
+			this.F7.TabIndex = 6;
+			this.F7.Text = "F7";
+			this.F7.UseVisualStyleBackColor = true;
+			// 
 			// ItemsPanel
 			// 
 			this.ItemsPanel.Controls.Add(this.label3);
@@ -540,11 +355,247 @@ namespace Copylane
 			this.ItemsPanel.Controls.Add(this.Search);
 			this.ItemsPanel.Controls.Add(this.groupBox1);
 			this.ItemsPanel.Controls.Add(this.SearchTextbox);
-			this.ItemsPanel.Location = new System.Drawing.Point(305, 173);
+			this.ItemsPanel.Location = new System.Drawing.Point(305, 228);
 			this.ItemsPanel.Name = "ItemsPanel";
-			this.ItemsPanel.Size = new System.Drawing.Size(785, 96);
-			this.ItemsPanel.TabIndex = 11;
+			this.ItemsPanel.Size = new System.Drawing.Size(836, 125);
+			this.ItemsPanel.TabIndex = 12;
 			this.ItemsPanel.Visible = false;
+			// 
+			// label3
+			// 
+			this.label3.AutoSize = true;
+			this.label3.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label3.ForeColor = System.Drawing.Color.OrangeRed;
+			this.label3.Location = new System.Drawing.Point(488, 399);
+			this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+			this.label3.Name = "label3";
+			this.label3.Size = new System.Drawing.Size(340, 15);
+			this.label3.TabIndex = 13;
+			this.label3.Text = "* Double click on the table row to update (edit) or delete item.";
+			// 
+			// label1
+			// 
+			this.label1.AutoSize = true;
+			this.label1.Location = new System.Drawing.Point(17, 33);
+			this.label1.Name = "label1";
+			this.label1.Size = new System.Drawing.Size(83, 16);
+			this.label1.TabIndex = 10;
+			this.label1.Text = "Search Item";
+			// 
+			// ItemGrid
+			// 
+			this.ItemGrid.AllowUserToAddRows = false;
+			this.ItemGrid.AllowUserToDeleteRows = false;
+			this.ItemGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+			this.ItemGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+			this.ItemGrid.Font = new System.Drawing.Font("Arial", 9.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.ItemGrid.Location = new System.Drawing.Point(17, 63);
+			this.ItemGrid.Margin = new System.Windows.Forms.Padding(4);
+			this.ItemGrid.MultiSelect = false;
+			this.ItemGrid.Name = "ItemGrid";
+			this.ItemGrid.ReadOnly = true;
+			this.ItemGrid.RowHeadersWidth = 51;
+			this.ItemGrid.RowTemplate.Height = 24;
+			this.ItemGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+			this.ItemGrid.Size = new System.Drawing.Size(811, 326);
+			this.ItemGrid.TabIndex = 100;
+			// 
+			// Search
+			// 
+			this.Search.Font = new System.Drawing.Font("Arial", 10.2F);
+			this.Search.Location = new System.Drawing.Point(705, 28);
+			this.Search.Name = "Search";
+			this.Search.Size = new System.Drawing.Size(123, 27);
+			this.Search.TabIndex = 100;
+			this.Search.Text = "Search";
+			this.Search.UseVisualStyleBackColor = true;
+			this.Search.Visible = false;
+			// 
+			// groupBox1
+			// 
+			this.groupBox1.Controls.Add(this.KeysCombo);
+			this.groupBox1.Controls.Add(this.label8);
+			this.groupBox1.Controls.Add(this.label4);
+			this.groupBox1.Controls.Add(this.Delete);
+			this.groupBox1.Controls.Add(this.Cancel);
+			this.groupBox1.Controls.Add(this.Save);
+			this.groupBox1.Controls.Add(this.label2);
+			this.groupBox1.Controls.Add(this.HiddenId_Textbox);
+			this.groupBox1.Controls.Add(this.Description_Label);
+			this.groupBox1.Controls.Add(this.Price_Textbox);
+			this.groupBox1.Controls.Add(this.Add);
+			this.groupBox1.Controls.Add(this.Price_Label);
+			this.groupBox1.Controls.Add(this.Description_Textbox);
+			this.groupBox1.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.groupBox1.Location = new System.Drawing.Point(18, 423);
+			this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
+			this.groupBox1.Name = "groupBox1";
+			this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
+			this.groupBox1.Size = new System.Drawing.Size(810, 160);
+			this.groupBox1.TabIndex = 6;
+			this.groupBox1.TabStop = false;
+			this.groupBox1.Text = "Item Details";
+			// 
+			// KeysCombo
+			// 
+			this.KeysCombo.FormattingEnabled = true;
+			this.KeysCombo.Items.AddRange(new object[] {
+            "F1",
+            "F2",
+            "F3",
+            "F4"});
+			this.KeysCombo.Location = new System.Drawing.Point(536, 31);
+			this.KeysCombo.Name = "KeysCombo";
+			this.KeysCombo.Size = new System.Drawing.Size(121, 24);
+			this.KeysCombo.TabIndex = 103;
+			// 
+			// label8
+			// 
+			this.label8.AutoSize = true;
+			this.label8.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label8.Location = new System.Drawing.Point(449, 35);
+			this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+			this.label8.Name = "label8";
+			this.label8.Size = new System.Drawing.Size(75, 15);
+			this.label8.TabIndex = 101;
+			this.label8.Text = "Shortcut Key";
+			// 
+			// label4
+			// 
+			this.label4.AutoSize = true;
+			this.label4.Font = new System.Drawing.Font("Arial", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label4.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+			this.label4.Location = new System.Drawing.Point(507, 108);
+			this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+			this.label4.Name = "label4";
+			this.label4.Size = new System.Drawing.Size(23, 33);
+			this.label4.TabIndex = 16;
+			this.label4.Text = "|";
+			// 
+			// Delete
+			// 
+			this.Delete.BackColor = System.Drawing.Color.OrangeRed;
+			this.Delete.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+			this.Delete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.Delete.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.Delete.ForeColor = System.Drawing.Color.White;
+			this.Delete.Location = new System.Drawing.Point(533, 110);
+			this.Delete.Margin = new System.Windows.Forms.Padding(4);
+			this.Delete.Name = "Delete";
+			this.Delete.Size = new System.Drawing.Size(84, 35);
+			this.Delete.TabIndex = 5;
+			this.Delete.Text = "Delete";
+			this.Delete.UseVisualStyleBackColor = false;
+			// 
+			// Cancel
+			// 
+			this.Cancel.BackColor = System.Drawing.Color.LightGray;
+			this.Cancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.Cancel.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.Cancel.Location = new System.Drawing.Point(717, 110);
+			this.Cancel.Margin = new System.Windows.Forms.Padding(4);
+			this.Cancel.Name = "Cancel";
+			this.Cancel.Size = new System.Drawing.Size(84, 35);
+			this.Cancel.TabIndex = 7;
+			this.Cancel.Text = "Cancel";
+			this.Cancel.UseVisualStyleBackColor = false;
+			// 
+			// Save
+			// 
+			this.Save.BackColor = System.Drawing.Color.ForestGreen;
+			this.Save.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+			this.Save.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.Save.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.Save.ForeColor = System.Drawing.Color.White;
+			this.Save.Location = new System.Drawing.Point(625, 110);
+			this.Save.Margin = new System.Windows.Forms.Padding(4);
+			this.Save.Name = "Save";
+			this.Save.Size = new System.Drawing.Size(84, 35);
+			this.Save.TabIndex = 6;
+			this.Save.Text = "Save";
+			this.Save.UseVisualStyleBackColor = false;
+			// 
+			// label2
+			// 
+			this.label2.AutoSize = true;
+			this.label2.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label2.Location = new System.Drawing.Point(12, 93);
+			this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+			this.label2.Name = "label2";
+			this.label2.Size = new System.Drawing.Size(60, 15);
+			this.label2.TabIndex = 12;
+			this.label2.Text = "Hidden Id";
+			this.label2.Visible = false;
+			// 
+			// HiddenId_Textbox
+			// 
+			this.HiddenId_Textbox.Location = new System.Drawing.Point(99, 89);
+			this.HiddenId_Textbox.Name = "HiddenId_Textbox";
+			this.HiddenId_Textbox.Size = new System.Drawing.Size(100, 23);
+			this.HiddenId_Textbox.TabIndex = 100;
+			this.HiddenId_Textbox.Visible = false;
+			// 
+			// Description_Label
+			// 
+			this.Description_Label.AutoSize = true;
+			this.Description_Label.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.Description_Label.Location = new System.Drawing.Point(12, 35);
+			this.Description_Label.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+			this.Description_Label.Name = "Description_Label";
+			this.Description_Label.Size = new System.Drawing.Size(70, 15);
+			this.Description_Label.TabIndex = 2;
+			this.Description_Label.Text = "Description";
+			// 
+			// Price_Textbox
+			// 
+			this.Price_Textbox.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.Price_Textbox.Location = new System.Drawing.Point(99, 61);
+			this.Price_Textbox.Margin = new System.Windows.Forms.Padding(4);
+			this.Price_Textbox.Name = "Price_Textbox";
+			this.Price_Textbox.Size = new System.Drawing.Size(100, 21);
+			this.Price_Textbox.TabIndex = 3;
+			// 
+			// Add
+			// 
+			this.Add.BackColor = System.Drawing.Color.SteelBlue;
+			this.Add.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+			this.Add.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.Add.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.Add.ForeColor = System.Drawing.Color.White;
+			this.Add.Location = new System.Drawing.Point(416, 110);
+			this.Add.Margin = new System.Windows.Forms.Padding(4);
+			this.Add.Name = "Add";
+			this.Add.Size = new System.Drawing.Size(84, 35);
+			this.Add.TabIndex = 4;
+			this.Add.Text = "Add";
+			this.Add.UseVisualStyleBackColor = false;
+			// 
+			// Price_Label
+			// 
+			this.Price_Label.AutoSize = true;
+			this.Price_Label.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.Price_Label.Location = new System.Drawing.Point(12, 64);
+			this.Price_Label.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+			this.Price_Label.Name = "Price_Label";
+			this.Price_Label.Size = new System.Drawing.Size(35, 15);
+			this.Price_Label.TabIndex = 3;
+			this.Price_Label.Text = "Price";
+			// 
+			// Description_Textbox
+			// 
+			this.Description_Textbox.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.Description_Textbox.Location = new System.Drawing.Point(99, 32);
+			this.Description_Textbox.Margin = new System.Windows.Forms.Padding(4);
+			this.Description_Textbox.Name = "Description_Textbox";
+			this.Description_Textbox.Size = new System.Drawing.Size(312, 21);
+			this.Description_Textbox.TabIndex = 2;
+			// 
+			// SearchTextbox
+			// 
+			this.SearchTextbox.Location = new System.Drawing.Point(106, 30);
+			this.SearchTextbox.Name = "SearchTextbox";
+			this.SearchTextbox.Size = new System.Drawing.Size(210, 23);
+			this.SearchTextbox.TabIndex = 1;
 			// 
 			// MainForm
 			// 
@@ -566,9 +617,6 @@ namespace Copylane
 			this.Text = "Main Form";
 			this.Load += new System.EventHandler(this.MainForm_Load);
 			this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.MainForm_KeyDown);
-			((System.ComponentModel.ISupportInitialize)(this.ItemGrid)).EndInit();
-			this.groupBox1.ResumeLayout(false);
-			this.groupBox1.PerformLayout();
 			this.panel2.ResumeLayout(false);
 			this.POSPanel.ResumeLayout(false);
 			this.CashOutPanel.ResumeLayout(false);
@@ -576,30 +624,17 @@ namespace Copylane
 			this.panel8.PerformLayout();
 			this.ChargePanel.ResumeLayout(false);
 			this.ChargePanel.PerformLayout();
+			this.ChoicesPanel.ResumeLayout(false);
 			this.ItemsPanel.ResumeLayout(false);
 			this.ItemsPanel.PerformLayout();
+			((System.ComponentModel.ISupportInitialize)(this.ItemGrid)).EndInit();
+			this.groupBox1.ResumeLayout(false);
+			this.groupBox1.PerformLayout();
 			this.ResumeLayout(false);
 
 		}
 
 		#endregion
-		private System.Windows.Forms.DataGridView ItemGrid;
-		private System.Windows.Forms.TextBox SearchTextbox;
-		private System.Windows.Forms.Label label1;
-		private System.Windows.Forms.Button Search;
-		private System.Windows.Forms.GroupBox groupBox1;
-		private System.Windows.Forms.Label Description_Label;
-		private System.Windows.Forms.TextBox Price_Textbox;
-		private System.Windows.Forms.Button Add;
-		private System.Windows.Forms.Label Price_Label;
-		private System.Windows.Forms.TextBox Description_Textbox;
-		private System.Windows.Forms.Label label2;
-		private System.Windows.Forms.TextBox HiddenId_Textbox;
-		private System.Windows.Forms.Button Cancel;
-		private System.Windows.Forms.Button Save;
-		private System.Windows.Forms.Label label3;
-		private System.Windows.Forms.Label label4;
-		private System.Windows.Forms.Button Delete;
 		private System.Windows.Forms.Button F4;
 		private System.Windows.Forms.Button F3;
 		private System.Windows.Forms.Button F2;
@@ -608,7 +643,6 @@ namespace Copylane
 		private System.Windows.Forms.Panel panel2;
 		private System.Windows.Forms.Panel panel3;
 		private System.Windows.Forms.Panel POSPanel;
-		private System.Windows.Forms.Panel ItemsPanel;
 		private System.Windows.Forms.Panel CashOutPanel;
 		private System.Windows.Forms.Panel panel8;
 		private System.Windows.Forms.Label label7;
@@ -618,9 +652,32 @@ namespace Copylane
 		private System.Windows.Forms.Label label5;
 		private System.Windows.Forms.Button ItemButton;
 		private System.Windows.Forms.Button POSButton;
-		private System.Windows.Forms.Label label8;
-		private System.Windows.Forms.ComboBox KeysCombo;
 		private System.Windows.Forms.Panel ItemListPanel;
+		private System.Windows.Forms.Panel ChoicesPanel;
+		private System.Windows.Forms.Button F5;
+		private System.Windows.Forms.Button F6;
+		private System.Windows.Forms.Button F8;
+		private System.Windows.Forms.Button F7;
+		private System.Windows.Forms.Panel ItemsPanel;
+		private System.Windows.Forms.Label label3;
+		private System.Windows.Forms.Label label1;
+		private System.Windows.Forms.DataGridView ItemGrid;
+		private System.Windows.Forms.Button Search;
+		private System.Windows.Forms.GroupBox groupBox1;
+		private System.Windows.Forms.ComboBox KeysCombo;
+		private System.Windows.Forms.Label label8;
+		private System.Windows.Forms.Label label4;
+		private System.Windows.Forms.Button Delete;
+		private System.Windows.Forms.Button Cancel;
+		private System.Windows.Forms.Button Save;
+		private System.Windows.Forms.Label label2;
+		private System.Windows.Forms.TextBox HiddenId_Textbox;
+		private System.Windows.Forms.Label Description_Label;
+		private System.Windows.Forms.TextBox Price_Textbox;
+		private System.Windows.Forms.Button Add;
+		private System.Windows.Forms.Label Price_Label;
+		private System.Windows.Forms.TextBox Description_Textbox;
+		private System.Windows.Forms.TextBox SearchTextbox;
 	}
 }
 
