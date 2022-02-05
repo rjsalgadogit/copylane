@@ -39,9 +39,12 @@ namespace CopyLane.CustomForms.Popups
 			this.label5 = new System.Windows.Forms.Label();
 			this.Price = new System.Windows.Forms.Label();
 			this.Save = new System.Windows.Forms.Button();
+			this.Discount = new System.Windows.Forms.NumericUpDown();
+			this.label1 = new System.Windows.Forms.Label();
 			((System.ComponentModel.ISupportInitialize)(this.Qty)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.Total)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.Additional)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.Discount)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// Description
@@ -76,7 +79,7 @@ namespace CopyLane.CustomForms.Popups
 			// label4
 			// 
 			this.label4.AutoSize = true;
-			this.label4.Location = new System.Drawing.Point(17, 178);
+			this.label4.Location = new System.Drawing.Point(17, 180);
 			this.label4.Name = "label4";
 			this.label4.Size = new System.Drawing.Size(72, 18);
 			this.label4.TabIndex = 3;
@@ -84,23 +87,39 @@ namespace CopyLane.CustomForms.Popups
 			// 
 			// Qty
 			// 
-			this.Qty.Location = new System.Drawing.Point(102, 99);
+			this.Qty.Location = new System.Drawing.Point(107, 99);
+			this.Qty.Maximum = new decimal(new int[] {
+            1000000,
+            0,
+            0,
+            0});
 			this.Qty.Name = "Qty";
-			this.Qty.Size = new System.Drawing.Size(120, 26);
+			this.Qty.Size = new System.Drawing.Size(128, 26);
 			this.Qty.TabIndex = 4;
+			this.Qty.ValueChanged += new System.EventHandler(this.Qty_ValueChanged);
 			// 
 			// Total
 			// 
-			this.Total.Location = new System.Drawing.Point(102, 138);
+			this.Total.Location = new System.Drawing.Point(107, 138);
+			this.Total.Maximum = new decimal(new int[] {
+            1000000,
+            0,
+            0,
+            0});
 			this.Total.Name = "Total";
-			this.Total.Size = new System.Drawing.Size(120, 26);
+			this.Total.Size = new System.Drawing.Size(128, 26);
 			this.Total.TabIndex = 5;
 			// 
 			// Additional
 			// 
-			this.Additional.Location = new System.Drawing.Point(102, 176);
+			this.Additional.Location = new System.Drawing.Point(107, 178);
+			this.Additional.Maximum = new decimal(new int[] {
+            1000000,
+            0,
+            0,
+            0});
 			this.Additional.Name = "Additional";
-			this.Additional.Size = new System.Drawing.Size(120, 26);
+			this.Additional.Size = new System.Drawing.Size(128, 26);
 			this.Additional.TabIndex = 6;
 			// 
 			// label5
@@ -115,7 +134,8 @@ namespace CopyLane.CustomForms.Popups
 			// Price
 			// 
 			this.Price.AutoSize = true;
-			this.Price.Location = new System.Drawing.Point(99, 66);
+			this.Price.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.Price.Location = new System.Drawing.Point(104, 66);
 			this.Price.Name = "Price";
 			this.Price.Size = new System.Drawing.Size(39, 18);
 			this.Price.TabIndex = 8;
@@ -130,19 +150,44 @@ namespace CopyLane.CustomForms.Popups
 			this.Save.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
 			this.Save.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.Save.ForeColor = System.Drawing.Color.White;
-			this.Save.Location = new System.Drawing.Point(0, 231);
+			this.Save.Location = new System.Drawing.Point(0, 281);
 			this.Save.Name = "Save";
 			this.Save.Size = new System.Drawing.Size(377, 44);
 			this.Save.TabIndex = 9;
 			this.Save.Text = "Enter";
 			this.Save.UseVisualStyleBackColor = false;
+			this.Save.Click += new System.EventHandler(this.Save_Click);
+			// 
+			// Discount
+			// 
+			this.Discount.Location = new System.Drawing.Point(107, 218);
+			this.Discount.Maximum = new decimal(new int[] {
+            1000000,
+            0,
+            0,
+            0});
+			this.Discount.Name = "Discount";
+			this.Discount.Size = new System.Drawing.Size(128, 26);
+			this.Discount.TabIndex = 11;
+			// 
+			// label1
+			// 
+			this.label1.AutoSize = true;
+			this.label1.Location = new System.Drawing.Point(17, 220);
+			this.label1.Name = "label1";
+			this.label1.Size = new System.Drawing.Size(62, 18);
+			this.label1.TabIndex = 10;
+			this.label1.Text = "Discount";
 			// 
 			// ProductPreviewPopup
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+			this.AutoSize = true;
 			this.BackColor = System.Drawing.Color.White;
-			this.ClientSize = new System.Drawing.Size(377, 275);
+			this.ClientSize = new System.Drawing.Size(377, 325);
+			this.Controls.Add(this.Discount);
+			this.Controls.Add(this.label1);
 			this.Controls.Add(this.Save);
 			this.Controls.Add(this.Price);
 			this.Controls.Add(this.label5);
@@ -165,6 +210,7 @@ namespace CopyLane.CustomForms.Popups
 			((System.ComponentModel.ISupportInitialize)(this.Qty)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.Total)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.Additional)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.Discount)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -182,5 +228,7 @@ namespace CopyLane.CustomForms.Popups
 		private System.Windows.Forms.Label label5;
 		private System.Windows.Forms.Label Price;
 		private System.Windows.Forms.Button Save;
+		private System.Windows.Forms.NumericUpDown Discount;
+		private System.Windows.Forms.Label label1;
 	}
 }

@@ -30,5 +30,17 @@ namespace CopyLane.CustomForms.Popups
 		{
 
 		}
+
+		private void Qty_ValueChanged(object sender, EventArgs e)
+		{
+			Total.Value = Product.Price * Qty.Value;
+		}
+
+		private void Save_Click(object sender, EventArgs e)
+		{
+			var total = Total.Value + Additional.Value - Discount.Value;
+
+			MessageBox.Show("Overall Total: " + total);
+		}
 	}
 }
