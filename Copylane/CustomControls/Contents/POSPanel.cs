@@ -18,5 +18,36 @@ namespace CopyLane.CustomControls.Contents
 
 			this.Dock = DockStyle.Fill;
 		}
+
+		private void POSPanel_Load(object sender, EventArgs e)
+		{
+			Color[] colors = new Color[] { Color.Red, Color.Blue, Color.Yellow };
+
+
+			for (int i = 0; i < colors.Length; i++)
+			{
+				//flowLayoutPanel1.Controls.Add(new ProductButton(colors[i]));
+			}
+		}
+
+		private void F1_Click(object sender, EventArgs e)
+		{
+
+		}
+
+		private void F2_Click(object sender, EventArgs e)
+		{
+
+		}
+
+		private void F3_Click(object sender, EventArgs e)
+		{
+
+		}
+
+		private void F4_Click(object sender, EventArgs e)
+		{
+
+		}
 	}
 }
