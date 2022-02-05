@@ -170,11 +170,7 @@ namespace Copylane
 			var item = itemService.GetItemByKey(new ItemModel { ShortcutKey = "F1" });
 
 			GlobalVariable.POSList.Add(item);
-
-			ItemListPanel.Controls.Add(new ItemPreview(new ItemModel
-			{
-				Description = item.Description
-			}));
+			ItemListPanel.Controls.Add(new ItemPreview(item));
 		}
 
 		private void F2_Click(object sender, EventArgs e)
@@ -183,21 +179,25 @@ namespace Copylane
 			var item = itemService.GetItemByKey(new ItemModel { ShortcutKey = "F2" });
 
 			GlobalVariable.POSList.Add(item);
-
-			ItemListPanel.Controls.Add(new ItemPreview(new ItemModel
-			{
-				Description = item.Description
-			}));
+			ItemListPanel.Controls.Add(new ItemPreview(item));
 		}
 
 		private void F3_Click(object sender, EventArgs e)
 		{
+			var itemService = new ItemService();
+			var item = itemService.GetItemByKey(new ItemModel { ShortcutKey = "F3" });
 
+			GlobalVariable.POSList.Add(item);
+			ItemListPanel.Controls.Add(new ItemPreview(item));
 		}
 
 		private void F4_Click(object sender, EventArgs e)
 		{
+			var itemService = new ItemService();
+			var item = itemService.GetItemByKey(new ItemModel { ShortcutKey = "F4" });
 
+			GlobalVariable.POSList.Add(item);
+			ItemListPanel.Controls.Add(new ItemPreview(item));
 		}
 
 		private void ChargePanel_Click(object sender, EventArgs e)

@@ -197,7 +197,7 @@ namespace Copylane
 			this.groupBox1.Controls.Add(this.Price_Label);
 			this.groupBox1.Controls.Add(this.Description_Textbox);
 			this.groupBox1.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.groupBox1.Location = new System.Drawing.Point(18, 435);
+			this.groupBox1.Location = new System.Drawing.Point(18, 423);
 			this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
 			this.groupBox1.Name = "groupBox1";
 			this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
