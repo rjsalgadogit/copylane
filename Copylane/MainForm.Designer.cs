@@ -135,6 +135,9 @@ namespace Copylane
 			this.DragPanel.Name = "DragPanel";
 			this.DragPanel.Size = new System.Drawing.Size(1144, 26);
 			this.DragPanel.TabIndex = 8;
+			this.DragPanel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.DragPanel_MouseDown);
+			this.DragPanel.MouseMove += new System.Windows.Forms.MouseEventHandler(this.DragPanel_MouseMove);
+			this.DragPanel.MouseUp += new System.Windows.Forms.MouseEventHandler(this.DragPanel_MouseUp);
 			// 
 			// panel2
 			// 
@@ -193,10 +196,9 @@ namespace Copylane
 			// 
 			this.POSPanel.Controls.Add(this.ChoicesPanel);
 			this.POSPanel.Controls.Add(this.CashOutPanel);
-			this.POSPanel.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.POSPanel.Location = new System.Drawing.Point(299, 26);
 			this.POSPanel.Name = "POSPanel";
-			this.POSPanel.Size = new System.Drawing.Size(845, 746);
+			this.POSPanel.Size = new System.Drawing.Size(845, 704);
 			this.POSPanel.TabIndex = 10;
 			// 
 			// CashOutPanel
@@ -208,7 +210,7 @@ namespace Copylane
 			this.CashOutPanel.Dock = System.Windows.Forms.DockStyle.Right;
 			this.CashOutPanel.Location = new System.Drawing.Point(411, 0);
 			this.CashOutPanel.Name = "CashOutPanel";
-			this.CashOutPanel.Size = new System.Drawing.Size(434, 746);
+			this.CashOutPanel.Size = new System.Drawing.Size(434, 704);
 			this.CashOutPanel.TabIndex = 4;
 			// 
 			// ItemListPanel
@@ -219,7 +221,7 @@ namespace Copylane
 			this.ItemListPanel.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.ItemListPanel.Location = new System.Drawing.Point(0, 0);
 			this.ItemListPanel.Name = "ItemListPanel";
-			this.ItemListPanel.Size = new System.Drawing.Size(434, 595);
+			this.ItemListPanel.Size = new System.Drawing.Size(434, 553);
 			this.ItemListPanel.TabIndex = 2;
 			// 
 			// panel8
@@ -228,7 +230,7 @@ namespace Copylane
 			this.panel8.Controls.Add(this.label7);
 			this.panel8.Controls.Add(this.label6);
 			this.panel8.Dock = System.Windows.Forms.DockStyle.Bottom;
-			this.panel8.Location = new System.Drawing.Point(0, 595);
+			this.panel8.Location = new System.Drawing.Point(0, 553);
 			this.panel8.Name = "panel8";
 			this.panel8.Size = new System.Drawing.Size(434, 56);
 			this.panel8.TabIndex = 1;
@@ -262,7 +264,7 @@ namespace Copylane
 			this.ChargePanel.Controls.Add(this.ChargeAmount);
 			this.ChargePanel.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.ChargePanel.Dock = System.Windows.Forms.DockStyle.Bottom;
-			this.ChargePanel.Location = new System.Drawing.Point(0, 651);
+			this.ChargePanel.Location = new System.Drawing.Point(0, 609);
 			this.ChargePanel.Name = "ChargePanel";
 			this.ChargePanel.Size = new System.Drawing.Size(434, 95);
 			this.ChargePanel.TabIndex = 0;
