@@ -19,12 +19,11 @@ namespace CopyLane.CustomControls.PartialViews
 		public ProductPreview(ProductModel product)
 		{
 			InitializeComponent();
+			Product = product;
 
 			this.Dock = DockStyle.Top;
 			this.label1.Text = product.Description;
 			this.label3.Text = product.Price.ToString();
-
-			Product = product;
 		}
 
 		private void ProductPreview_DoubleClick(object sender, EventArgs e)
