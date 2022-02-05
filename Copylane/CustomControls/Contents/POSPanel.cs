@@ -1,4 +1,6 @@
 ﻿using CopyLane.CustomControls.PartialViews;
+using CopyLane.Models;
+using CopyLane.Services;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -22,33 +24,51 @@ namespace CopyLane.CustomControls.Contents
 
 		private void POSPanel_Load(object sender, EventArgs e)
 		{
-			Color[] colors = new Color[] { Color.Red, Color.Blue, Color.Yellow };
 
-
-			for (int i = 0; i < colors.Length; i++)
-			{
-				//flowLayoutPanel1.Controls.Add(new ProductButton(colors[i]));
-			}
 		}
 
 		private void F1_Click(object sender, EventArgs e)
 		{
-			panel1.Controls.Add(new ProductPreview());
+			var productService = new ProductService();
+			var product = productService.GetProductByKey(new ProductModel { ShortcutKey = "F1" });
+
+			if (product != null)
+			{
+				panel1.Controls.Add(new ProductPreview(product));
+			}
 		}
 
 		private void F2_Click(object sender, EventArgs e)
 		{
+			var productService = new ProductService();
+			var product = productService.GetProductByKey(new ProductModel { ShortcutKey = "F2" });
 
+			if (product != null)
+			{
+				panel1.Controls.Add(new ProductPreview(product));
+			}
 		}
 
 		private void F3_Click(object sender, EventArgs e)
 		{
+			var productService = new ProductService();
+			var product = productService.GetProductByKey(new ProductModel { ShortcutKey = "F3" });
 
+			if (product != null)
+			{
+				panel1.Controls.Add(new ProductPreview(product));
+			}
 		}
 
 		private void F4_Click(object sender, EventArgs e)
 		{
+			var productService = new ProductService();
+			var product = productService.GetProductByKey(new ProductModel { ShortcutKey = "F4" });
 
+			if (product != null)
+			{
+				panel1.Controls.Add(new ProductPreview(product));
+			}
 		}
 	}
 }

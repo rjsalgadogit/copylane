@@ -1,0 +1,89 @@
+﻿using CopyLane.Models;
+using System;
+using System.Collections.Generic;
+using System.Data;
+using System.Data.SqlClient;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+using Newtonsoft.Json;
+
+namespace CopyLane.Services
+{
+	public class ProductService
+	{
+		public string Server { get; set; }
+		public string Database { get; set; }
+		public string ConnectionString { get; set; }
+
+		public ProductService()
+		{
+			Server = "localhost\\SQLEXPRESS";
+			Database = "CopyLane";
+			ConnectionString = $"Data Source={Server};Initial Catalog={Database};Integrated Security=True";
+		}
+
+		public bool Connected()
+		{
+			try
+			{
+				var connString = $"Data Source={Server};Initial Catalog={Database};Integrated Security=True";
+
+				var conn = new SqlConnection(connString);
+				conn.Open();
+				conn.Close();
+
+				return true;
+			}
+			catch (Exception ex)
+			{
+				MessageBox.Show(ex.Message
+					, "Error"
+					, MessageBoxButtons.OK
+					, MessageBoxIcon.Error);
+
+				return false;
+			}
+		}
+
+		public ProductModel GetProductByKey(ProductModel item)
+		{
+			var sp = "GetProductByKey";
+
+			SqlDataReader sqlReader;
+			DataTable dataTable = new DataTable();
+
+			try
+			{
+				using (SqlConnection conn = new SqlConnection(ConnectionString))
+				{
+					conn.Open();
+
+					using (SqlCommand comm = new SqlCommand(sp, conn))
+					{
+						comm.CommandType = CommandType.StoredProcedure;
+						comm.Parameters.AddWithValue("@ShortcutKey", item.ShortcutKey);
+
+						sqlReader = comm.ExecuteReader();
+						dataTable.Load(sqlReader);
+						sqlReader.Close();
+						conn.Close();
+					}
+				}
+			}
+			catch (Exception ex)
+			{
+				MessageBox.Show(ex.Message
+					, "Error"
+					, MessageBoxButtons.OK
+					, MessageBoxIcon.Error);
+			}
+
+			var records = new List<ProductModel>();
+			records = JsonConvert.DeserializeObject<List<ProductModel>>(JsonConvert.SerializeObject(dataTable));
+
+			return records.FirstOrDefault();
+		}
+	}
+}
