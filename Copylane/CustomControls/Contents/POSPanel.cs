@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CopyLane.CustomControls.PartialViews;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -32,7 +33,7 @@ namespace CopyLane.CustomControls.Contents
 
 		private void F1_Click(object sender, EventArgs e)
 		{
-
+			panel1.Controls.Add(new ProductPreview());
 		}
 
 		private void F2_Click(object sender, EventArgs e)
