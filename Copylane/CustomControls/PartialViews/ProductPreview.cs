@@ -14,6 +14,8 @@ namespace CopyLane.CustomControls.PartialViews
 {
 	public partial class ProductPreview : UserControl
 	{
+		private ProductModel Product { get; set; }
+
 		public ProductPreview(ProductModel product)
 		{
 			InitializeComponent();
@@ -21,11 +23,13 @@ namespace CopyLane.CustomControls.PartialViews
 			this.Dock = DockStyle.Top;
 			this.label1.Text = product.Description;
 			this.label3.Text = product.Price.ToString();
+
+			Product = product;
 		}
 
 		private void ProductPreview_DoubleClick(object sender, EventArgs e)
 		{
-			var formPopupEdit = new ProductPreviewPopup();
+			var formPopupEdit = new ProductPreviewPopup(Product);
 			formPopupEdit.ShowDialog();
 		}
 	}

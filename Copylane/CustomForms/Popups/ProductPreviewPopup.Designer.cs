@@ -39,6 +39,7 @@ namespace CopyLane.CustomForms.Popups
 			this.Name = "ProductPreviewPopup";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
 			this.Text = "Product Details";
+			this.Load += new System.EventHandler(this.ProductPreviewPopup_Load);
 			this.ResumeLayout(false);
 
 		}

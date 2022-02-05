@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CopyLane.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +13,14 @@ namespace CopyLane.CustomForms.Popups
 {
 	public partial class ProductPreviewPopup : Form
 	{
-		public ProductPreviewPopup()
+		public ProductPreviewPopup(ProductModel product)
 		{
 			InitializeComponent();
+		}
+
+		private void ProductPreviewPopup_Load(object sender, EventArgs e)
+		{
+
 		}
 	}
 }
