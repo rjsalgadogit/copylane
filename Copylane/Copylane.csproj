@@ -67,6 +67,12 @@
     <Compile Include="CustomControls\PartialViews\ProductPreview.Designer.cs">
       <DependentUpon>ProductPreview.cs</DependentUpon>
     </Compile>
+    <Compile Include="CustomForms\Popups\ProductPreviewPopup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CustomForms\Popups\ProductPreviewPopup.Designer.cs">
+      <DependentUpon>ProductPreviewPopup.cs</DependentUpon>
+    </Compile>
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -85,6 +91,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CustomControls\PartialViews\ProductPreview.resx">
       <DependentUpon>ProductPreview.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomForms\Popups\ProductPreviewPopup.resx">
+      <DependentUpon>ProductPreviewPopup.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
@@ -112,8 +121,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="CustomControls\Popups\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

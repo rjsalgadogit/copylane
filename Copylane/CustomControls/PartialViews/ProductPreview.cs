@@ -1,4 +1,5 @@
-﻿using CopyLane.Models;
+﻿using CopyLane.CustomForms.Popups;
+using CopyLane.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -20,6 +21,12 @@ namespace CopyLane.CustomControls.PartialViews
 			this.Dock = DockStyle.Top;
 			this.label1.Text = product.Description;
 			this.label3.Text = product.Price.ToString();
+		}
+
+		private void ProductPreview_DoubleClick(object sender, EventArgs e)
+		{
+			var formPopupEdit = new ProductPreviewPopup();
+			formPopupEdit.ShowDialog();
 		}
 	}
 }
