@@ -15,6 +15,8 @@ namespace CopyLane.CustomControls.Contents
 		public ProductPanel()
 		{
 			InitializeComponent();
+
+			this.Dock = DockStyle.Fill;
 		}
 	}
 }

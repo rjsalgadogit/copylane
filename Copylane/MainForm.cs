@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CopyLane.CustomControls.Contents;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -18,6 +19,12 @@ namespace CopyLane
 		public MainForm()
 		{
 			InitializeComponent();
+		}
+
+		private void MainForm_Load(object sender, EventArgs e)
+		{
+			panel3.Controls.Clear();
+			panel3.Controls.Add(new POSPanel());
 		}
 
 		private void panel1_MouseDown(object sender, MouseEventArgs e)
@@ -40,6 +47,18 @@ namespace CopyLane
 		private void panel1_MouseUp(object sender, MouseEventArgs e)
 		{
 			mouseDown = false;
+		}
+
+		private void POSButton_Click(object sender, EventArgs e)
+		{
+			panel3.Controls.Clear();
+			panel3.Controls.Add(new POSPanel());
+		}
+
+		private void ProductsButton_Click(object sender, EventArgs e)
+		{
+			panel3.Controls.Clear();
+			panel3.Controls.Add(new ProductPanel());
 		}
 	}
 }
