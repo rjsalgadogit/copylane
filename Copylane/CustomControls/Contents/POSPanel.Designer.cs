@@ -76,7 +76,7 @@ namespace CopyLane.CustomControls.Contents
 			this.F1.Name = "F1";
 			this.F1.Size = new System.Drawing.Size(150, 115);
 			this.F1.TabIndex = 0;
-			this.F1.Text = "Package 1 Laminated Film";
+			this.F1.Text = "No item";
 			this.F1.UseVisualStyleBackColor = true;
 			this.F1.Click += new System.EventHandler(this.F1_Click);
 			// 
@@ -111,7 +111,7 @@ namespace CopyLane.CustomControls.Contents
 			this.F2.Name = "F2";
 			this.F2.Size = new System.Drawing.Size(150, 115);
 			this.F2.TabIndex = 5;
-			this.F2.Text = "Package 1 Laminated Film";
+			this.F2.Text = "No item";
 			this.F2.UseVisualStyleBackColor = true;
 			this.F2.Click += new System.EventHandler(this.F2_Click);
 			// 
@@ -134,7 +134,7 @@ namespace CopyLane.CustomControls.Contents
 			this.F3.Name = "F3";
 			this.F3.Size = new System.Drawing.Size(150, 115);
 			this.F3.TabIndex = 7;
-			this.F3.Text = "Package 1 Laminated Film";
+			this.F3.Text = "No item";
 			this.F3.UseVisualStyleBackColor = true;
 			this.F3.Click += new System.EventHandler(this.F3_Click);
 			// 
@@ -157,7 +157,7 @@ namespace CopyLane.CustomControls.Contents
 			this.F4.Name = "F4";
 			this.F4.Size = new System.Drawing.Size(150, 115);
 			this.F4.TabIndex = 9;
-			this.F4.Text = "Package 1 Laminated Film";
+			this.F4.Text = "No item";
 			this.F4.UseVisualStyleBackColor = true;
 			this.F4.Click += new System.EventHandler(this.F4_Click);
 			// 

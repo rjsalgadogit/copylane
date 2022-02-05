@@ -22,9 +22,13 @@ namespace CopyLane.CustomControls.Contents
 			this.Dock = DockStyle.Fill;
 		}
 
+		#region Control Events
+
 		private void POSPanel_Load(object sender, EventArgs e)
 		{
+			var productService = new ProductService();
 
+			ArrangeButtonUI(productService);
 		}
 
 		private void F1_Click(object sender, EventArgs e)
@@ -70,5 +74,38 @@ namespace CopyLane.CustomControls.Contents
 				panel1.Controls.Add(new ProductPreview(product));
 			}
 		}
+
+		#endregion
+
+		#region Private Methods
+
+		private void ArrangeButtonUI(ProductService productService)
+		{
+			var products = productService.GetProducts();
+
+			foreach (var product in products)
+			{
+				switch (product.ShortcutKey)
+				{
+					case "F1":
+						F1.Text = product.Description;
+						break;
+
+					case "F2":
+						F2.Text = product.Description;
+						break;
+
+					case "F3":
+						F3.Text = product.Description;
+						break;
+
+					case "F4":
+						F4.Text = product.Description;
+						break;
+				}
+			}
+		}
+
+		#endregion
 	}
 }

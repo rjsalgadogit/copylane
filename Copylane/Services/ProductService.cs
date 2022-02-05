@@ -47,6 +47,42 @@ namespace CopyLane.Services
 			}
 		}
 
+		public List<ProductModel> GetProducts()
+		{
+			var query = @"SELECT * FROM dbo.Items";
+
+			SqlDataReader sqlReader;
+			DataTable dataTable = new DataTable();
+
+			try
+			{
+				using (SqlConnection conn = new SqlConnection(ConnectionString))
+				{
+					conn.Open();
+
+					using (SqlCommand comm = new SqlCommand(query, conn))
+					{
+						sqlReader = comm.ExecuteReader();
+						dataTable.Load(sqlReader);
+						sqlReader.Close();
+						conn.Close();
+					}
+				}
+			}
+			catch (Exception ex)
+			{
+				MessageBox.Show(ex.Message
+					, "Error"
+					, MessageBoxButtons.OK
+					, MessageBoxIcon.Error);
+			}
+
+			var records = new List<ProductModel>();
+			records = JsonConvert.DeserializeObject<List<ProductModel>>(JsonConvert.SerializeObject(dataTable));
+
+			return records;
+		}
+
 		public ProductModel GetProductByKey(ProductModel item)
 		{
 			var sp = "GetProductByKey";
