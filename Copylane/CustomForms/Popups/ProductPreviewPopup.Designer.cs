@@ -96,7 +96,7 @@ namespace CopyLane.CustomForms.Popups
 			this.Qty.Name = "Qty";
 			this.Qty.Size = new System.Drawing.Size(128, 26);
 			this.Qty.TabIndex = 4;
-			this.Qty.ValueChanged += new System.EventHandler(this.Qty_ValueChanged);
+			this.Qty.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Qty_KeyUp);
 			// 
 			// Total
 			// 
@@ -121,6 +121,7 @@ namespace CopyLane.CustomForms.Popups
 			this.Additional.Name = "Additional";
 			this.Additional.Size = new System.Drawing.Size(128, 26);
 			this.Additional.TabIndex = 6;
+			this.Additional.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Additional_KeyUp);
 			// 
 			// label5
 			// 
@@ -169,6 +170,7 @@ namespace CopyLane.CustomForms.Popups
 			this.Discount.Name = "Discount";
 			this.Discount.Size = new System.Drawing.Size(128, 26);
 			this.Discount.TabIndex = 11;
+			this.Discount.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Discount_KeyUp);
 			// 
 			// label1
 			// 

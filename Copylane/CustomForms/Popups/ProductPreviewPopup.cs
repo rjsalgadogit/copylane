@@ -24,6 +24,7 @@ namespace CopyLane.CustomForms.Popups
 			this.Price.Text = product.Price.ToString();
 			this.Qty.Value = 1;
 			this.Total.Value = product.Price;
+			this.Save.Text = "Charge    (P " + product.Price + ")";
 		}
 
 		private void ProductPreviewPopup_Load(object sender, EventArgs e)
@@ -31,16 +32,32 @@ namespace CopyLane.CustomForms.Popups
 
 		}
 
-		private void Qty_ValueChanged(object sender, EventArgs e)
-		{
-			Total.Value = Product.Price * Qty.Value;
-		}
-
 		private void Save_Click(object sender, EventArgs e)
 		{
-			var total = Total.Value + Additional.Value - Discount.Value;
+			var subtotal = Total.Value + Additional.Value - Discount.Value;
 
-			MessageBox.Show("Overall Total: " + total);
+			MessageBox.Show("Overall Total: " + subtotal);
+		}
+
+		private void Qty_KeyUp(object sender, KeyEventArgs e)
+		{
+			var total = Product.Price * Qty.Value;
+			var subtotal = total + Additional.Value - Discount.Value;
+
+			Total.Value = total;
+			Save.Text = "Charge    (P " + subtotal + ")";
+		}
+
+		private void Additional_KeyUp(object sender, KeyEventArgs e)
+		{
+			var subtotal = Total.Value + Additional.Value - Discount.Value;
+			Save.Text = "Charge    (P " + subtotal + ")";
+		}
+
+		private void Discount_KeyUp(object sender, KeyEventArgs e)
+		{
+			var subtotal = Total.Value + Additional.Value - Discount.Value;
+			Save.Text = "Charge    (P " + subtotal + ")";
 		}
 	}
 }
