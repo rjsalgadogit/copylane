@@ -42,17 +42,20 @@ namespace CopyLane.CustomForms.Popups
 			this.Additional = new System.Windows.Forms.TextBox();
 			this.Discount = new System.Windows.Forms.TextBox();
 			this.groupBox1 = new System.Windows.Forms.GroupBox();
+			this.panel1 = new System.Windows.Forms.Panel();
+			this.label6 = new System.Windows.Forms.Label();
 			this.groupBox1.SuspendLayout();
+			this.panel1.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// Description
 			// 
 			this.Description.AutoSize = true;
-			this.Description.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.Description.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.Description.ForeColor = System.Drawing.SystemColors.HotTrack;
-			this.Description.Location = new System.Drawing.Point(17, 21);
+			this.Description.Location = new System.Drawing.Point(17, 9);
 			this.Description.Name = "Description";
-			this.Description.Size = new System.Drawing.Size(101, 23);
+			this.Description.Size = new System.Drawing.Size(110, 26);
 			this.Description.TabIndex = 0;
 			this.Description.Text = "Description";
 			// 
@@ -77,6 +80,7 @@ namespace CopyLane.CustomForms.Popups
 			// label4
 			// 
 			this.label4.AutoSize = true;
+			this.label4.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.label4.Location = new System.Drawing.Point(34, 30);
 			this.label4.Name = "label4";
 			this.label4.Size = new System.Drawing.Size(72, 18);
@@ -122,6 +126,7 @@ namespace CopyLane.CustomForms.Popups
 			// label1
 			// 
 			this.label1.AutoSize = true;
+			this.label1.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.label1.Location = new System.Drawing.Point(34, 70);
 			this.label1.Name = "label1";
 			this.label1.Size = new System.Drawing.Size(62, 18);
@@ -170,12 +175,33 @@ namespace CopyLane.CustomForms.Popups
 			this.groupBox1.Controls.Add(this.Discount);
 			this.groupBox1.Controls.Add(this.label1);
 			this.groupBox1.Controls.Add(this.Additional);
+			this.groupBox1.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.groupBox1.Location = new System.Drawing.Point(12, 181);
 			this.groupBox1.Name = "groupBox1";
 			this.groupBox1.Size = new System.Drawing.Size(428, 111);
 			this.groupBox1.TabIndex = 16;
 			this.groupBox1.TabStop = false;
 			this.groupBox1.Text = "Options";
+			// 
+			// panel1
+			// 
+			this.panel1.Controls.Add(this.label6);
+			this.panel1.Controls.Add(this.Description);
+			this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+			this.panel1.Location = new System.Drawing.Point(0, 0);
+			this.panel1.Name = "panel1";
+			this.panel1.Size = new System.Drawing.Size(452, 46);
+			this.panel1.TabIndex = 17;
+			// 
+			// label6
+			// 
+			this.label6.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+			this.label6.Dock = System.Windows.Forms.DockStyle.Bottom;
+			this.label6.Location = new System.Drawing.Point(0, 43);
+			this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+			this.label6.Name = "label6";
+			this.label6.Size = new System.Drawing.Size(452, 3);
+			this.label6.TabIndex = 5;
 			// 
 			// ProductPreviewPopup
 			// 
@@ -184,6 +210,7 @@ namespace CopyLane.CustomForms.Popups
 			this.AutoSize = true;
 			this.BackColor = System.Drawing.Color.White;
 			this.ClientSize = new System.Drawing.Size(452, 344);
+			this.Controls.Add(this.panel1);
 			this.Controls.Add(this.groupBox1);
 			this.Controls.Add(this.Total);
 			this.Controls.Add(this.Qty);
@@ -192,7 +219,6 @@ namespace CopyLane.CustomForms.Popups
 			this.Controls.Add(this.label5);
 			this.Controls.Add(this.label3);
 			this.Controls.Add(this.label2);
-			this.Controls.Add(this.Description);
 			this.Font = new System.Drawing.Font("Calibri", 11.25F);
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
 			this.Margin = new System.Windows.Forms.Padding(4);
@@ -204,6 +230,8 @@ namespace CopyLane.CustomForms.Popups
 			this.Load += new System.EventHandler(this.ProductPreviewPopup_Load);
 			this.groupBox1.ResumeLayout(false);
 			this.groupBox1.PerformLayout();
+			this.panel1.ResumeLayout(false);
+			this.panel1.PerformLayout();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -224,5 +252,7 @@ namespace CopyLane.CustomForms.Popups
 		private System.Windows.Forms.TextBox Additional;
 		private System.Windows.Forms.TextBox Discount;
 		private System.Windows.Forms.GroupBox groupBox1;
+		private System.Windows.Forms.Panel panel1;
+		private System.Windows.Forms.Label label6;
 	}
 }
