@@ -40,10 +40,12 @@ namespace CopyLane.CustomControls.PartialViews
 					using (var popup = new PaymentPopup(PosPanel, change, payment, subtotal))
 					{
 						var result = popup.ShowDialog();
-
 						if (result == DialogResult.OK)
 						{
-
+							// clear transaction
+							Subtotal.Text = "0.00";
+							PosPanel.Payment.Clear();
+							PosPanel.panel3.Controls.Clear();
 						}
 					}
 				}
