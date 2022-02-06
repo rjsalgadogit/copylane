@@ -39,12 +39,16 @@ namespace CopyLane.CustomControls.Contents
 			this.F2 = new System.Windows.Forms.Button();
 			this.label1 = new System.Windows.Forms.Label();
 			this.F1 = new System.Windows.Forms.Button();
+			this.button1 = new System.Windows.Forms.Button();
+			this.panel3 = new System.Windows.Forms.Panel();
+			this.panel1.SuspendLayout();
 			this.panel2.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// panel1
 			// 
 			this.panel1.BackColor = System.Drawing.Color.White;
+			this.panel1.Controls.Add(this.panel3);
 			this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
 			this.panel1.Location = new System.Drawing.Point(631, 0);
 			this.panel1.Margin = new System.Windows.Forms.Padding(4);
@@ -54,6 +58,7 @@ namespace CopyLane.CustomControls.Contents
 			// 
 			// panel2
 			// 
+			this.panel2.Controls.Add(this.button1);
 			this.panel2.Controls.Add(this.label4);
 			this.panel2.Controls.Add(this.F4);
 			this.panel2.Controls.Add(this.label3);
@@ -161,6 +166,24 @@ namespace CopyLane.CustomControls.Contents
 			this.F1.UseVisualStyleBackColor = true;
 			this.F1.Click += new System.EventHandler(this.F1_Click);
 			// 
+			// button1
+			// 
+			this.button1.Location = new System.Drawing.Point(419, 618);
+			this.button1.Name = "button1";
+			this.button1.Size = new System.Drawing.Size(75, 34);
+			this.button1.TabIndex = 11;
+			this.button1.Text = "button1";
+			this.button1.UseVisualStyleBackColor = true;
+			this.button1.Click += new System.EventHandler(this.button1_Click);
+			// 
+			// panel3
+			// 
+			this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
+			this.panel3.Location = new System.Drawing.Point(0, 0);
+			this.panel3.Name = "panel3";
+			this.panel3.Size = new System.Drawing.Size(425, 524);
+			this.panel3.TabIndex = 0;
+			// 
 			// POSPanel
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
@@ -173,6 +196,7 @@ namespace CopyLane.CustomControls.Contents
 			this.Name = "POSPanel";
 			this.Size = new System.Drawing.Size(1056, 718);
 			this.Load += new System.EventHandler(this.POSPanel_Load);
+			this.panel1.ResumeLayout(false);
 			this.panel2.ResumeLayout(false);
 			this.panel2.PerformLayout();
 			this.ResumeLayout(false);
@@ -191,5 +215,7 @@ namespace CopyLane.CustomControls.Contents
 		public System.Windows.Forms.Button F4;
 		public System.Windows.Forms.Button F3;
 		public System.Windows.Forms.Button F2;
+		private System.Windows.Forms.Button button1;
+		private System.Windows.Forms.Panel panel3;
 	}
 }

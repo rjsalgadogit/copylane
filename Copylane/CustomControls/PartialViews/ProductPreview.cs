@@ -14,7 +14,7 @@ namespace CopyLane.CustomControls.PartialViews
 {
 	public partial class ProductPreview : UserControl
 	{
-		private ProductModel Product { get; set; }
+		public ProductModel Product { get; set; }
 
 		public ProductPreview(ProductModel product)
 		{

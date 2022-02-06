@@ -21,7 +21,7 @@ namespace CopyLane.CustomControls.Contents
 			this.Dock = DockStyle.Fill;
 		}
 
-		#region Control Events
+		#region Events
 
 		private void POSPanel_Load(object sender, EventArgs e)
 		{
@@ -38,7 +38,7 @@ namespace CopyLane.CustomControls.Contents
 			if (product != null)
 			{
 				product.Qty = 1;
-				panel1.Controls.Add(new ProductPreview(product));
+				panel3.Controls.Add(new ProductPreview(product));
 			}
 		}
 
@@ -50,7 +50,7 @@ namespace CopyLane.CustomControls.Contents
 			if (product != null)
 			{
 				product.Qty = 1;
-				panel1.Controls.Add(new ProductPreview(product));
+				panel3.Controls.Add(new ProductPreview(product));
 			}
 		}
 
@@ -62,7 +62,7 @@ namespace CopyLane.CustomControls.Contents
 			if (product != null)
 			{
 				product.Qty = 1;
-				panel1.Controls.Add(new ProductPreview(product));
+				panel3.Controls.Add(new ProductPreview(product));
 			}
 		}
 
@@ -74,37 +74,15 @@ namespace CopyLane.CustomControls.Contents
 			if (product != null)
 			{
 				product.Qty = 1;
-				panel1.Controls.Add(new ProductPreview(product));
+				panel3.Controls.Add(new ProductPreview(product));
 			}
 			else
 				MessageBox.Show(" No item available", "Notice", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 		}
 
-		public void KeyAction(Keys key)
-		{
-			switch (key)
-			{
-				case Keys.F1:
-					F1.PerformClick();
-					break;
-
-				case Keys.F2:
-					F2.PerformClick();
-					break;
-
-				case Keys.F3:
-					F3.PerformClick();
-					break;
-
-				case Keys.F4:
-					F4.PerformClick();
-					break;
-			}
-		}
-
 		#endregion
 
-		#region Private Methods
+		#region Methods
 
 		private void ArrangeButtonUI(ProductService productService)
 		{
@@ -133,6 +111,36 @@ namespace CopyLane.CustomControls.Contents
 			}
 		}
 
+		public void KeyAction(Keys key)
+		{
+			switch (key)
+			{
+				case Keys.F1:
+					F1.PerformClick();
+					break;
+
+				case Keys.F2:
+					F2.PerformClick();
+					break;
+
+				case Keys.F3:
+					F3.PerformClick();
+					break;
+
+				case Keys.F4:
+					F4.PerformClick();
+					break;
+			}
+		}
+
 		#endregion
+
+		private void button1_Click(object sender, EventArgs e)
+		{
+			foreach (var item in panel3.Controls.OfType<ProductPreview>().OrderBy(x => x.TabIndex))
+			{
+				var result = item.Product;
+			}
+		}
 	}
 }
