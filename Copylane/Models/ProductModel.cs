@@ -19,6 +19,10 @@ namespace CopyLane.Models
 
 		public int Qty { get; set; }
 
+		public decimal Additional { get; set; }
+
+		public decimal Discount { get; set; }
+
 		[DisplayName("Shortcut Key")]
 		public string ShortcutKey { get; set; }
 

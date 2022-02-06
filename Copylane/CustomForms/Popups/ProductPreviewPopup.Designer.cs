@@ -33,18 +33,16 @@ namespace CopyLane.CustomForms.Popups
 			this.label2 = new System.Windows.Forms.Label();
 			this.label3 = new System.Windows.Forms.Label();
 			this.label4 = new System.Windows.Forms.Label();
-			this.Qty = new System.Windows.Forms.NumericUpDown();
-			this.Total = new System.Windows.Forms.NumericUpDown();
-			this.Additional = new System.Windows.Forms.NumericUpDown();
 			this.label5 = new System.Windows.Forms.Label();
 			this.Price = new System.Windows.Forms.Label();
 			this.Save = new System.Windows.Forms.Button();
-			this.Discount = new System.Windows.Forms.NumericUpDown();
 			this.label1 = new System.Windows.Forms.Label();
-			((System.ComponentModel.ISupportInitialize)(this.Qty)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.Total)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.Additional)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.Discount)).BeginInit();
+			this.Qty = new System.Windows.Forms.TextBox();
+			this.Total = new System.Windows.Forms.TextBox();
+			this.Additional = new System.Windows.Forms.TextBox();
+			this.Discount = new System.Windows.Forms.TextBox();
+			this.groupBox1 = new System.Windows.Forms.GroupBox();
+			this.groupBox1.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// Description
@@ -61,7 +59,7 @@ namespace CopyLane.CustomForms.Popups
 			// label2
 			// 
 			this.label2.AutoSize = true;
-			this.label2.Location = new System.Drawing.Point(18, 101);
+			this.label2.Location = new System.Drawing.Point(24, 101);
 			this.label2.Name = "label2";
 			this.label2.Size = new System.Drawing.Size(33, 18);
 			this.label2.TabIndex = 1;
@@ -70,64 +68,25 @@ namespace CopyLane.CustomForms.Popups
 			// label3
 			// 
 			this.label3.AutoSize = true;
-			this.label3.Location = new System.Drawing.Point(17, 140);
+			this.label3.Location = new System.Drawing.Point(23, 140);
 			this.label3.Name = "label3";
-			this.label3.Size = new System.Drawing.Size(38, 18);
+			this.label3.Size = new System.Drawing.Size(72, 18);
 			this.label3.TabIndex = 2;
-			this.label3.Text = "Total";
+			this.label3.Text = "Total Price";
 			// 
 			// label4
 			// 
 			this.label4.AutoSize = true;
-			this.label4.Location = new System.Drawing.Point(17, 180);
+			this.label4.Location = new System.Drawing.Point(34, 30);
 			this.label4.Name = "label4";
 			this.label4.Size = new System.Drawing.Size(72, 18);
 			this.label4.TabIndex = 3;
 			this.label4.Text = "Additional";
 			// 
-			// Qty
-			// 
-			this.Qty.Location = new System.Drawing.Point(107, 99);
-			this.Qty.Maximum = new decimal(new int[] {
-            5000,
-            0,
-            0,
-            0});
-			this.Qty.Name = "Qty";
-			this.Qty.Size = new System.Drawing.Size(128, 26);
-			this.Qty.TabIndex = 4;
-			this.Qty.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Qty_KeyUp);
-			// 
-			// Total
-			// 
-			this.Total.Location = new System.Drawing.Point(107, 138);
-			this.Total.Maximum = new decimal(new int[] {
-            1000000000,
-            0,
-            0,
-            0});
-			this.Total.Name = "Total";
-			this.Total.Size = new System.Drawing.Size(128, 26);
-			this.Total.TabIndex = 5;
-			this.Total.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Total_KeyUp);
-			// 
-			// Additional
-			// 
-			this.Additional.Location = new System.Drawing.Point(107, 178);
-			this.Additional.Maximum = new decimal(new int[] {
-            1000000,
-            0,
-            0,
-            0});
-			this.Additional.Name = "Additional";
-			this.Additional.Size = new System.Drawing.Size(128, 26);
-			this.Additional.TabIndex = 6;
-			this.Additional.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Additional_KeyUp);
-			// 
 			// label5
 			// 
 			this.label5.AutoSize = true;
-			this.label5.Location = new System.Drawing.Point(18, 66);
+			this.label5.Location = new System.Drawing.Point(24, 66);
 			this.label5.Name = "label5";
 			this.label5.Size = new System.Drawing.Size(39, 18);
 			this.label5.TabIndex = 7;
@@ -136,10 +95,10 @@ namespace CopyLane.CustomForms.Popups
 			// Price
 			// 
 			this.Price.AutoSize = true;
-			this.Price.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.Price.Location = new System.Drawing.Point(104, 66);
+			this.Price.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.Price.Location = new System.Drawing.Point(110, 66);
 			this.Price.Name = "Price";
-			this.Price.Size = new System.Drawing.Size(39, 18);
+			this.Price.Size = new System.Drawing.Size(43, 19);
 			this.Price.TabIndex = 8;
 			this.Price.Text = "Price";
 			// 
@@ -152,35 +111,71 @@ namespace CopyLane.CustomForms.Popups
 			this.Save.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
 			this.Save.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.Save.ForeColor = System.Drawing.Color.White;
-			this.Save.Location = new System.Drawing.Point(0, 281);
+			this.Save.Location = new System.Drawing.Point(0, 300);
 			this.Save.Name = "Save";
-			this.Save.Size = new System.Drawing.Size(377, 44);
+			this.Save.Size = new System.Drawing.Size(452, 44);
 			this.Save.TabIndex = 9;
 			this.Save.Text = "Enter";
 			this.Save.UseVisualStyleBackColor = false;
 			this.Save.Click += new System.EventHandler(this.Save_Click);
 			// 
-			// Discount
-			// 
-			this.Discount.Location = new System.Drawing.Point(107, 218);
-			this.Discount.Maximum = new decimal(new int[] {
-            1000000,
-            0,
-            0,
-            0});
-			this.Discount.Name = "Discount";
-			this.Discount.Size = new System.Drawing.Size(128, 26);
-			this.Discount.TabIndex = 11;
-			this.Discount.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Discount_KeyUp);
-			// 
 			// label1
 			// 
 			this.label1.AutoSize = true;
-			this.label1.Location = new System.Drawing.Point(17, 220);
+			this.label1.Location = new System.Drawing.Point(34, 70);
 			this.label1.Name = "label1";
 			this.label1.Size = new System.Drawing.Size(62, 18);
 			this.label1.TabIndex = 10;
 			this.label1.Text = "Discount";
+			// 
+			// Qty
+			// 
+			this.Qty.Location = new System.Drawing.Point(113, 98);
+			this.Qty.Name = "Qty";
+			this.Qty.Size = new System.Drawing.Size(128, 26);
+			this.Qty.TabIndex = 12;
+			this.Qty.TextChanged += new System.EventHandler(this.Qty_TextChanged);
+			this.Qty.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Qty_KeyPress);
+			// 
+			// Total
+			// 
+			this.Total.Location = new System.Drawing.Point(113, 137);
+			this.Total.Name = "Total";
+			this.Total.Size = new System.Drawing.Size(128, 26);
+			this.Total.TabIndex = 13;
+			this.Total.TextChanged += new System.EventHandler(this.Total_TextChanged);
+			this.Total.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Total_KeyPress);
+			// 
+			// Additional
+			// 
+			this.Additional.Location = new System.Drawing.Point(124, 27);
+			this.Additional.Name = "Additional";
+			this.Additional.Size = new System.Drawing.Size(128, 26);
+			this.Additional.TabIndex = 14;
+			this.Additional.TextChanged += new System.EventHandler(this.Additional_TextChanged);
+			this.Additional.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Additional_KeyPress);
+			// 
+			// Discount
+			// 
+			this.Discount.Location = new System.Drawing.Point(124, 67);
+			this.Discount.Name = "Discount";
+			this.Discount.Size = new System.Drawing.Size(128, 26);
+			this.Discount.TabIndex = 15;
+			this.Discount.TextChanged += new System.EventHandler(this.Discount_TextChanged);
+			this.Discount.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Discount_KeyPress);
+			// 
+			// groupBox1
+			// 
+			this.groupBox1.Controls.Add(this.label4);
+			this.groupBox1.Controls.Add(this.Discount);
+			this.groupBox1.Controls.Add(this.label1);
+			this.groupBox1.Controls.Add(this.Additional);
+			this.groupBox1.Location = new System.Drawing.Point(12, 181);
+			this.groupBox1.Name = "groupBox1";
+			this.groupBox1.Size = new System.Drawing.Size(428, 111);
+			this.groupBox1.TabIndex = 16;
+			this.groupBox1.TabStop = false;
+			this.groupBox1.Text = "Options";
 			// 
 			// ProductPreviewPopup
 			// 
@@ -188,16 +183,13 @@ namespace CopyLane.CustomForms.Popups
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.AutoSize = true;
 			this.BackColor = System.Drawing.Color.White;
-			this.ClientSize = new System.Drawing.Size(377, 325);
-			this.Controls.Add(this.Discount);
-			this.Controls.Add(this.label1);
+			this.ClientSize = new System.Drawing.Size(452, 344);
+			this.Controls.Add(this.groupBox1);
+			this.Controls.Add(this.Total);
+			this.Controls.Add(this.Qty);
 			this.Controls.Add(this.Save);
 			this.Controls.Add(this.Price);
 			this.Controls.Add(this.label5);
-			this.Controls.Add(this.Additional);
-			this.Controls.Add(this.Total);
-			this.Controls.Add(this.Qty);
-			this.Controls.Add(this.label4);
 			this.Controls.Add(this.label3);
 			this.Controls.Add(this.label2);
 			this.Controls.Add(this.Description);
@@ -210,10 +202,8 @@ namespace CopyLane.CustomForms.Popups
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
 			this.Text = "Product Details";
 			this.Load += new System.EventHandler(this.ProductPreviewPopup_Load);
-			((System.ComponentModel.ISupportInitialize)(this.Qty)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.Total)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.Additional)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.Discount)).EndInit();
+			this.groupBox1.ResumeLayout(false);
+			this.groupBox1.PerformLayout();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -225,13 +215,14 @@ namespace CopyLane.CustomForms.Popups
 		private System.Windows.Forms.Label label2;
 		private System.Windows.Forms.Label label3;
 		private System.Windows.Forms.Label label4;
-		private System.Windows.Forms.NumericUpDown Qty;
-		private System.Windows.Forms.NumericUpDown Total;
-		private System.Windows.Forms.NumericUpDown Additional;
 		private System.Windows.Forms.Label label5;
 		private System.Windows.Forms.Label Price;
 		private System.Windows.Forms.Button Save;
-		private System.Windows.Forms.NumericUpDown Discount;
 		private System.Windows.Forms.Label label1;
+		private System.Windows.Forms.TextBox Qty;
+		private System.Windows.Forms.TextBox Total;
+		private System.Windows.Forms.TextBox Additional;
+		private System.Windows.Forms.TextBox Discount;
+		private System.Windows.Forms.GroupBox groupBox1;
 	}
 }

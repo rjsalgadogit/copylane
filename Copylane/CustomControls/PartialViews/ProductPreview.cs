@@ -49,7 +49,10 @@ namespace CopyLane.CustomControls.PartialViews
 		{
 			this.label1.Text = product.Description;
 			this.label2.Text = $"x {product.Qty}";
-			this.label3.Text = product.Total.ToString("#,##0.00");
+			this.label3.Text = (product.Total + product.Additional - product.Discount).ToString("#,##0.00");
+
+			Product.Qty = product.Qty;
+			Product.Total = product.Total;
 		}
 	}
 }

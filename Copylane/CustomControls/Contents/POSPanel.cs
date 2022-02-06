@@ -99,9 +99,7 @@ namespace CopyLane.CustomControls.Contents
 		private void Payment_KeyPress(object sender, KeyPressEventArgs e)
 		{
 			// only allow numbers
-			if (!char.IsControl(e.KeyChar) &&
-				!char.IsDigit(e.KeyChar) &&
-				(e.KeyChar != '.'))
+			if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
 			{
 				e.Handled = true;
 			}
@@ -176,12 +174,7 @@ namespace CopyLane.CustomControls.Contents
 
 		public void ComputeSubtotal()
 		{
-			decimal subtotal = 0;
-
-			foreach (var item in panel3.Controls.OfType<ProductPreview>().OrderBy(x => x.TabIndex))
-			{
-				subtotal = subtotal + item.Product.Total;
-			}
+			var subtotal = panel3.Controls.OfType<ProductPreview>().OrderBy(x => x.TabIndex).Sum(x => x.Product.Total);
 
 			SubtotalView.Subtotal.Text = subtotal.ToString("#,##0.00");
 		}

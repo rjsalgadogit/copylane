@@ -74,6 +74,7 @@ namespace CopyLane.CustomControls.Contents
 			// 
 			// Payment
 			// 
+			this.Payment.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
 			this.Payment.Font = new System.Drawing.Font("Calibri", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.Payment.Location = new System.Drawing.Point(189, 15);
 			this.Payment.Name = "Payment";
