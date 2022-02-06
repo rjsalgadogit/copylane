@@ -18,7 +18,6 @@ namespace CopyLane.CustomControls.Contents
 		public POSPanel()
 		{
 			InitializeComponent();
-
 			this.Dock = DockStyle.Fill;
 		}
 
@@ -76,6 +75,30 @@ namespace CopyLane.CustomControls.Contents
 			{
 				product.Qty = 1;
 				panel1.Controls.Add(new ProductPreview(product));
+			}
+			else
+				MessageBox.Show(" No item available", "Notice", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+		}
+
+		public void KeyAction(Keys key)
+		{
+			switch (key)
+			{
+				case Keys.F1:
+					F1.PerformClick();
+					break;
+
+				case Keys.F2:
+					F2.PerformClick();
+					break;
+
+				case Keys.F3:
+					F3.PerformClick();
+					break;
+
+				case Keys.F4:
+					F4.PerformClick();
+					break;
 			}
 		}
 

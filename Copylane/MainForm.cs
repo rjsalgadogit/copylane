@@ -15,6 +15,7 @@ namespace CopyLane
 	{
 		private bool mouseDown;
 		private Point lastLocation;
+		private POSPanel posPanel;
 
 		public MainForm()
 		{
@@ -23,8 +24,7 @@ namespace CopyLane
 
 		private void MainForm_Load(object sender, EventArgs e)
 		{
-			panel3.Controls.Clear();
-			panel3.Controls.Add(new POSPanel());
+			POSButton.PerformClick();
 		}
 
 		private void panel1_MouseDown(object sender, MouseEventArgs e)
@@ -51,14 +51,40 @@ namespace CopyLane
 
 		private void POSButton_Click(object sender, EventArgs e)
 		{
+			posPanel = new POSPanel();
+
 			panel3.Controls.Clear();
-			panel3.Controls.Add(new POSPanel());
+			panel3.Controls.Add(posPanel);
 		}
 
 		private void ProductsButton_Click(object sender, EventArgs e)
 		{
 			panel3.Controls.Clear();
 			panel3.Controls.Add(new ProductPanel());
+		}
+
+		private void MainForm_KeyDown(object sender, KeyEventArgs e)
+		{
+			//NOTE: set KeyPreview = True
+
+			switch (e.KeyCode)
+			{
+				case Keys.F1:
+					posPanel.KeyAction(Keys.F1);
+					break;
+
+				case Keys.F2:
+					posPanel.KeyAction(Keys.F2);
+					break;
+
+				case Keys.F3:
+					posPanel.KeyAction(Keys.F3);
+					break;
+
+				case Keys.F4:
+					posPanel.KeyAction(Keys.F4);
+					break;
+			}
 		}
 	}
 }
