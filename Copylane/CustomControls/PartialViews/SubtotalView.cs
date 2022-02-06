@@ -1,4 +1,5 @@
 ﻿using CopyLane.CustomControls.Contents;
+using CopyLane.CustomForms.Popups;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,16 +14,31 @@ namespace CopyLane.CustomControls.PartialViews
 {
 	public partial class SubtotalView : UserControl
 	{
-		private POSPanel PosPanel;
-
-		public SubtotalView(POSPanel posPanel)
+		public SubtotalView()
 		{
 			InitializeComponent();
 
 			this.Dock = DockStyle.Bottom;
-			this.PosPanel = posPanel;
 
 			SetAllControlsOnSameClickEvent();
+		}
+
+		private void Subtotal_Click(object sender, EventArgs e)
+		{
+			using (var popup = new PaymentPopup())
+			{
+				var result = popup.ShowDialog();
+
+				if (result == DialogResult.OK)
+				{
+
+				}
+			}
+		}
+
+		public void SubtotalPerformClick()
+		{
+			this.Subtotal_Click(this, new EventArgs());
 		}
 
 		private void SetAllControlsOnSameClickEvent()
@@ -40,11 +56,6 @@ namespace CopyLane.CustomControls.PartialViews
 
 				control.Click += new EventHandler(Subtotal_Click);
 			}
-		}
-
-		private void Subtotal_Click(object sender, EventArgs e)
-		{
-			PosPanel.ProcessPayment();
 		}
 	}
 }

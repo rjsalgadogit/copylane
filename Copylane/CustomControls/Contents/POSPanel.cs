@@ -15,7 +15,7 @@ namespace CopyLane.CustomControls.Contents
 {
 	public partial class POSPanel : UserControl
 	{
-		private SubtotalView SubtotalView { get; set; }
+		public SubtotalView SubtotalView { get; set; }
 
 		public POSPanel()
 		{
@@ -28,7 +28,7 @@ namespace CopyLane.CustomControls.Contents
 		private void POSPanel_Load(object sender, EventArgs e)
 		{
 			var productService = new ProductService();
-			var subtotalView = new SubtotalView(this);
+			var subtotalView = new SubtotalView();
 
 			ArrangeButtonUI(productService);
 

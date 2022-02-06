@@ -75,10 +75,10 @@ namespace CopyLane.CustomControls.Contents
 			// Payment
 			// 
 			this.Payment.Font = new System.Drawing.Font("Calibri", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.Payment.Location = new System.Drawing.Point(179, 15);
+			this.Payment.Location = new System.Drawing.Point(189, 15);
 			this.Payment.Name = "Payment";
 			this.Payment.RightToLeft = System.Windows.Forms.RightToLeft.No;
-			this.Payment.Size = new System.Drawing.Size(226, 40);
+			this.Payment.Size = new System.Drawing.Size(211, 40);
 			this.Payment.TabIndex = 12;
 			this.Payment.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
 			this.Payment.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Payment_KeyPress);
@@ -88,7 +88,7 @@ namespace CopyLane.CustomControls.Contents
 			// 
 			this.label7.AutoSize = true;
 			this.label7.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label7.Location = new System.Drawing.Point(13, 21);
+			this.label7.Location = new System.Drawing.Point(19, 21);
 			this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
 			this.label7.Name = "label7";
 			this.label7.Size = new System.Drawing.Size(127, 23);

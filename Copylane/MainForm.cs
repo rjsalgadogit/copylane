@@ -1,4 +1,5 @@
 ﻿using CopyLane.CustomControls.Contents;
+using CopyLane.CustomControls.PartialViews;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -83,6 +84,10 @@ namespace CopyLane
 
 				case Keys.F4:
 					posPanel.KeyAction(Keys.F4);
+					break;
+
+				case Keys.Enter:
+					posPanel.SubtotalView.SubtotalPerformClick();
 					break;
 			}
 		}
