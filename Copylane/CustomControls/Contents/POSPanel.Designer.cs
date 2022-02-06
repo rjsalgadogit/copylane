@@ -30,6 +30,9 @@ namespace CopyLane.CustomControls.Contents
 		private void InitializeComponent()
 		{
 			this.panel1 = new System.Windows.Forms.Panel();
+			this.panel6 = new System.Windows.Forms.Panel();
+			this.Payment = new System.Windows.Forms.TextBox();
+			this.label7 = new System.Windows.Forms.Label();
 			this.panel4 = new System.Windows.Forms.Panel();
 			this.panel5 = new System.Windows.Forms.Panel();
 			this.label5 = new System.Windows.Forms.Label();
@@ -46,6 +49,7 @@ namespace CopyLane.CustomControls.Contents
 			this.label1 = new System.Windows.Forms.Label();
 			this.F1 = new System.Windows.Forms.Button();
 			this.panel1.SuspendLayout();
+			this.panel6.SuspendLayout();
 			this.panel4.SuspendLayout();
 			this.panel5.SuspendLayout();
 			this.panel2.SuspendLayout();
@@ -54,6 +58,7 @@ namespace CopyLane.CustomControls.Contents
 			// panel1
 			// 
 			this.panel1.BackColor = System.Drawing.Color.White;
+			this.panel1.Controls.Add(this.panel6);
 			this.panel1.Controls.Add(this.panel4);
 			this.panel1.Controls.Add(this.panel3);
 			this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
@@ -63,6 +68,41 @@ namespace CopyLane.CustomControls.Contents
 			this.panel1.Size = new System.Drawing.Size(425, 718);
 			this.panel1.TabIndex = 0;
 			// 
+			// panel6
+			// 
+			this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+			this.panel6.Controls.Add(this.Payment);
+			this.panel6.Controls.Add(this.label7);
+			this.panel6.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.panel6.ForeColor = System.Drawing.Color.White;
+			this.panel6.Location = new System.Drawing.Point(0, 565);
+			this.panel6.Name = "panel6";
+			this.panel6.Size = new System.Drawing.Size(425, 69);
+			this.panel6.TabIndex = 2;
+			// 
+			// Payment
+			// 
+			this.Payment.Font = new System.Drawing.Font("Calibri", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.Payment.Location = new System.Drawing.Point(179, 15);
+			this.Payment.Name = "Payment";
+			this.Payment.RightToLeft = System.Windows.Forms.RightToLeft.No;
+			this.Payment.Size = new System.Drawing.Size(226, 40);
+			this.Payment.TabIndex = 12;
+			this.Payment.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+			this.Payment.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Payment_KeyPress);
+			this.Payment.Leave += new System.EventHandler(this.Payment_Leave);
+			// 
+			// label7
+			// 
+			this.label7.AutoSize = true;
+			this.label7.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label7.Location = new System.Drawing.Point(13, 21);
+			this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+			this.label7.Name = "label7";
+			this.label7.Size = new System.Drawing.Size(127, 23);
+			this.label7.TabIndex = 11;
+			this.label7.Text = "Enter Payment";
+			// 
 			// panel4
 			// 
 			this.panel4.BackColor = System.Drawing.Color.ForestGreen;
@@ -71,19 +111,19 @@ namespace CopyLane.CustomControls.Contents
 			this.panel4.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.panel4.Dock = System.Windows.Forms.DockStyle.Bottom;
 			this.panel4.ForeColor = System.Drawing.Color.White;
-			this.panel4.Location = new System.Drawing.Point(0, 631);
+			this.panel4.Location = new System.Drawing.Point(0, 634);
 			this.panel4.Name = "panel4";
-			this.panel4.Size = new System.Drawing.Size(425, 87);
+			this.panel4.Size = new System.Drawing.Size(425, 84);
 			this.panel4.TabIndex = 1;
 			// 
 			// panel5
 			// 
 			this.panel5.Controls.Add(this.label5);
 			this.panel5.Controls.Add(this.Subtotal);
-			this.panel5.Location = new System.Drawing.Point(215, 16);
+			this.panel5.Location = new System.Drawing.Point(144, 17);
 			this.panel5.Name = "panel5";
 			this.panel5.RightToLeft = System.Windows.Forms.RightToLeft.No;
-			this.panel5.Size = new System.Drawing.Size(201, 54);
+			this.panel5.Size = new System.Drawing.Size(272, 54);
 			this.panel5.TabIndex = 11;
 			// 
 			// label5
@@ -93,7 +133,7 @@ namespace CopyLane.CustomControls.Contents
 			this.label5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
 			this.label5.Font = new System.Drawing.Font("Calibri", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.label5.ForeColor = System.Drawing.Color.White;
-			this.label5.Location = new System.Drawing.Point(7, 0);
+			this.label5.Location = new System.Drawing.Point(145, 0);
 			this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
 			this.label5.Name = "label5";
 			this.label5.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -108,31 +148,32 @@ namespace CopyLane.CustomControls.Contents
 			this.Subtotal.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
 			this.Subtotal.Font = new System.Drawing.Font("Calibri", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.Subtotal.ForeColor = System.Drawing.Color.White;
-			this.Subtotal.Location = new System.Drawing.Point(47, 0);
+			this.Subtotal.Location = new System.Drawing.Point(185, 0);
 			this.Subtotal.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
 			this.Subtotal.Name = "Subtotal";
 			this.Subtotal.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-			this.Subtotal.Size = new System.Drawing.Size(154, 45);
+			this.Subtotal.Size = new System.Drawing.Size(87, 45);
 			this.Subtotal.TabIndex = 7;
-			this.Subtotal.Text = "2,500.00";
+			this.Subtotal.Text = "0.00";
 			// 
 			// label6
 			// 
 			this.label6.AutoSize = true;
-			this.label6.Font = new System.Drawing.Font("Calibri", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label6.Location = new System.Drawing.Point(9, 24);
+			this.label6.Font = new System.Drawing.Font("Calibri", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label6.Location = new System.Drawing.Point(12, 24);
 			this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
 			this.label6.Name = "label6";
-			this.label6.Size = new System.Drawing.Size(125, 33);
+			this.label6.Size = new System.Drawing.Size(134, 36);
 			this.label6.TabIndex = 10;
 			this.label6.Text = "SUBTOTAL";
 			// 
 			// panel3
 			// 
+			this.panel3.AutoScroll = true;
 			this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
 			this.panel3.Location = new System.Drawing.Point(0, 0);
 			this.panel3.Name = "panel3";
-			this.panel3.Size = new System.Drawing.Size(425, 396);
+			this.panel3.Size = new System.Drawing.Size(425, 565);
 			this.panel3.TabIndex = 0;
 			// 
 			// panel2
@@ -257,6 +298,8 @@ namespace CopyLane.CustomControls.Contents
 			this.Size = new System.Drawing.Size(1056, 718);
 			this.Load += new System.EventHandler(this.POSPanel_Load);
 			this.panel1.ResumeLayout(false);
+			this.panel6.ResumeLayout(false);
+			this.panel6.PerformLayout();
 			this.panel4.ResumeLayout(false);
 			this.panel4.PerformLayout();
 			this.panel5.ResumeLayout(false);
@@ -285,5 +328,8 @@ namespace CopyLane.CustomControls.Contents
 		private System.Windows.Forms.Label label5;
 		private System.Windows.Forms.Label Subtotal;
 		private System.Windows.Forms.Label label6;
+		private System.Windows.Forms.Panel panel6;
+		private System.Windows.Forms.TextBox Payment;
+		private System.Windows.Forms.Label label7;
 	}
 }

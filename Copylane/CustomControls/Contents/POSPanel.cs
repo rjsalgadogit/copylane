@@ -156,5 +156,30 @@ namespace CopyLane.CustomControls.Contents
 		}
 
 		#endregion
+
+		private void Payment_KeyPress(object sender, KeyPressEventArgs e)
+		{
+			// only allow numbers
+			if (!char.IsControl(e.KeyChar) && 
+				!char.IsDigit(e.KeyChar) &&
+				(e.KeyChar != '.'))
+			{
+				e.Handled = true;
+			}
+
+			// only allow one decimal point
+			if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+			{
+				e.Handled = true;
+			}
+		}
+
+		private void Payment_Leave(object sender, EventArgs e)
+		{
+			if (!string.IsNullOrEmpty(Payment.Text))
+			{
+				Payment.Text = Convert.ToDecimal(Payment.Text).ToString("#,###.00");
+			}
+		}
 	}
 }

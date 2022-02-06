@@ -49,19 +49,19 @@ namespace CopyLane.CustomForms.Popups
 			var subtotal = total + Additional.Value - Discount.Value;
 
 			Total.Value = total;
-			Save.Text = $"Charge    (₱  " + subtotal.ToString("#,##0.00") + ")";
+			Save.Text = $"Charge    (P  " + subtotal.ToString("#,##0.00") + ")";
 		}
 
 		private void Additional_KeyUp(object sender, KeyEventArgs e)
 		{
 			var subtotal = Total.Value + Additional.Value - Discount.Value;
-			Save.Text = $"Charge    (₱  " + subtotal.ToString("#,##0.00") + ")";
+			Save.Text = $"Charge    (P  " + subtotal.ToString("#,##0.00") + ")";
 		}
 
 		private void Discount_KeyUp(object sender, KeyEventArgs e)
 		{
 			var subtotal = Total.Value + Additional.Value - Discount.Value;
-			Save.Text = $"Charge    (₱  " + subtotal.ToString("#,##0.00") + ")";
+			Save.Text = $"Charge    (P  " + subtotal.ToString("#,##0.00") + ")";
 		}
 	}
 }

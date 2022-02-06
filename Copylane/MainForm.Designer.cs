@@ -68,7 +68,7 @@ namespace CopyLane
 			this.ProductsButton.Dock = System.Windows.Forms.DockStyle.Top;
 			this.ProductsButton.FlatAppearance.BorderSize = 0;
 			this.ProductsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.ProductsButton.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.ProductsButton.Font = new System.Drawing.Font("Calibri", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.ProductsButton.ForeColor = System.Drawing.Color.White;
 			this.ProductsButton.Location = new System.Drawing.Point(0, 212);
 			this.ProductsButton.Name = "ProductsButton";
@@ -84,7 +84,7 @@ namespace CopyLane
 			this.POSButton.Dock = System.Windows.Forms.DockStyle.Top;
 			this.POSButton.FlatAppearance.BorderSize = 0;
 			this.POSButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.POSButton.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.POSButton.Font = new System.Drawing.Font("Calibri", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.POSButton.ForeColor = System.Drawing.Color.White;
 			this.POSButton.Location = new System.Drawing.Point(0, 168);
 			this.POSButton.Name = "POSButton";

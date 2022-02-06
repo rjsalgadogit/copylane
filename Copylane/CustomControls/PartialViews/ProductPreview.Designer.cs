@@ -89,7 +89,7 @@ namespace CopyLane.CustomControls.PartialViews
 			// panel1
 			// 
 			this.panel1.Controls.Add(this.label3);
-			this.panel1.Location = new System.Drawing.Point(246, 45);
+			this.panel1.Location = new System.Drawing.Point(241, 45);
 			this.panel1.Name = "panel1";
 			this.panel1.RightToLeft = System.Windows.Forms.RightToLeft.No;
 			this.panel1.Size = new System.Drawing.Size(136, 27);
@@ -99,7 +99,7 @@ namespace CopyLane.CustomControls.PartialViews
 			// 
 			this.label5.AutoSize = true;
 			this.label5.ForeColor = System.Drawing.SystemColors.ActiveBorder;
-			this.label5.Location = new System.Drawing.Point(380, 48);
+			this.label5.Location = new System.Drawing.Point(375, 48);
 			this.label5.Name = "label5";
 			this.label5.Size = new System.Drawing.Size(33, 18);
 			this.label5.TabIndex = 9;

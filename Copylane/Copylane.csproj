@@ -67,12 +67,6 @@
     <Compile Include="CustomControls\PartialViews\ProductPreview.Designer.cs">
       <DependentUpon>ProductPreview.cs</DependentUpon>
     </Compile>
-    <Compile Include="CustomControls\PartialViews\SubtotalView.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="CustomControls\PartialViews\SubtotalView.Designer.cs">
-      <DependentUpon>SubtotalView.cs</DependentUpon>
-    </Compile>
     <Compile Include="CustomForms\Popups\ProductPreviewPopup.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -97,9 +91,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CustomControls\PartialViews\ProductPreview.resx">
       <DependentUpon>ProductPreview.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="CustomControls\PartialViews\SubtotalView.resx">
-      <DependentUpon>SubtotalView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CustomForms\Popups\ProductPreviewPopup.resx">
       <DependentUpon>ProductPreviewPopup.cs</DependentUpon>
