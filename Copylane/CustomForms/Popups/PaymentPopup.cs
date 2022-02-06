@@ -15,9 +15,11 @@ namespace CopyLane.CustomForms.Popups
 		private bool mouseDown;
 		private Point lastLocation;
 
-		public PaymentPopup()
+		public PaymentPopup(decimal change)
 		{
 			InitializeComponent();
+
+			this.SubtotalProcess.Text = change.ToString("#,##0.00");
 		}
 
 		private void PaymentPopup_Load(object sender, EventArgs e)

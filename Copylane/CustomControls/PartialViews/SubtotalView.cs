@@ -14,26 +14,39 @@ namespace CopyLane.CustomControls.PartialViews
 {
 	public partial class SubtotalView : UserControl
 	{
-		public SubtotalView()
+		private POSPanel PosPanel;
+
+		public SubtotalView(POSPanel posPanel)
 		{
 			InitializeComponent();
 
 			this.Dock = DockStyle.Bottom;
+			this.PosPanel = posPanel;
 
 			SetAllControlsOnSameClickEvent();
 		}
 
 		private void Subtotal_Click(object sender, EventArgs e)
 		{
-			using (var popup = new PaymentPopup())
+			if (Convert.ToDecimal(PosPanel.Payment.Text) > Convert.ToDecimal(Subtotal.Text))
 			{
-				var result = popup.ShowDialog();
+				var change = (Convert.ToDecimal(Subtotal.Text) - Convert.ToDecimal(PosPanel.Payment.Text)) * -1;
 
-				if (result == DialogResult.OK)
+				using (var popup = new PaymentPopup(change))
 				{
+					var result = popup.ShowDialog();
 
+					if (result == DialogResult.OK)
+					{
+
+					}
 				}
 			}
+			else
+				MessageBox.Show("Payment is not enough"
+					, "Error"
+					, MessageBoxButtons.OK
+					, MessageBoxIcon.Error);
 		}
 
 		public void SubtotalPerformClick()

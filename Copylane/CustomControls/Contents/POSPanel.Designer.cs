@@ -248,7 +248,7 @@ namespace CopyLane.CustomControls.Contents
 		public System.Windows.Forms.Button F2;
 		private System.Windows.Forms.Panel panel3;
 		private System.Windows.Forms.Panel panel6;
-		private System.Windows.Forms.TextBox Payment;
 		private System.Windows.Forms.Label label7;
+		public System.Windows.Forms.TextBox Payment;
 	}
 }

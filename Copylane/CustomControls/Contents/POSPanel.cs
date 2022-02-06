@@ -28,7 +28,7 @@ namespace CopyLane.CustomControls.Contents
 		private void POSPanel_Load(object sender, EventArgs e)
 		{
 			var productService = new ProductService();
-			var subtotalView = new SubtotalView();
+			var subtotalView = new SubtotalView(this);
 
 			ArrangeButtonUI(productService);
 

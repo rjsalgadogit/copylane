@@ -35,7 +35,7 @@ namespace CopyLane.CustomForms.Popups
 			this.Process = new System.Windows.Forms.Button();
 			this.panel5 = new System.Windows.Forms.Panel();
 			this.label5 = new System.Windows.Forms.Label();
-			this.Subtotal = new System.Windows.Forms.Label();
+			this.SubtotalProcess = new System.Windows.Forms.Label();
 			this.label6 = new System.Windows.Forms.Label();
 			this.panel2.SuspendLayout();
 			this.panel5.SuspendLayout();
@@ -100,7 +100,7 @@ namespace CopyLane.CustomForms.Popups
 			// panel5
 			// 
 			this.panel5.Controls.Add(this.label5);
-			this.panel5.Controls.Add(this.Subtotal);
+			this.panel5.Controls.Add(this.SubtotalProcess);
 			this.panel5.Location = new System.Drawing.Point(152, 44);
 			this.panel5.Name = "panel5";
 			this.panel5.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -122,20 +122,20 @@ namespace CopyLane.CustomForms.Popups
 			this.label5.TabIndex = 8;
 			this.label5.Text = "P";
 			// 
-			// Subtotal
+			// SubtotalProcess
 			// 
-			this.Subtotal.AutoSize = true;
-			this.Subtotal.Dock = System.Windows.Forms.DockStyle.Right;
-			this.Subtotal.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.Subtotal.Font = new System.Drawing.Font("Calibri", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.Subtotal.ForeColor = System.Drawing.Color.White;
-			this.Subtotal.Location = new System.Drawing.Point(185, 0);
-			this.Subtotal.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-			this.Subtotal.Name = "Subtotal";
-			this.Subtotal.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-			this.Subtotal.Size = new System.Drawing.Size(87, 45);
-			this.Subtotal.TabIndex = 7;
-			this.Subtotal.Text = "0.00";
+			this.SubtotalProcess.AutoSize = true;
+			this.SubtotalProcess.Dock = System.Windows.Forms.DockStyle.Right;
+			this.SubtotalProcess.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.SubtotalProcess.Font = new System.Drawing.Font("Calibri", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.SubtotalProcess.ForeColor = System.Drawing.Color.White;
+			this.SubtotalProcess.Location = new System.Drawing.Point(185, 0);
+			this.SubtotalProcess.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+			this.SubtotalProcess.Name = "SubtotalProcess";
+			this.SubtotalProcess.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+			this.SubtotalProcess.Size = new System.Drawing.Size(87, 45);
+			this.SubtotalProcess.TabIndex = 7;
+			this.SubtotalProcess.Text = "0.00";
 			// 
 			// label6
 			// 
@@ -181,7 +181,7 @@ namespace CopyLane.CustomForms.Popups
 		private System.Windows.Forms.Button Cancel;
 		private System.Windows.Forms.Panel panel5;
 		private System.Windows.Forms.Label label5;
-		public System.Windows.Forms.Label Subtotal;
+		public System.Windows.Forms.Label SubtotalProcess;
 		private System.Windows.Forms.Label label6;
 		public System.Windows.Forms.Button Process;
 	}
