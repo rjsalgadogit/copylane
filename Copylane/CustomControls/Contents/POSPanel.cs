@@ -15,6 +15,8 @@ namespace CopyLane.CustomControls.Contents
 {
 	public partial class POSPanel : UserControl
 	{
+		private SubtotalView SubtotalView { get; set; }
+
 		public POSPanel()
 		{
 			InitializeComponent();
@@ -26,8 +28,12 @@ namespace CopyLane.CustomControls.Contents
 		private void POSPanel_Load(object sender, EventArgs e)
 		{
 			var productService = new ProductService();
+			var subtotalView = new SubtotalView(this);
 
 			ArrangeButtonUI(productService);
+
+			SubtotalView = subtotalView;
+			this.panel1.Controls.Add(subtotalView);
 		}
 
 		private void F1_Click(object sender, EventArgs e)
@@ -88,6 +94,31 @@ namespace CopyLane.CustomControls.Contents
 			}
 			else
 				MessageBox.Show(" No item available", "Notice", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+		}
+
+		private void Payment_KeyPress(object sender, KeyPressEventArgs e)
+		{
+			// only allow numbers
+			if (!char.IsControl(e.KeyChar) &&
+				!char.IsDigit(e.KeyChar) &&
+				(e.KeyChar != '.'))
+			{
+				e.Handled = true;
+			}
+
+			// only allow one decimal point
+			if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+			{
+				e.Handled = true;
+			}
+		}
+
+		private void Payment_Leave(object sender, EventArgs e)
+		{
+			if (!string.IsNullOrEmpty(Payment.Text))
+			{
+				Payment.Text = Convert.ToDecimal(Payment.Text).ToString("#,###.00");
+			}
 		}
 
 		#endregion
@@ -152,34 +183,14 @@ namespace CopyLane.CustomControls.Contents
 				subtotal = subtotal + item.Product.Total;
 			}
 
-			Subtotal.Text = subtotal.ToString("#,##0.00");
+			SubtotalView.Subtotal.Text = subtotal.ToString("#,##0.00");
+		}
+
+		public void ProcessPayment()
+		{
+			MessageBox.Show("ProcessPayment");
 		}
 
 		#endregion
-
-		private void Payment_KeyPress(object sender, KeyPressEventArgs e)
-		{
-			// only allow numbers
-			if (!char.IsControl(e.KeyChar) && 
-				!char.IsDigit(e.KeyChar) &&
-				(e.KeyChar != '.'))
-			{
-				e.Handled = true;
-			}
-
-			// only allow one decimal point
-			if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
-			{
-				e.Handled = true;
-			}
-		}
-
-		private void Payment_Leave(object sender, EventArgs e)
-		{
-			if (!string.IsNullOrEmpty(Payment.Text))
-			{
-				Payment.Text = Convert.ToDecimal(Payment.Text).ToString("#,###.00");
-			}
-		}
 	}
 }

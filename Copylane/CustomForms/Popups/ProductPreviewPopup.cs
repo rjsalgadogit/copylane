@@ -63,5 +63,11 @@ namespace CopyLane.CustomForms.Popups
 			var subtotal = Total.Value + Additional.Value - Discount.Value;
 			Save.Text = $"Charge    (P  " + subtotal.ToString("#,##0.00") + ")";
 		}
+
+		private void Total_KeyUp(object sender, KeyEventArgs e)
+		{
+			var subtotal = Total.Value + Additional.Value - Discount.Value;
+			Save.Text = $"Charge    (P  " + subtotal.ToString("#,##0.00") + ")";
+		}
 	}
 }

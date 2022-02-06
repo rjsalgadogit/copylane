@@ -109,6 +109,7 @@ namespace CopyLane.CustomForms.Popups
 			this.Total.Name = "Total";
 			this.Total.Size = new System.Drawing.Size(128, 26);
 			this.Total.TabIndex = 5;
+			this.Total.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Total_KeyUp);
 			// 
 			// Additional
 			// 
