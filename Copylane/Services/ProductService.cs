@@ -121,5 +121,84 @@ namespace CopyLane.Services
 
 			return records.FirstOrDefault();
 		}
+
+		public bool SaveTransactionDetails(List<ProductModel> products, string uniqueId)
+		{
+			var sp = "SaveTransactionDetails";
+			
+
+			try
+			{
+				foreach (var product in products)
+				{
+					var total = product.Total + product.Additional - product.Discount;
+
+					using (SqlConnection conn = new SqlConnection(ConnectionString))
+					{
+						conn.Open();
+
+						using (SqlCommand comm = new SqlCommand(sp, conn))
+						{
+							comm.CommandType = CommandType.StoredProcedure;
+							comm.Parameters.AddWithValue("@Id", uniqueId);
+							comm.Parameters.AddWithValue("@Description", product.Description);
+							comm.Parameters.AddWithValue("@Total", total);
+							comm.Parameters.AddWithValue("@Qty", product.Qty);
+
+							int rowAffected = comm.ExecuteNonQuery();
+							conn.Close();
+						}
+					}
+				}
+
+				return true;
+			}
+			catch (Exception ex)
+			{
+				MessageBox.Show(ex.Message
+					, "Error"
+					, MessageBoxButtons.OK
+					, MessageBoxIcon.Error);
+
+				return false;
+			}
+		}
+
+		public bool SaveTransaction(string uniqueId, decimal change, decimal payment, decimal subtotal)
+		{
+			var sp = "SaveTransaction";
+
+			try
+			{
+				using (SqlConnection conn = new SqlConnection(ConnectionString))
+				{
+					conn.Open();
+
+					using (SqlCommand comm = new SqlCommand(sp, conn))
+					{
+						comm.CommandType = CommandType.StoredProcedure;
+						comm.Parameters.AddWithValue("@TransactionDetailsId", uniqueId);
+						comm.Parameters.AddWithValue("@Username", "system");
+						comm.Parameters.AddWithValue("@Payment", payment);
+						comm.Parameters.AddWithValue("@Change", change);
+						comm.Parameters.AddWithValue("@Subtotal", subtotal);
+
+						int rowAffected = comm.ExecuteNonQuery();
+						conn.Close();
+					}
+				}
+
+				return true;
+			}
+			catch (Exception ex)
+			{
+				MessageBox.Show(ex.Message
+					, "Error"
+					, MessageBoxButtons.OK
+					, MessageBoxIcon.Error);
+
+				return false;
+			}
+		}
 	}
 }

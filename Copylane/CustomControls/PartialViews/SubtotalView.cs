@@ -37,7 +37,7 @@ namespace CopyLane.CustomControls.PartialViews
 				{
 					var change = (subtotal - payment) * -1;     // added (-1) to remove negative
 
-					using (var popup = new PaymentPopup(change))
+					using (var popup = new PaymentPopup(PosPanel, change, payment, subtotal))
 					{
 						var result = popup.ShowDialog();
 
@@ -60,11 +60,6 @@ namespace CopyLane.CustomControls.PartialViews
 					, MessageBoxIcon.Warning);
 		}
 
-		public void SubtotalPerformClick()
-		{
-			this.Subtotal_Click(this, new EventArgs());
-		}
-
 		private void SetAllControlsOnSameClickEvent()
 		{
 			this.Click += new EventHandler(Subtotal_Click);
@@ -80,6 +75,11 @@ namespace CopyLane.CustomControls.PartialViews
 
 				control.Click += new EventHandler(Subtotal_Click);
 			}
+		}
+
+		public void SubtotalPerformClick()
+		{
+			this.Subtotal_Click(this, new EventArgs());
 		}
 	}
 }

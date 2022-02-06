@@ -16,7 +16,7 @@ namespace CopyLane.CustomControls.Contents
 {
 	public partial class POSPanel : UserControl
 	{
-		public SubtotalView SubtotalView { get; set; }
+		public SubtotalView SubtotalView;
 
 		public POSPanel()
 		{
@@ -183,6 +183,23 @@ namespace CopyLane.CustomControls.Contents
 			foreach (var item in panel3.Controls.OfType<ProductPreview>().OrderBy(x => x.TabIndex))
 			{
 				GlobalVariables.ProductList.Add(item.Product);
+			}
+		}
+
+		public void SaveTransaction(decimal change, decimal payment, decimal subtotal)
+		{
+			var products = GlobalVariables.ProductList;
+			var productService = new ProductService();
+			var uniqueId = DateTime.Now.ToString("yy")
+				+ DateTime.Now.ToString("MM")
+				+ DateTime.Now.ToString("dd")
+				+ Guid.NewGuid().ToString().Substring(0, 4);
+
+			var isSuccessful = productService.SaveTransactionDetails(products, uniqueId);
+
+			if (isSuccessful)
+			{
+				productService.SaveTransaction(uniqueId, change, payment, subtotal);
 			}
 		}
 
