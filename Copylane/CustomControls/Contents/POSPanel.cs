@@ -38,6 +38,7 @@ namespace CopyLane.CustomControls.Contents
 
 			if (product != null)
 			{
+				product.Qty = 1;
 				panel1.Controls.Add(new ProductPreview(product));
 			}
 		}
@@ -49,6 +50,7 @@ namespace CopyLane.CustomControls.Contents
 
 			if (product != null)
 			{
+				product.Qty = 1;
 				panel1.Controls.Add(new ProductPreview(product));
 			}
 		}
@@ -60,6 +62,7 @@ namespace CopyLane.CustomControls.Contents
 
 			if (product != null)
 			{
+				product.Qty = 1;
 				panel1.Controls.Add(new ProductPreview(product));
 			}
 		}
@@ -71,6 +74,7 @@ namespace CopyLane.CustomControls.Contents
 
 			if (product != null)
 			{
+				product.Qty = 1;
 				panel1.Controls.Add(new ProductPreview(product));
 			}
 		}

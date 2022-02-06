@@ -15,6 +15,12 @@ namespace CopyLane.Models
 
 		public decimal Price { get; set; }
 
+		public decimal Total { get; set; }
+
+		public int Qty { get; set; }
+
+		public bool IsFromPopup { get; set; }
+
 		[DisplayName("Shortcut Key")]
 		public string ShortcutKey { get; set; }
 

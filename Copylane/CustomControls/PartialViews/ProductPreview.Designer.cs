@@ -30,9 +30,12 @@ namespace CopyLane.CustomControls.PartialViews
 		private void InitializeComponent()
 		{
 			this.label4 = new System.Windows.Forms.Label();
-			this.label3 = new System.Windows.Forms.Label();
 			this.label2 = new System.Windows.Forms.Label();
 			this.label1 = new System.Windows.Forms.Label();
+			this.label3 = new System.Windows.Forms.Label();
+			this.panel1 = new System.Windows.Forms.Panel();
+			this.label5 = new System.Windows.Forms.Label();
+			this.panel1.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// label4
@@ -44,18 +47,6 @@ namespace CopyLane.CustomControls.PartialViews
 			this.label4.Name = "label4";
 			this.label4.Size = new System.Drawing.Size(434, 3);
 			this.label4.TabIndex = 4;
-			// 
-			// label3
-			// 
-			this.label3.AutoSize = true;
-			this.label3.Font = new System.Drawing.Font("Calibri", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label3.ForeColor = System.Drawing.Color.ForestGreen;
-			this.label3.Location = new System.Drawing.Point(357, 47);
-			this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-			this.label3.Name = "label3";
-			this.label3.Size = new System.Drawing.Size(73, 21);
-			this.label3.TabIndex = 7;
-			this.label3.Text = "2,500.00";
 			// 
 			// label2
 			// 
@@ -80,12 +71,47 @@ namespace CopyLane.CustomControls.PartialViews
 			this.label1.TabIndex = 5;
 			this.label1.Text = "label1";
 			// 
+			// label3
+			// 
+			this.label3.AutoSize = true;
+			this.label3.Dock = System.Windows.Forms.DockStyle.Right;
+			this.label3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.label3.Font = new System.Drawing.Font("Calibri", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label3.ForeColor = System.Drawing.Color.ForestGreen;
+			this.label3.Location = new System.Drawing.Point(63, 0);
+			this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+			this.label3.Name = "label3";
+			this.label3.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+			this.label3.Size = new System.Drawing.Size(73, 21);
+			this.label3.TabIndex = 7;
+			this.label3.Text = "2,500.00";
+			// 
+			// panel1
+			// 
+			this.panel1.Controls.Add(this.label3);
+			this.panel1.Location = new System.Drawing.Point(246, 45);
+			this.panel1.Name = "panel1";
+			this.panel1.RightToLeft = System.Windows.Forms.RightToLeft.No;
+			this.panel1.Size = new System.Drawing.Size(136, 27);
+			this.panel1.TabIndex = 8;
+			// 
+			// label5
+			// 
+			this.label5.AutoSize = true;
+			this.label5.ForeColor = System.Drawing.SystemColors.ActiveBorder;
+			this.label5.Location = new System.Drawing.Point(380, 48);
+			this.label5.Name = "label5";
+			this.label5.Size = new System.Drawing.Size(33, 18);
+			this.label5.TabIndex = 9;
+			this.label5.Text = "PHP";
+			// 
 			// ProductPreview
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.Color.Transparent;
-			this.Controls.Add(this.label3);
+			this.Controls.Add(this.label5);
+			this.Controls.Add(this.panel1);
 			this.Controls.Add(this.label2);
 			this.Controls.Add(this.label1);
 			this.Controls.Add(this.label4);
@@ -95,6 +121,8 @@ namespace CopyLane.CustomControls.PartialViews
 			this.Name = "ProductPreview";
 			this.Size = new System.Drawing.Size(434, 77);
 			this.DoubleClick += new System.EventHandler(this.ProductPreview_DoubleClick);
+			this.panel1.ResumeLayout(false);
+			this.panel1.PerformLayout();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -103,8 +131,10 @@ namespace CopyLane.CustomControls.PartialViews
 		#endregion
 
 		private System.Windows.Forms.Label label4;
-		private System.Windows.Forms.Label label3;
 		private System.Windows.Forms.Label label2;
 		private System.Windows.Forms.Label label1;
+		private System.Windows.Forms.Label label3;
+		private System.Windows.Forms.Panel panel1;
+		private System.Windows.Forms.Label label5;
 	}
 }

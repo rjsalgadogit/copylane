@@ -13,7 +13,7 @@ namespace CopyLane.CustomForms.Popups
 {
 	public partial class ProductPreviewPopup : Form
 	{
-		private ProductModel Product { get; set; }
+		public ProductModel Product { get; set; }
 
 		public ProductPreviewPopup(ProductModel product)
 		{
@@ -36,7 +36,12 @@ namespace CopyLane.CustomForms.Popups
 		{
 			var subtotal = Total.Value + Additional.Value - Discount.Value;
 
-			MessageBox.Show("Overall Total: " + subtotal);
+			Product.Total = subtotal;
+			Product.Qty = Convert.ToInt32(Qty.Value);
+
+			this.Product.IsFromPopup = true;
+			this.DialogResult = DialogResult.OK;
+			this.Close();
 		}
 
 		private void Qty_KeyUp(object sender, KeyEventArgs e)
@@ -45,19 +50,19 @@ namespace CopyLane.CustomForms.Popups
 			var subtotal = total + Additional.Value - Discount.Value;
 
 			Total.Value = total;
-			Save.Text = "Charge    (P " + subtotal + ")";
+			Save.Text = $"Charge    (₱  " + subtotal.ToString("#,##0.00") + ")";
 		}
 
 		private void Additional_KeyUp(object sender, KeyEventArgs e)
 		{
 			var subtotal = Total.Value + Additional.Value - Discount.Value;
-			Save.Text = "Charge    (P " + subtotal + ")";
+			Save.Text = $"Charge    (₱  " + subtotal.ToString("#,##0.00") + ")";
 		}
 
 		private void Discount_KeyUp(object sender, KeyEventArgs e)
 		{
 			var subtotal = Total.Value + Additional.Value - Discount.Value;
-			Save.Text = "Charge    (P " + subtotal + ")";
+			Save.Text = $"Charge    (₱  " + subtotal.ToString("#,##0.00") + ")";
 		}
 	}
 }

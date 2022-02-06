@@ -89,7 +89,7 @@ namespace CopyLane.CustomForms.Popups
 			// 
 			this.Qty.Location = new System.Drawing.Point(107, 99);
 			this.Qty.Maximum = new decimal(new int[] {
-            1000000,
+            5000,
             0,
             0,
             0});
@@ -102,7 +102,7 @@ namespace CopyLane.CustomForms.Popups
 			// 
 			this.Total.Location = new System.Drawing.Point(107, 138);
 			this.Total.Maximum = new decimal(new int[] {
-            1000000,
+            1000000000,
             0,
             0,
             0});
