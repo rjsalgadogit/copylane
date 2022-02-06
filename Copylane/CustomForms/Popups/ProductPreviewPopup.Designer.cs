@@ -135,6 +135,7 @@ namespace CopyLane.CustomForms.Popups
 			// 
 			// Qty
 			// 
+			this.Qty.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.Qty.Location = new System.Drawing.Point(113, 98);
 			this.Qty.Name = "Qty";
 			this.Qty.Size = new System.Drawing.Size(128, 26);
@@ -144,6 +145,7 @@ namespace CopyLane.CustomForms.Popups
 			// 
 			// Total
 			// 
+			this.Total.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.Total.Location = new System.Drawing.Point(113, 137);
 			this.Total.Name = "Total";
 			this.Total.Size = new System.Drawing.Size(128, 26);

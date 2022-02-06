@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CopyLane.Models.Global;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -19,17 +20,12 @@ namespace CopyLane.CustomForms.Popups
 		{
 			InitializeComponent();
 
-			this.SubtotalProcess.Text = change.ToString("#,##0.00");
+			this.Change.Text = change.ToString("#,##0.00");
 		}
 
 		private void PaymentPopup_Load(object sender, EventArgs e)
 		{
 			Process.Focus();
-		}
-
-		private void Process_Click(object sender, EventArgs e)
-		{
-			MessageBox.Show("Process");
 		}
 
 		private void Cancel_Click(object sender, EventArgs e)
@@ -58,6 +54,12 @@ namespace CopyLane.CustomForms.Popups
 		private void panel1_MouseUp(object sender, MouseEventArgs e)
 		{
 			mouseDown = false;
+		}
+
+		private void Process_Click(object sender, EventArgs e)
+		{
+			var products = GlobalVariables.ProductList;
+			var change = Convert.ToDecimal(Change.Text);
 		}
 	}
 }

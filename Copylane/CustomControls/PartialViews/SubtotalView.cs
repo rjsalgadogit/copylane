@@ -28,25 +28,36 @@ namespace CopyLane.CustomControls.PartialViews
 
 		private void Subtotal_Click(object sender, EventArgs e)
 		{
-			if (Convert.ToDecimal(PosPanel.Payment.Text) > Convert.ToDecimal(Subtotal.Text))
+			var payment = !string.IsNullOrEmpty(PosPanel.Payment.Text) ? Convert.ToDecimal(PosPanel.Payment.Text) : 0;
+			var subtotal = !string.IsNullOrEmpty(Subtotal.Text) ? Convert.ToDecimal(Subtotal.Text) : 0;
+
+			if (payment > subtotal)
 			{
-				var change = (Convert.ToDecimal(Subtotal.Text) - Convert.ToDecimal(PosPanel.Payment.Text)) * -1;
-
-				using (var popup = new PaymentPopup(change))
+				if (subtotal > 0)
 				{
-					var result = popup.ShowDialog();
+					var change = (subtotal - payment) * -1;     // added (-1) to remove negative
 
-					if (result == DialogResult.OK)
+					using (var popup = new PaymentPopup(change))
 					{
+						var result = popup.ShowDialog();
 
+						if (result == DialogResult.OK)
+						{
+
+						}
 					}
 				}
+				else
+					MessageBox.Show(" No transaction available."
+						, "Warning"
+						, MessageBoxButtons.OK
+						, MessageBoxIcon.Warning);
 			}
 			else
-				MessageBox.Show("Payment is not enough"
-					, "Error"
+				MessageBox.Show(" Payment is not enough."
+					, "Warning"
 					, MessageBoxButtons.OK
-					, MessageBoxIcon.Error);
+					, MessageBoxIcon.Warning);
 		}
 
 		public void SubtotalPerformClick()
