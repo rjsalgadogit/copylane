@@ -1,4 +1,5 @@
-﻿using CopyLane.CustomForms.Popups;
+﻿using CopyLane.CustomControls.Contents;
+using CopyLane.CustomForms.Popups;
 using CopyLane.Models;
 using System;
 using System.Collections.Generic;
@@ -7,6 +8,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -15,15 +17,19 @@ namespace CopyLane.CustomControls.PartialViews
 	public partial class ProductPreview : UserControl
 	{
 		public ProductModel Product { get; set; }
+		private POSPanel PosPanel { get; set; }
 
-		public ProductPreview(ProductModel product)
+		public ProductPreview(ProductModel product, POSPanel posPanel)
 		{
 			InitializeComponent();
 
 			this.Dock = DockStyle.Top;
 
 			Product = product;
-			AssignValues(product);
+			Product.Total = product.Price;
+			PosPanel = posPanel;
+
+			Updatevalues(product);
 		}
 
 		private void ProductPreview_DoubleClick(object sender, EventArgs e)
@@ -33,22 +39,17 @@ namespace CopyLane.CustomControls.PartialViews
 				var result = formPopup.ShowDialog();
 				if (result == DialogResult.OK)
 				{
-					AssignValues(formPopup.Product);
+					Updatevalues(formPopup.Product);
+					PosPanel.ComputeSubtotal();
 				}
 			}
 		}
 
-		private void AssignValues(ProductModel product)
+		private void Updatevalues(ProductModel product)
 		{
 			this.label1.Text = product.Description;
 			this.label2.Text = $"x {product.Qty}";
-
-			if (product.IsFromPopup)
-			{
-				this.label3.Text = product.Total.ToString("#,##0.00");
-			}
-			else
-				this.label3.Text = product.Price.ToString("#,##0.00");
+			this.label3.Text = product.Total.ToString("#,##0.00");
 		}
 	}
 }

@@ -38,8 +38,11 @@ namespace CopyLane.CustomControls.Contents
 			if (product != null)
 			{
 				product.Qty = 1;
-				panel3.Controls.Add(new ProductPreview(product));
+				panel3.Controls.Add(new ProductPreview(product, this));
+				ComputeSubtotal();
 			}
+			else
+				MessageBox.Show(" No item available", "Notice", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 		}
 
 		private void F2_Click(object sender, EventArgs e)
@@ -50,8 +53,11 @@ namespace CopyLane.CustomControls.Contents
 			if (product != null)
 			{
 				product.Qty = 1;
-				panel3.Controls.Add(new ProductPreview(product));
+				panel3.Controls.Add(new ProductPreview(product, this));
+				ComputeSubtotal();
 			}
+			else
+				MessageBox.Show(" No item available", "Notice", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 		}
 
 		private void F3_Click(object sender, EventArgs e)
@@ -62,8 +68,11 @@ namespace CopyLane.CustomControls.Contents
 			if (product != null)
 			{
 				product.Qty = 1;
-				panel3.Controls.Add(new ProductPreview(product));
+				panel3.Controls.Add(new ProductPreview(product, this));
+				ComputeSubtotal();
 			}
+			else
+				MessageBox.Show(" No item available", "Notice", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 		}
 
 		private void F4_Click(object sender, EventArgs e)
@@ -74,7 +83,8 @@ namespace CopyLane.CustomControls.Contents
 			if (product != null)
 			{
 				product.Qty = 1;
-				panel3.Controls.Add(new ProductPreview(product));
+				panel3.Controls.Add(new ProductPreview(product, this));
+				ComputeSubtotal();
 			}
 			else
 				MessageBox.Show(" No item available", "Notice", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -133,14 +143,18 @@ namespace CopyLane.CustomControls.Contents
 			}
 		}
 
-		#endregion
-
-		private void button1_Click(object sender, EventArgs e)
+		public void ComputeSubtotal()
 		{
+			decimal subtotal = 0;
+
 			foreach (var item in panel3.Controls.OfType<ProductPreview>().OrderBy(x => x.TabIndex))
 			{
-				var result = item.Product;
+				subtotal = subtotal + item.Product.Total;
 			}
+
+			Subtotal.Text = subtotal.ToString("#,##0.00");
 		}
+
+		#endregion
 	}
 }

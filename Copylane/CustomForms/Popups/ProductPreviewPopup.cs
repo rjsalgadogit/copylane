@@ -39,7 +39,6 @@ namespace CopyLane.CustomForms.Popups
 			Product.Total = subtotal;
 			Product.Qty = Convert.ToInt32(Qty.Value);
 
-			this.Product.IsFromPopup = true;
 			this.DialogResult = DialogResult.OK;
 			this.Close();
 		}
