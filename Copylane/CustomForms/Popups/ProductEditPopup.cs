@@ -18,22 +18,9 @@ namespace CopyLane.CustomForms.Popups
         private bool mouseDown;
         private Point lastLocation;
 
-        public ProductEditPopup(ProductPanel posPanel)
+        public ProductEditPopup()
         {
             InitializeComponent();
-        }
-
-        private void ProductEditPopup_Load(object sender, EventArgs e)
-        {
-            //var grid = PosPanel.dataGridView1;
-
-            //if (grid.SelectedRows.Count > 0)
-            //{
-            //    HiddenID.Text = grid.SelectedRows[0].Cells["id"].Value.ToString();
-            //    Description.Text = grid.SelectedRows[0].Cells["Description"].Value.ToString();
-            //    Price.Text = grid.SelectedRows[0].Cells["Price"].Value.ToString();
-            //    ShortcutKey.Text = grid.SelectedRows[0].Cells["ShortcutKey"].Value.ToString();
-            //}
         }
 
         private void Save_Click(object sender, EventArgs e)

@@ -1,4 +1,5 @@
 ﻿using CopyLane.CustomForms.Popups;
+using CopyLane.Models;
 using CopyLane.Services;
 using System;
 using System.Collections.Generic;
@@ -22,19 +23,25 @@ namespace CopyLane.CustomControls.Contents
 
         private void ProductPanel_Load(object sender, EventArgs e)
         {
-			LoadItemGrid();
+			LoadProductGrid();
 		}
 
         private void button1_Click(object sender, EventArgs e)
         {
-			using (var popup = new ProductEditPopup(this))
+			using (var popup = new ProductEditPopup())
             {
 				var result = popup.ShowDialog();
+
 				if (result == DialogResult.OK)
                 {
+					MessageBox.Show(" The product has been successfully saved."
+						, "Info."
+						, MessageBoxButtons.OK
+						, MessageBoxIcon.Information);
 
-                }
-            }
+					LoadProductGrid();
+				}
+			}
         }
 
 		private void button2_Click(object sender, EventArgs e)
@@ -43,7 +50,7 @@ namespace CopyLane.CustomControls.Contents
 
 			if (grid.SelectedRows.Count > 0)
             {
-				using (var popup = new ProductEditPopup(this))
+				using (var popup = new ProductEditPopup())
 				{
 					popup.HiddenID.Text = grid.SelectedRows[0].Cells["id"].Value.ToString();
 					popup.Description.Text = grid.SelectedRows[0].Cells["Description"].Value.ToString();
@@ -53,9 +60,37 @@ namespace CopyLane.CustomControls.Contents
                     var result = popup.ShowDialog();
 
 					if (result == DialogResult.OK)
-					{
+                    {
+						MessageBox.Show(" The product has been successfully saved."
+							, "Info."
+							, MessageBoxButtons.OK
+							, MessageBoxIcon.Information);
 
+						LoadProductGrid();
 					}
+				}
+			}
+		}
+
+		private void button3_Click(object sender, EventArgs e)
+		{
+			var productService = new ProductService();
+			var grid = dataGridView1;
+
+			if (grid.SelectedRows.Count > 0)
+            {
+				var id = Convert.ToInt32(grid.SelectedRows[0].Cells["id"].Value);
+
+				var isSuccessful = productService.DeleteProduct(new ProductModel { Id = id });
+
+				if (isSuccessful)
+                {
+					MessageBox.Show(" The product has been successfully deleted."
+						, "Info."
+						, MessageBoxButtons.OK
+						, MessageBoxIcon.Information);
+
+					LoadProductGrid();
 				}
 			}
 		}
@@ -64,7 +99,7 @@ namespace CopyLane.CustomControls.Contents
         {
 			DataGridViewRow row = dataGridView1.Rows[e.RowIndex];
 
-			using (var popup = new ProductEditPopup(this))
+			using (var popup = new ProductEditPopup())
             {
 				popup.HiddenID.Text = row.Cells[0].Value.ToString();
 				popup.Description.Text = row.Cells[1].Value.ToString();
@@ -75,12 +110,17 @@ namespace CopyLane.CustomControls.Contents
 
 				if (result == DialogResult.OK)
                 {
-					LoadItemGrid();
-                }
-            }
+					MessageBox.Show(" The product has been successfully saved."
+						, "Info."
+						, MessageBoxButtons.OK
+						, MessageBoxIcon.Information);
+
+					LoadProductGrid();
+				}
+			}
         }
 
-		private void LoadItemGrid()
+		private void LoadProductGrid()
 		{
 			var productService = new ProductService();
 			var products = productService.GetProducts();
@@ -96,5 +136,5 @@ namespace CopyLane.CustomControls.Contents
 					, product.ModifiedDate);
 			}
 		}
-	}
+    }
 }

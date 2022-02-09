@@ -158,6 +158,39 @@ namespace CopyLane.Services
             }
         }
 
+		public bool DeleteProduct(ProductModel product)
+        {
+			var sp = "DeleteItem";
+
+			try
+            {
+				using (SqlConnection conn = new SqlConnection(ConnectionString))
+                {
+					conn.Open();
+
+					using (SqlCommand comm = new SqlCommand(sp, conn))
+                    {
+						comm.CommandType = CommandType.StoredProcedure;
+						comm.Parameters.AddWithValue("@Id", product.Id);
+
+						int rowAffected = comm.ExecuteNonQuery();
+						conn.Close();
+                    }
+                }
+
+				return true;
+            }
+			catch (Exception ex)
+			{
+				MessageBox.Show(ex.Message
+					, "Error"
+					, MessageBoxButtons.OK
+					, MessageBoxIcon.Error);
+
+				return false;
+			}
+        }
+
 		public bool SaveTransactionDetails(List<ProductModel> products, string uniqueId)
 		{
 			var sp = "SaveTransactionDetails";

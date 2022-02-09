@@ -185,7 +185,6 @@ namespace CopyLane.CustomForms.Popups
             this.Name = "ProductEditPopup";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "ProductEditPopup";
-            this.Load += new System.EventHandler(this.ProductEditPopup_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
