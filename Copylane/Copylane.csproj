@@ -79,6 +79,12 @@
     <Compile Include="CustomForms\Popups\PaymentPopup.Designer.cs">
       <DependentUpon>PaymentPopup.cs</DependentUpon>
     </Compile>
+    <Compile Include="CustomForms\Popups\ProductEditPopup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CustomForms\Popups\ProductEditPopup.Designer.cs">
+      <DependentUpon>ProductEditPopup.cs</DependentUpon>
+    </Compile>
     <Compile Include="CustomForms\Popups\ProductPreviewPopup.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -110,6 +116,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CustomForms\Popups\PaymentPopup.resx">
       <DependentUpon>PaymentPopup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomForms\Popups\ProductEditPopup.resx">
+      <DependentUpon>ProductEditPopup.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CustomForms\Popups\ProductPreviewPopup.resx">
       <DependentUpon>ProductPreviewPopup.cs</DependentUpon>

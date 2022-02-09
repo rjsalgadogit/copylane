@@ -122,6 +122,42 @@ namespace CopyLane.Services
 			return records.FirstOrDefault();
 		}
 
+		public bool SaveProduct(ProductModel product)
+        {
+			var sp = "SaveItem";
+
+			try
+            {
+				using (SqlConnection conn = new SqlConnection(ConnectionString))
+				{
+					conn.Open();
+
+					using (SqlCommand comm = new SqlCommand(sp, conn))
+                    {
+						comm.CommandType = CommandType.StoredProcedure;
+						comm.Parameters.AddWithValue("@Id", product.Id);
+						comm.Parameters.AddWithValue("@Description", product.Description);
+						comm.Parameters.AddWithValue("@Price", product.Price);
+						comm.Parameters.AddWithValue("@ShortcutKey", product.ShortcutKey);
+
+						int rowAffected = comm.ExecuteNonQuery();
+						conn.Close();
+					}
+				}
+
+				return true;
+            }
+			catch (Exception ex)
+            {
+				MessageBox.Show($" {ex.Message}"
+					, "Error"
+					, MessageBoxButtons.OK
+					, MessageBoxIcon.Error);
+
+				return false;
+            }
+        }
+
 		public bool SaveTransactionDetails(List<ProductModel> products, string uniqueId)
 		{
 			var sp = "SaveTransactionDetails";

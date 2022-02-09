@@ -37,6 +37,7 @@ namespace CopyLane.CustomControls.PartialViews
 				{
 					var change = (subtotal - payment) * -1;     // added (-1) to remove negative
 
+					// pass parameter to another form
 					using (var popup = new PaymentPopup(PosPanel, change, payment, subtotal))
 					{
 						var result = popup.ShowDialog();
