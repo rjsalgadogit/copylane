@@ -83,7 +83,47 @@ namespace CopyLane.Services
 			return records;
 		}
 
-		public ProductModel GetProductByKey(ProductModel item)
+		public List<ProductModel> SearchProduct(ProductModel product)
+        {
+			var sp = "SearchItem";
+
+			SqlDataReader sqlReader;
+			DataTable dataTable = new DataTable();
+
+			try
+            {
+				using (SqlConnection conn = new SqlConnection(ConnectionString))
+                {
+					conn.Open();
+
+					using (SqlCommand comm = new SqlCommand(sp, conn))
+                    {
+						comm.CommandType = CommandType.StoredProcedure;
+						comm.Parameters.AddWithValue("@Description", product.Description);
+
+						sqlReader = comm.ExecuteReader();
+						dataTable.Load(sqlReader);
+
+						sqlReader.Close();
+						conn.Close();
+                    }
+                }
+            }
+			catch (Exception ex)
+            {
+				MessageBox.Show(ex.Message
+					, "Error"
+					, MessageBoxButtons.OK
+					, MessageBoxIcon.Error);
+			}
+
+			var records = new List<ProductModel>();
+			records = JsonConvert.DeserializeObject<List<ProductModel>>(JsonConvert.SerializeObject(dataTable));
+
+			return records;
+		}
+
+		public ProductModel GetProductByKey(ProductModel product)
 		{
 			var sp = "GetProductByKey";
 
@@ -99,7 +139,7 @@ namespace CopyLane.Services
 					using (SqlCommand comm = new SqlCommand(sp, conn))
 					{
 						comm.CommandType = CommandType.StoredProcedure;
-						comm.Parameters.AddWithValue("@ShortcutKey", item.ShortcutKey);
+						comm.Parameters.AddWithValue("@ShortcutKey", product.ShortcutKey);
 
 						sqlReader = comm.ExecuteReader();
 						dataTable.Load(sqlReader);

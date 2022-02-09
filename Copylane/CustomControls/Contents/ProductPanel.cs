@@ -95,6 +95,23 @@ namespace CopyLane.CustomControls.Contents
 			}
 		}
 
+		private void SearchProduct_KeyDown(object sender, KeyEventArgs e)
+		{
+			var productService = new ProductService();
+			var products = productService.SearchProduct(new ProductModel { Description = SearchProduct.Text });
+
+			dataGridView1.Rows.Clear();
+			foreach (var product in products)
+			{
+				dataGridView1.Rows.Add(product.Id
+					, product.Description
+					, product.Price
+					, product.ShortcutKey
+					, product.CreatedDate
+					, product.ModifiedDate);
+			}
+		}
+
 		private void dataGridView1_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
 			DataGridViewRow row = dataGridView1.Rows[e.RowIndex];

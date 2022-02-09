@@ -110,6 +110,7 @@ namespace CopyLane.CustomForms.Popups
             this.HiddenID.Name = "HiddenID";
             this.HiddenID.Size = new System.Drawing.Size(100, 27);
             this.HiddenID.TabIndex = 6;
+            this.HiddenID.Visible = false;
             // 
             // label4
             // 
@@ -119,6 +120,7 @@ namespace CopyLane.CustomForms.Popups
             this.label4.Size = new System.Drawing.Size(73, 19);
             this.label4.TabIndex = 7;
             this.label4.Text = "Hidden ID";
+            this.label4.Visible = false;
             // 
             // Save
             // 
