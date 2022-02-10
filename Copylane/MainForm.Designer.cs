@@ -30,6 +30,7 @@ namespace CopyLane
 		private void InitializeComponent()
 		{
             this.panel1 = new System.Windows.Forms.Panel();
+            this.MaxMinForm = new System.Windows.Forms.Button();
             this.ExitButton = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.ProductsButton = new System.Windows.Forms.Button();
@@ -45,6 +46,7 @@ namespace CopyLane
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(38)))));
+            this.panel1.Controls.Add(this.MaxMinForm);
             this.panel1.Controls.Add(this.ExitButton);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
@@ -54,6 +56,23 @@ namespace CopyLane
             this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
             this.panel1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseMove);
             this.panel1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseUp);
+            // 
+            // MaxMinForm
+            // 
+            this.MaxMinForm.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.MaxMinForm.Dock = System.Windows.Forms.DockStyle.Right;
+            this.MaxMinForm.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.MaxMinForm.FlatAppearance.BorderSize = 0;
+            this.MaxMinForm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.MaxMinForm.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MaxMinForm.ForeColor = System.Drawing.Color.White;
+            this.MaxMinForm.Location = new System.Drawing.Point(1226, 0);
+            this.MaxMinForm.Name = "MaxMinForm";
+            this.MaxMinForm.Size = new System.Drawing.Size(39, 30);
+            this.MaxMinForm.TabIndex = 11;
+            this.MaxMinForm.Text = "[ ]";
+            this.MaxMinForm.UseVisualStyleBackColor = true;
+            this.MaxMinForm.Click += new System.EventHandler(this.MaxMinForm_Click);
             // 
             // ExitButton
             // 
@@ -112,7 +131,7 @@ namespace CopyLane
             this.POSButton.Name = "POSButton";
             this.POSButton.Size = new System.Drawing.Size(248, 44);
             this.POSButton.TabIndex = 1;
-            this.POSButton.Text = "POS";
+            this.POSButton.Text = "Point of Sale";
             this.POSButton.UseVisualStyleBackColor = true;
             this.POSButton.Click += new System.EventHandler(this.POSButton_Click);
             // 
@@ -180,6 +199,7 @@ namespace CopyLane
 		private System.Windows.Forms.Button POSButton;
 		private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button ExitButton;
+        private System.Windows.Forms.Button MaxMinForm;
     }
 }
 

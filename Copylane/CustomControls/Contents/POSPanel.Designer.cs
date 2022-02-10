@@ -62,7 +62,7 @@ namespace CopyLane.CustomControls.Contents
             // 
             // panel6
             // 
-            this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(38)))));
             this.panel6.Controls.Add(this.Payment);
             this.panel6.Controls.Add(this.label7);
             this.panel6.Dock = System.Windows.Forms.DockStyle.Top;
@@ -237,8 +237,6 @@ namespace CopyLane.CustomControls.Contents
 		}
 
 		#endregion
-
-		private System.Windows.Forms.Panel panel1;
 		private System.Windows.Forms.Panel panel2;
 		private System.Windows.Forms.Label label1;
 		private System.Windows.Forms.Label label4;
@@ -252,5 +250,6 @@ namespace CopyLane.CustomControls.Contents
 		private System.Windows.Forms.Label label7;
 		public System.Windows.Forms.TextBox Payment;
 		public System.Windows.Forms.Panel panel3;
-	}
+        public System.Windows.Forms.Panel panel1;
+    }
 }

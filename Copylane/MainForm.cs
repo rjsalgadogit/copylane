@@ -97,5 +97,22 @@ namespace CopyLane
         {
 			Process.GetCurrentProcess().Kill();
 		}
+
+        private void MaxMinForm_Click(object sender, EventArgs e)
+        {
+			if (this.WindowState == FormWindowState.Normal)
+			{
+				this.WindowState = FormWindowState.Maximized;
+				var listPanelHeight = posPanel.panel1.Height - 153;
+				posPanel.panel3.Height = listPanelHeight;
+				MaxMinForm.Text = "-";
+			}
+			else
+			{
+				this.WindowState = FormWindowState.Normal;
+				posPanel.panel3.Height = 565;
+				MaxMinForm.Text = "[ ]";
+			}
+		}
     }
 }
