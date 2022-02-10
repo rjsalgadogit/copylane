@@ -35,6 +35,7 @@ namespace CopyLane.CustomControls.Contents
 
 			SubtotalView = subtotalView;
 			this.panel1.Controls.Add(subtotalView);
+			this.Payment.Select();
 		}
 
 		private void F1_Click(object sender, EventArgs e)

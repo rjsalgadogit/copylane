@@ -88,7 +88,7 @@ namespace CopyLane
 					break;
 
 				case Keys.Enter:
-					posPanel.SubtotalView.SubtotalPerformClick();
+                    posPanel.SubtotalView.SubtotalPerformClick();
 					break;
 			}
 		}

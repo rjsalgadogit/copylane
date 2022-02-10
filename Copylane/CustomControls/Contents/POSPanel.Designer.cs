@@ -80,7 +80,7 @@ namespace CopyLane.CustomControls.Contents
             this.Payment.Name = "Payment";
             this.Payment.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.Payment.Size = new System.Drawing.Size(211, 40);
-            this.Payment.TabIndex = 12;
+            this.Payment.TabIndex = 0;
             this.Payment.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.Payment.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Payment_KeyPress);
             this.Payment.Leave += new System.EventHandler(this.Payment_Leave);
@@ -107,6 +107,7 @@ namespace CopyLane.CustomControls.Contents
             // 
             // panel2
             // 
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(24)))), ((int)(((byte)(24)))));
             this.panel2.Controls.Add(this.label4);
             this.panel2.Controls.Add(this.F4);
             this.panel2.Controls.Add(this.label3);
