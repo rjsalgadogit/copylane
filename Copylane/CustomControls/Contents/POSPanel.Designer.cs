@@ -62,7 +62,7 @@ namespace CopyLane.CustomControls.Contents
             this.panel3.Location = new System.Drawing.Point(0, 0);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(425, 634);
-            this.panel3.TabIndex = 0;
+            this.panel3.TabIndex = 4;
             // 
             // panel2
             // 
@@ -100,7 +100,7 @@ namespace CopyLane.CustomControls.Contents
             this.F4.Location = new System.Drawing.Point(473, 10);
             this.F4.Name = "F4";
             this.F4.Size = new System.Drawing.Size(150, 115);
-            this.F4.TabIndex = 9;
+            this.F4.TabIndex = 3;
             this.F4.Text = "No product";
             this.F4.UseVisualStyleBackColor = true;
             this.F4.Click += new System.EventHandler(this.F4_Click);
@@ -123,7 +123,7 @@ namespace CopyLane.CustomControls.Contents
             this.F3.Location = new System.Drawing.Point(318, 10);
             this.F3.Name = "F3";
             this.F3.Size = new System.Drawing.Size(150, 115);
-            this.F3.TabIndex = 7;
+            this.F3.TabIndex = 2;
             this.F3.Text = "No product";
             this.F3.UseVisualStyleBackColor = true;
             this.F3.Click += new System.EventHandler(this.F3_Click);
@@ -146,7 +146,7 @@ namespace CopyLane.CustomControls.Contents
             this.F2.Location = new System.Drawing.Point(163, 10);
             this.F2.Name = "F2";
             this.F2.Size = new System.Drawing.Size(150, 115);
-            this.F2.TabIndex = 5;
+            this.F2.TabIndex = 1;
             this.F2.Text = "No product";
             this.F2.UseVisualStyleBackColor = true;
             this.F2.Click += new System.EventHandler(this.F2_Click);

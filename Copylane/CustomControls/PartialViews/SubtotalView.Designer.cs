@@ -29,22 +29,34 @@ namespace CopyLane.CustomControls.PartialViews
 		/// </summary>
 		private void InitializeComponent()
 		{
+            this.panel1 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
             this.Subtotal = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
+            this.panel1.SuspendLayout();
             this.panel5.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.panel5);
+            this.panel1.Controls.Add(this.label6);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(425, 84);
+            this.panel1.TabIndex = 6;
             // 
             // panel5
             // 
             this.panel5.Controls.Add(this.label5);
             this.panel5.Controls.Add(this.Subtotal);
-            this.panel5.Location = new System.Drawing.Point(142, 18);
+            this.panel5.Location = new System.Drawing.Point(140, 15);
             this.panel5.Name = "panel5";
             this.panel5.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.panel5.Size = new System.Drawing.Size(272, 54);
-            this.panel5.TabIndex = 13;
+            this.panel5.TabIndex = 15;
             // 
             // label5
             // 
@@ -73,7 +85,7 @@ namespace CopyLane.CustomControls.PartialViews
             this.Subtotal.Name = "Subtotal";
             this.Subtotal.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.Subtotal.Size = new System.Drawing.Size(87, 45);
-            this.Subtotal.TabIndex = 7;
+            this.Subtotal.TabIndex = 10;
             this.Subtotal.Text = "0.00";
             // 
             // label6
@@ -81,11 +93,11 @@ namespace CopyLane.CustomControls.PartialViews
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Calibri", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(15, 22);
+            this.label6.Location = new System.Drawing.Point(13, 19);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(134, 36);
-            this.label6.TabIndex = 12;
+            this.label6.TabIndex = 14;
             this.label6.Text = "SUBTOTAL";
             // 
             // SubtotalView
@@ -93,25 +105,26 @@ namespace CopyLane.CustomControls.PartialViews
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.ForestGreen;
-            this.Controls.Add(this.panel5);
-            this.Controls.Add(this.label6);
+            this.Controls.Add(this.panel1);
             this.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Font = new System.Drawing.Font("Calibri", 11.25F);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "SubtotalView";
             this.Size = new System.Drawing.Size(425, 84);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
 		}
 
-		#endregion
+        #endregion
 
-		private System.Windows.Forms.Panel panel5;
-		private System.Windows.Forms.Label label5;
-		private System.Windows.Forms.Label label6;
-		public System.Windows.Forms.Label Subtotal;
-	}
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.Label label5;
+        public System.Windows.Forms.Label Subtotal;
+        private System.Windows.Forms.Label label6;
+    }
 }

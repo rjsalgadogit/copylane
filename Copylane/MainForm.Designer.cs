@@ -33,12 +33,12 @@ namespace CopyLane
             this.MaxMinForm = new System.Windows.Forms.Button();
             this.ExitButton = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.SalesButton = new System.Windows.Forms.Button();
             this.ProductsButton = new System.Windows.Forms.Button();
             this.POSButton = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.SalesButton = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -53,7 +53,7 @@ namespace CopyLane
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1304, 30);
-            this.panel1.TabIndex = 1;
+            this.panel1.TabIndex = 150;
             this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
             this.panel1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseMove);
             this.panel1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseUp);
@@ -70,7 +70,7 @@ namespace CopyLane
             this.MaxMinForm.Location = new System.Drawing.Point(1226, 0);
             this.MaxMinForm.Name = "MaxMinForm";
             this.MaxMinForm.Size = new System.Drawing.Size(39, 30);
-            this.MaxMinForm.TabIndex = 11;
+            this.MaxMinForm.TabIndex = 105;
             this.MaxMinForm.Text = "[ ]";
             this.MaxMinForm.UseVisualStyleBackColor = true;
             this.MaxMinForm.Click += new System.EventHandler(this.MaxMinForm_Click);
@@ -87,7 +87,7 @@ namespace CopyLane
             this.ExitButton.Location = new System.Drawing.Point(1265, 0);
             this.ExitButton.Name = "ExitButton";
             this.ExitButton.Size = new System.Drawing.Size(39, 30);
-            this.ExitButton.TabIndex = 10;
+            this.ExitButton.TabIndex = 104;
             this.ExitButton.Text = "x";
             this.ExitButton.UseVisualStyleBackColor = true;
             this.ExitButton.Click += new System.EventHandler(this.ExitButton_Click);
@@ -103,7 +103,22 @@ namespace CopyLane
             this.panel2.Location = new System.Drawing.Point(0, 30);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(248, 718);
-            this.panel2.TabIndex = 2;
+            this.panel2.TabIndex = 150;
+            // 
+            // SalesButton
+            // 
+            this.SalesButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.SalesButton.Dock = System.Windows.Forms.DockStyle.Top;
+            this.SalesButton.FlatAppearance.BorderSize = 0;
+            this.SalesButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.SalesButton.Font = new System.Drawing.Font("Calibri", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SalesButton.ForeColor = System.Drawing.Color.White;
+            this.SalesButton.Location = new System.Drawing.Point(0, 256);
+            this.SalesButton.Name = "SalesButton";
+            this.SalesButton.Size = new System.Drawing.Size(248, 44);
+            this.SalesButton.TabIndex = 103;
+            this.SalesButton.Text = "Sales";
+            this.SalesButton.UseVisualStyleBackColor = true;
             // 
             // ProductsButton
             // 
@@ -116,7 +131,7 @@ namespace CopyLane
             this.ProductsButton.Location = new System.Drawing.Point(0, 212);
             this.ProductsButton.Name = "ProductsButton";
             this.ProductsButton.Size = new System.Drawing.Size(248, 44);
-            this.ProductsButton.TabIndex = 2;
+            this.ProductsButton.TabIndex = 102;
             this.ProductsButton.Text = "Products";
             this.ProductsButton.UseVisualStyleBackColor = true;
             this.ProductsButton.Click += new System.EventHandler(this.ProductsButton_Click);
@@ -132,7 +147,7 @@ namespace CopyLane
             this.POSButton.Location = new System.Drawing.Point(0, 168);
             this.POSButton.Name = "POSButton";
             this.POSButton.Size = new System.Drawing.Size(248, 44);
-            this.POSButton.TabIndex = 1;
+            this.POSButton.TabIndex = 101;
             this.POSButton.Text = "Point of Sale";
             this.POSButton.UseVisualStyleBackColor = true;
             this.POSButton.Click += new System.EventHandler(this.POSButton_Click);
@@ -164,22 +179,7 @@ namespace CopyLane
             this.panel3.Location = new System.Drawing.Point(248, 30);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1056, 718);
-            this.panel3.TabIndex = 3;
-            // 
-            // SalesButton
-            // 
-            this.SalesButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.SalesButton.Dock = System.Windows.Forms.DockStyle.Top;
-            this.SalesButton.FlatAppearance.BorderSize = 0;
-            this.SalesButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.SalesButton.Font = new System.Drawing.Font("Calibri", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SalesButton.ForeColor = System.Drawing.Color.White;
-            this.SalesButton.Location = new System.Drawing.Point(0, 256);
-            this.SalesButton.Name = "SalesButton";
-            this.SalesButton.Size = new System.Drawing.Size(248, 44);
-            this.SalesButton.TabIndex = 3;
-            this.SalesButton.Text = "Sales";
-            this.SalesButton.UseVisualStyleBackColor = true;
+            this.panel3.TabIndex = 150;
             // 
             // MainForm
             // 

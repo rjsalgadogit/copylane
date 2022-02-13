@@ -56,7 +56,7 @@ namespace CopyLane.CustomForms.Popups
 
         private void Process_Click(object sender, EventArgs e)
         {
-            var payment = Convert.ToDecimal(Payment.Text);
+            var payment = !string.IsNullOrEmpty(Payment.Text) ? Convert.ToDecimal(Payment.Text) : 0;
             var subtotal = !string.IsNullOrEmpty(_subtotalView.Subtotal.Text) ? Convert.ToDecimal(_subtotalView.Subtotal.Text) : 0;
             var totalChange = (subtotal - payment) * -1;  // (* -1) to remove negative
 

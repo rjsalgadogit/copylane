@@ -24,6 +24,7 @@ namespace CopyLane.CustomControls.PartialViews
 			InitializeComponent();
 
 			this.Dock = DockStyle.Top;
+			this.TabIndex = 5;
 			
 			_posPanel = posPanel;
 			_productModel = productModel;
