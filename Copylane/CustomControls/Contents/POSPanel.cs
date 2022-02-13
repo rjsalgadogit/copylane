@@ -208,5 +208,10 @@ namespace CopyLane.CustomControls.Contents
 		}
 
         #endregion
+
+        private void Search_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
