@@ -41,93 +41,57 @@ namespace CopyLane.CustomControls.Contents
 
 		private void F1_Click(object sender, EventArgs e)
 		{
-			var productService = new ProductService();
-			var product = productService.GetProductByKey(new ProductModel { ShortcutKey = "F1" });
-
-			if (product != null)
-            {
-				product.Qty = 1;
-				AddItemToTheList(product);
-            }
-			else
-				MessageBox.Show(" No product available", "Notice", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+			ShortcutKeyAction("F1");
 		}
 
 		private void F2_Click(object sender, EventArgs e)
 		{
-			var productService = new ProductService();
-			var product = productService.GetProductByKey(new ProductModel { ShortcutKey = "F2" });
-
-			if (product != null)
-			{
-				product.Qty = 1;
-				AddItemToTheList(product);
-			}
-			else
-				MessageBox.Show(" No product available", "Notice", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+			ShortcutKeyAction("F2");
 		}
 
 		private void F3_Click(object sender, EventArgs e)
 		{
-			var productService = new ProductService();
-			var product = productService.GetProductByKey(new ProductModel { ShortcutKey = "F3" });
-
-			if (product != null)
-			{
-				product.Qty = 1;
-				AddItemToTheList(product);
-			}
-			else
-				MessageBox.Show(" No product available", "Notice", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+			ShortcutKeyAction("F3");
 		}
 
 		private void F4_Click(object sender, EventArgs e)
 		{
-			var productService = new ProductService();
-			var product = productService.GetProductByKey(new ProductModel { ShortcutKey = "F4" });
-
-			if (product != null)
-			{
-				product.Qty = 1;
-				AddItemToTheList(product);
-			}
-			else
-				MessageBox.Show(" No product available", "Notice", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+			ShortcutKeyAction("F4");
 		}
 
 		private void F5_Click(object sender, EventArgs e)
 		{
-
+			ShortcutKeyAction("F5");
 		}
 
 		private void F6_Click(object sender, EventArgs e)
 		{
-
+			ShortcutKeyAction("F6");
 		}
 
 		private void F7_Click(object sender, EventArgs e)
 		{
-
+			ShortcutKeyAction("F7");
 		}
 
 		private void F8_Click(object sender, EventArgs e)
 		{
-
+			ShortcutKeyAction("F8");
 		}
 
 		private void F9_Click(object sender, EventArgs e)
 		{
-
+			ShortcutKeyAction("F9");
 		}
 
 		private void F10_Click(object sender, EventArgs e)
 		{
-
+			ShortcutKeyAction("F10");
 		}
 
 		private void F11_Click(object sender, EventArgs e)
 		{
-
+			ShortcutKeyAction("F11");
 		}
 
 		private void Search_Click(object sender, EventArgs e)
@@ -255,6 +219,21 @@ namespace CopyLane.CustomControls.Contents
 			this.panel3.Controls.Clear();
 			this.SubtotalView.Subtotal.Text = "0.00";
         }
+
+		private void ShortcutKeyAction(string keyCode)
+        {
+			var productService = new ProductService();
+			var product = productService.GetProductByKey(new ProductModel { ShortcutKey = keyCode });
+
+			if (product != null)
+			{
+				product.Qty = 1;
+				AddItemToTheList(product);
+			}
+			else
+				MessageBox.Show(" No product available", "Notice", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+		}
+
         #endregion
     }
 }
