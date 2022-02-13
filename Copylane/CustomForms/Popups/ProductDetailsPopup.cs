@@ -24,7 +24,7 @@ namespace CopyLane.CustomForms.Popups
             this._productModel = productModel;
             this.Description.Text = productModel.Description;
             this.Price.Text = $"PHP   {productModel.Price}";
-            this.Total.Text = productModel.Total.ToString("#,##0.00");
+            this.Total.Text = productModel.Total > 0 ? productModel.Total.ToString("#,##0.00") : productModel.Price.ToString("#,##0.00");
             this.Quantity.Text = productModel.Qty.ToString();
             this.Charge.Text = productModel.Total > 0 ? $"Charge  (P  {productModel.Total.ToString("#,##0.00")})" : $"Charge  (P  {productModel.Price.ToString("#,##0.00")})";
         }

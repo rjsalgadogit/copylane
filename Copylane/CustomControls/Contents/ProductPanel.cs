@@ -72,6 +72,8 @@ namespace CopyLane.CustomControls.Contents
 					}
 				}
 			}
+
+			//NOTE: SelectedRows[0] because the Grid was restricted to select 1 row only.
 		}
 
 		private void button3_Click(object sender, EventArgs e)

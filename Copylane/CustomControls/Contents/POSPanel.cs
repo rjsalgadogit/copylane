@@ -96,7 +96,7 @@ namespace CopyLane.CustomControls.Contents
 
 		private void Search_Click(object sender, EventArgs e)
 		{
-			using (var popup = new ProductListPopup())
+			using (var popup = new ProductListPopup(this))
 			{
 				var result = popup.ShowDialog();
 			}
@@ -121,6 +121,20 @@ namespace CopyLane.CustomControls.Contents
 
 		#region Methods
 
+		private void ShortcutKeyAction(string keyCode)
+		{
+			var productService = new ProductService();
+			var product = productService.GetProductByKey(new ProductModel { ShortcutKey = keyCode });
+
+			if (product != null)
+			{
+				product.Qty = 1;
+				AddItemToTheList(product);
+			}
+			else
+				MessageBox.Show(" No product available", "Notice", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+		}
+
 		private void ArrangeButtonUI(ProductService productService)
 		{
 			var products = productService.GetProducts();
@@ -144,6 +158,20 @@ namespace CopyLane.CustomControls.Contents
 					case "F4":
 						F4.Text = product.Description;
 						break;
+				}
+			}
+		}
+
+		public void AddItemToTheList(ProductModel product)
+		{
+			using (var popup = new ProductDetailsPopup(product))
+			{
+				var result = popup.ShowDialog();
+
+				if (result == DialogResult.OK)
+				{
+					this.panel3.Controls.Add(new ProductPreview(popup._productModel, this));
+					ComputeSubtotal();
 				}
 			}
 		}
@@ -200,39 +228,11 @@ namespace CopyLane.CustomControls.Contents
 			}
 		}
 
-		private void AddItemToTheList(ProductModel product)
-        {
-			using (var popup = new ProductDetailsPopup(product))
-			{
-				var result = popup.ShowDialog();
-
-				if (result == DialogResult.OK)
-				{
-					this.panel3.Controls.Add(new ProductPreview(popup._productModel, this));
-					ComputeSubtotal();
-				}
-			}
-		}
-
 		public void ClearTransaction()
         {
 			this.panel3.Controls.Clear();
 			this.SubtotalView.Subtotal.Text = "0.00";
         }
-
-		private void ShortcutKeyAction(string keyCode)
-        {
-			var productService = new ProductService();
-			var product = productService.GetProductByKey(new ProductModel { ShortcutKey = keyCode });
-
-			if (product != null)
-			{
-				product.Qty = 1;
-				AddItemToTheList(product);
-			}
-			else
-				MessageBox.Show(" No product available", "Notice", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-		}
 
         #endregion
     }

@@ -1,4 +1,5 @@
-﻿using CopyLane.Models;
+﻿using CopyLane.CustomControls.Contents;
+using CopyLane.Models;
 using CopyLane.Services;
 using System;
 using System.Collections.Generic;
@@ -14,13 +15,15 @@ namespace CopyLane.CustomForms.Popups
 {
     public partial class ProductListPopup : Form
     {
+        private POSPanel _posPanel;
         private bool mouseDown;
         private Point lastLocation;
 
-        public ProductListPopup()
+        public ProductListPopup(POSPanel posPanel)
         {
             InitializeComponent();
             this.SearchProduct.Select();
+            this._posPanel = posPanel;
 
             //NOTE: set DataGridView.StandardProperty = True (to disable tabstop on each column)
         }
@@ -96,16 +99,61 @@ namespace CopyLane.CustomForms.Popups
         {
             if (e.KeyData == Keys.Enter)
             {
-                MessageBox.Show("Testing");
+                var grid = dataGridView1;
+
+                if (grid.SelectedRows.Count > 0)
+                {
+                    var productModel = new ProductModel
+                    {
+                        Id = Convert.ToInt32(grid.SelectedRows[0].Cells["ID"].Value.ToString()),
+                        Description = grid.SelectedRows[0].Cells["Description"].Value.ToString(),
+                        Price = Convert.ToDecimal(grid.SelectedRows[0].Cells["Price"].Value.ToString()),
+                        Qty = 1
+                    };
+
+                    this._posPanel.AddItemToTheList(productModel);
+                }
             }
+
+            //NOTE: SelectedRows[0] because the Grid was restricted to select 1 row only.
         }
 
         private void SearchProduct_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
             {
-                MessageBox.Show("Testing");
+                var grid = dataGridView1;
+
+                if (grid.SelectedRows.Count > 0)
+                {
+                    var productModel = new ProductModel
+                    {
+                        Id = Convert.ToInt32(grid.SelectedRows[0].Cells["ID"].Value.ToString()),
+                        Description = grid.SelectedRows[0].Cells["Description"].Value.ToString(),
+                        Price = Convert.ToDecimal(grid.SelectedRows[0].Cells["Price"].Value.ToString()),
+                        Qty = 1
+                    };
+
+                    this._posPanel.AddItemToTheList(productModel);
+                }
             }
+
+            //NOTE: SelectedRows[0] because the Grid was restricted to select 1 row only.
+        }
+
+        private void dataGridView1_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            DataGridViewRow row = dataGridView1.Rows[e.RowIndex];
+
+            var productModel = new ProductModel
+            {
+                Id = Convert.ToInt32(row.Cells[0].Value.ToString()),
+                Description = row.Cells[1].Value.ToString(),
+                Price = Convert.ToDecimal(row.Cells[2].Value.ToString()),
+                Qty = 1
+            };
+
+            this._posPanel.AddItemToTheList(productModel);
         }
     }
 }

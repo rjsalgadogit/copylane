@@ -104,6 +104,7 @@ namespace CopyLane.CustomForms.Popups
             this.dataGridView1.Size = new System.Drawing.Size(834, 440);
             this.dataGridView1.StandardTab = true;
             this.dataGridView1.TabIndex = 1;
+            this.dataGridView1.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_CellMouseDoubleClick);
             this.dataGridView1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dataGridView1_KeyDown);
             // 
             // ID
