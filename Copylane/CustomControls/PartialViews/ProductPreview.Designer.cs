@@ -35,6 +35,7 @@ namespace CopyLane.CustomControls.PartialViews
             this.label3 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
+            this.Remove = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -89,7 +90,7 @@ namespace CopyLane.CustomControls.PartialViews
             // panel1
             // 
             this.panel1.Controls.Add(this.label3);
-            this.panel1.Location = new System.Drawing.Point(241, 45);
+            this.panel1.Location = new System.Drawing.Point(238, 45);
             this.panel1.Name = "panel1";
             this.panel1.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.panel1.Size = new System.Drawing.Size(136, 27);
@@ -99,17 +100,31 @@ namespace CopyLane.CustomControls.PartialViews
             // 
             this.label5.AutoSize = true;
             this.label5.ForeColor = System.Drawing.SystemColors.ActiveBorder;
-            this.label5.Location = new System.Drawing.Point(375, 48);
+            this.label5.Location = new System.Drawing.Point(372, 48);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(33, 18);
             this.label5.TabIndex = 9;
             this.label5.Text = "PHP";
+            // 
+            // Remove
+            // 
+            this.Remove.AutoSize = true;
+            this.Remove.FlatAppearance.BorderSize = 0;
+            this.Remove.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Remove.Image = global::CopyLane.Properties.Resources.close_24;
+            this.Remove.Location = new System.Drawing.Point(375, 9);
+            this.Remove.Name = "Remove";
+            this.Remove.Size = new System.Drawing.Size(30, 30);
+            this.Remove.TabIndex = 10;
+            this.Remove.UseVisualStyleBackColor = true;
+            this.Remove.Click += new System.EventHandler(this.Remove_Click);
             // 
             // ProductPreview
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Transparent;
+            this.Controls.Add(this.Remove);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label2);
@@ -136,5 +151,6 @@ namespace CopyLane.CustomControls.PartialViews
 		private System.Windows.Forms.Panel panel1;
 		private System.Windows.Forms.Label label5;
 		private System.Windows.Forms.Label label1;
-	}
+        private System.Windows.Forms.Button Remove;
+    }
 }

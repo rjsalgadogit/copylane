@@ -75,5 +75,10 @@ namespace CopyLane.CustomControls.PartialViews
 				control.DoubleClick += new EventHandler(ProductPreview_DoubleClick);
 			}
 		}
-	}
+
+        private void Remove_Click(object sender, EventArgs e)
+        {
+			_posPanel.panel3.Controls.Remove(this);
+        }
+    }
 }
