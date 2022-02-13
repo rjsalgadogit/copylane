@@ -111,7 +111,6 @@ namespace CopyLane.CustomControls.PartialViews
             this.Remove.AutoSize = true;
             this.Remove.FlatAppearance.BorderSize = 0;
             this.Remove.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Remove.Image = global::CopyLane.Properties.Resources.close_24;
             this.Remove.Location = new System.Drawing.Point(375, 9);
             this.Remove.Name = "Remove";
             this.Remove.Size = new System.Drawing.Size(30, 30);

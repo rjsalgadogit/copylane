@@ -131,14 +131,28 @@ namespace CopyLane
 			if (this.WindowState == FormWindowState.Normal)
 			{
 				this.WindowState = FormWindowState.Maximized;
-				this.MaxMinForm.Text = "-";
 
 				_posPanel.panel3.Height = 718;
 			}
 			else
 			{
 				this.WindowState = FormWindowState.Normal;
-				this.MaxMinForm.Text = "[ ]";
+
+                _posPanel.panel3.Height = 617;
+			}
+        }
+
+        private void panel1_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+			if (this.WindowState == FormWindowState.Normal)
+			{
+				this.WindowState = FormWindowState.Maximized;
+
+				_posPanel.panel3.Height = 718;
+			}
+			else
+			{
+				this.WindowState = FormWindowState.Normal;
 
 				_posPanel.panel3.Height = 617;
 			}

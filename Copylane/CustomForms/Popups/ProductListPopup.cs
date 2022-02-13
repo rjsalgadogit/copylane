@@ -111,7 +111,7 @@ namespace CopyLane.CustomForms.Popups
                         Qty = 1
                     };
 
-                    this._posPanel.AddItemToTheList(productModel);
+                    _posPanel.AddItemToTheList(productModel);
                 }
             }
 
@@ -134,7 +134,7 @@ namespace CopyLane.CustomForms.Popups
                         Qty = 1
                     };
 
-                    this._posPanel.AddItemToTheList(productModel);
+                    _posPanel.AddItemToTheList(productModel);
                 }
             }
 
@@ -153,7 +153,7 @@ namespace CopyLane.CustomForms.Popups
                 Qty = 1
             };
 
-            this._posPanel.AddItemToTheList(productModel);
+            _posPanel.AddItemToTheList(productModel);
         }
     }
 }
