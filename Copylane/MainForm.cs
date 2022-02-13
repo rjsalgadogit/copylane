@@ -131,14 +131,16 @@ namespace CopyLane
 			if (this.WindowState == FormWindowState.Normal)
 			{
 				this.WindowState = FormWindowState.Maximized;
+				this.MaxMinForm.Image = Properties.Resources.normal_12_white;
 
 				_posPanel.panel3.Height = 718;
 			}
 			else
 			{
 				this.WindowState = FormWindowState.Normal;
+				this.MaxMinForm.Image = Properties.Resources.square_12_white;
 
-                _posPanel.panel3.Height = 617;
+				_posPanel.panel3.Height = 617;
 			}
         }
 

@@ -169,19 +169,13 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\close_32.png" />
+    <None Include="Resources\normal_12_white.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\close_white.png" />
+    <None Include="Resources\square_12_white.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\maximize_white1.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\close_white1.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\close.png" />
+    <None Include="Resources\cross_12_white.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
