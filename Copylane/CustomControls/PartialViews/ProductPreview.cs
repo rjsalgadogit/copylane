@@ -25,6 +25,7 @@ namespace CopyLane.CustomControls.PartialViews
 
 			this.Dock = DockStyle.Top;
 			this.TabIndex = 5;
+			this.Select();
 			
 			_posPanel = posPanel;
 			_productModel = productModel;
@@ -60,7 +61,7 @@ namespace CopyLane.CustomControls.PartialViews
 
 		private void SetAllControlsOnSameClickEvent()
         {
-			this.DoubleClick += new EventHandler(ProductPreview_DoubleClick);
+			//this.DoubleClick += new EventHandler(ProductPreview_DoubleClick);
 
 			// loop all controls inside of each panels
 			// and set click event
