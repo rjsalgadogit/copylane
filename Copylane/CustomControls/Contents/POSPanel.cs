@@ -35,7 +35,7 @@ namespace CopyLane.CustomControls.Contents
 
 			SubtotalView = subtotalView;
 			this.panel1.Controls.Add(subtotalView);
-			this.Payment.Select();
+			this.SubtotalView.Select();
 		}
 
 		private void F1_Click(object sender, EventArgs e)
@@ -50,7 +50,7 @@ namespace CopyLane.CustomControls.Contents
 				ComputeSubtotal();
 			}
 			else
-				MessageBox.Show(" No item available", "Notice", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+				MessageBox.Show(" No product available", "Notice", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 		}
 
 		private void F2_Click(object sender, EventArgs e)
@@ -65,7 +65,7 @@ namespace CopyLane.CustomControls.Contents
 				ComputeSubtotal();
 			}
 			else
-				MessageBox.Show(" No item available", "Notice", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+				MessageBox.Show(" No product available", "Notice", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 		}
 
 		private void F3_Click(object sender, EventArgs e)
@@ -80,7 +80,7 @@ namespace CopyLane.CustomControls.Contents
 				ComputeSubtotal();
 			}
 			else
-				MessageBox.Show(" No item available", "Notice", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+				MessageBox.Show(" No product available", "Notice", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 		}
 
 		private void F4_Click(object sender, EventArgs e)
@@ -95,7 +95,7 @@ namespace CopyLane.CustomControls.Contents
 				ComputeSubtotal();
 			}
 			else
-				MessageBox.Show(" No item available", "Notice", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+				MessageBox.Show(" No product available", "Notice", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 		}
 
 		private void Payment_KeyPress(object sender, KeyPressEventArgs e)
@@ -110,14 +110,6 @@ namespace CopyLane.CustomControls.Contents
 			if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
 			{
 				e.Handled = true;
-			}
-		}
-
-		private void Payment_Leave(object sender, EventArgs e)
-		{
-			if (!string.IsNullOrEmpty(Payment.Text))
-			{
-				Payment.Text = Convert.ToDecimal(Payment.Text).ToString("#,###.00");
 			}
 		}
 

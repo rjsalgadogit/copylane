@@ -15,9 +15,9 @@ namespace CopyLane
 {
 	public partial class MainForm : Form
 	{
+		private POSPanel _posPanel;
 		private bool mouseDown;
 		private Point lastLocation;
-		private POSPanel posPanel;
 
 		public MainForm()
 		{
@@ -53,10 +53,10 @@ namespace CopyLane
 
 		private void POSButton_Click(object sender, EventArgs e)
 		{
-			posPanel = new POSPanel();
+			_posPanel = new POSPanel();
 
 			panel3.Controls.Clear();
-			panel3.Controls.Add(posPanel);
+			panel3.Controls.Add(_posPanel);
 		}
 
 		private void ProductsButton_Click(object sender, EventArgs e)
@@ -72,23 +72,23 @@ namespace CopyLane
 			switch (e.KeyCode)
 			{
 				case Keys.F1:
-					posPanel.KeyAction(Keys.F1);
+					_posPanel.KeyAction(Keys.F1);
 					break;
 
 				case Keys.F2:
-					posPanel.KeyAction(Keys.F2);
+					_posPanel.KeyAction(Keys.F2);
 					break;
 
 				case Keys.F3:
-					posPanel.KeyAction(Keys.F3);
+					_posPanel.KeyAction(Keys.F3);
 					break;
 
 				case Keys.F4:
-					posPanel.KeyAction(Keys.F4);
+					_posPanel.KeyAction(Keys.F4);
 					break;
 
 				case Keys.Enter:
-                    posPanel.SubtotalView.SubtotalPerformClick();
+					_posPanel.SubtotalView.SubtotalPerformClick();
 					break;
 			}
 		}
@@ -103,14 +103,14 @@ namespace CopyLane
 			if (this.WindowState == FormWindowState.Normal)
 			{
 				this.WindowState = FormWindowState.Maximized;
-				var listPanelHeight = posPanel.panel1.Height - 153;
-				posPanel.panel3.Height = listPanelHeight;
+				var listPanelHeight = _posPanel.panel1.Height - 153;
+				_posPanel.panel3.Height = listPanelHeight;
 				MaxMinForm.Text = "-";
 			}
 			else
 			{
 				this.WindowState = FormWindowState.Normal;
-				posPanel.panel3.Height = 565;
+				_posPanel.panel3.Height = 565;
 				MaxMinForm.Text = "[ ]";
 			}
 		}

@@ -1,5 +1,6 @@
-﻿using CopyLane.CustomControls.Contents;
+﻿using CopyLane.CustomControls.PartialViews;
 using CopyLane.Models.Global;
+using CopyLane.Services;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -12,65 +13,125 @@ using System.Windows.Forms;
 
 namespace CopyLane.CustomForms.Popups
 {
-	public partial class PaymentPopup : Form
-	{
-		private bool mouseDown;
-		private Point lastLocation;
-		private decimal Payment;
-		private decimal Subtotal;
-		private POSPanel PosPanel;
+    public partial class PaymentPopup : Form
+    {
+        private SubtotalView _subtotalView;
+        private bool mouseDown;
+        private Point lastLocation;
+        public string change;
 
-		public PaymentPopup(POSPanel posPanel, decimal change, decimal payment, decimal subtotal)
-		{
-			InitializeComponent();
+        public PaymentPopup(SubtotalView subtotalView)
+        {
+            InitializeComponent();
 
-			this.Change.Text = change.ToString("#,##0.00");
-			this.Payment = payment;
-			this.Subtotal = subtotal;
-			this.PosPanel = posPanel;
-		}
+            _subtotalView = subtotalView;
+        }
 
-		private void PaymentPopup_Load(object sender, EventArgs e)
-		{
-			Process.Focus();
-		}
+        private void ChargePopup_Load(object sender, EventArgs e)
+        {
+            this.Payment.Select();
+        }
 
-		private void Process_Click(object sender, EventArgs e)
-		{
-			var change = Convert.ToDecimal(Change.Text);
+        private void panel1_MouseDown(object sender, MouseEventArgs e)
+        {
+            mouseDown = true;
+            lastLocation = e.Location;
+        }
 
-			PosPanel.SaveTransaction(change, this.Payment, this.Subtotal);
+        private void panel1_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (mouseDown)
+            {
+                this.Location = new Point(
+                    (this.Location.X - lastLocation.X) + e.X, (this.Location.Y - lastLocation.Y) + e.Y);
 
-			this.DialogResult = DialogResult.OK;
-			this.Close();
-		}
+                this.Update();
+            }
+        }
 
-		private void Cancel_Click(object sender, EventArgs e)
-		{
-			this.DialogResult = DialogResult.Cancel;
-			this.Close();
-		}
+        private void panel1_MouseUp(object sender, MouseEventArgs e)
+        {
+            mouseDown = false;
+        }
 
-		private void panel1_MouseDown(object sender, MouseEventArgs e)
-		{
-			mouseDown = true;
-			lastLocation = e.Location;
-		}
+        private void Process_Click(object sender, EventArgs e)
+        {
+            var payment = Convert.ToDecimal(Payment.Text);
+            var subtotal = !string.IsNullOrEmpty(_subtotalView.Subtotal.Text) ? Convert.ToDecimal(_subtotalView.Subtotal.Text) : 0;
+            var totalChange = (subtotal - payment) * -1;  // (* -1) to remove negative
 
-		private void panel1_MouseMove(object sender, MouseEventArgs e)
-		{
-			if (mouseDown)
-			{
-				this.Location = new Point(
-					(this.Location.X - lastLocation.X) + e.X, (this.Location.Y - lastLocation.Y) + e.Y);
+            if (payment > subtotal)
+            {
+                var isSuccessful = SaveTransaction(totalChange, payment, subtotal);
 
-				this.Update();
-			}
-		}
+                if (isSuccessful)
+                {
+                    change = totalChange.ToString("#,##0.00");
 
-		private void panel1_MouseUp(object sender, MouseEventArgs e)
-		{
-			mouseDown = false;
-		}
-	}
+                    this.DialogResult = DialogResult.OK;
+                    this.Close();
+                }
+            }
+            else
+                MessageBox.Show(" Payment is not enough."
+                    , "Warning"
+                    , MessageBoxButtons.OK
+                    , MessageBoxIcon.Warning);
+        }
+
+        private void Payment_Leave(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrEmpty(Payment.Text))
+            {
+                Payment.Text = Convert.ToDecimal(Payment.Text).ToString("#,###.00");
+            }
+        }
+
+        private void Payment_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // only allow numbers
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+
+            // only allow one decimal point
+            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void Cancel_Click(object sender, EventArgs e)
+        {
+            this.DialogResult = DialogResult.Cancel;
+            this.Close();
+        }
+
+        private void Payment_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+                Process.PerformClick();
+        }
+
+        private bool SaveTransaction(decimal change, decimal payment, decimal subtotal)
+        {
+            var productService = new ProductService();
+
+            var products = GlobalVariables.ProductList;
+            var uniqueId = DateTime.Now.ToString("yy")
+                + DateTime.Now.ToString("MM")
+                + DateTime.Now.ToString("dd")
+                + Guid.NewGuid().ToString().Substring(0, 4);
+
+            var isSuccessful = productService.SaveTransactionDetails(products, uniqueId);
+
+            if (isSuccessful)
+            {
+                return productService.SaveTransaction(uniqueId, change, payment, subtotal);
+            }
+            else
+                return false;
+        }
+    }
 }

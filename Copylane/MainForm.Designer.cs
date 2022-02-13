@@ -38,6 +38,7 @@ namespace CopyLane
             this.panel4 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.SalesButton = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -94,6 +95,7 @@ namespace CopyLane
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.panel2.Controls.Add(this.SalesButton);
             this.panel2.Controls.Add(this.ProductsButton);
             this.panel2.Controls.Add(this.POSButton);
             this.panel2.Controls.Add(this.panel4);
@@ -164,6 +166,21 @@ namespace CopyLane
             this.panel3.Size = new System.Drawing.Size(1056, 718);
             this.panel3.TabIndex = 3;
             // 
+            // SalesButton
+            // 
+            this.SalesButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.SalesButton.Dock = System.Windows.Forms.DockStyle.Top;
+            this.SalesButton.FlatAppearance.BorderSize = 0;
+            this.SalesButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.SalesButton.Font = new System.Drawing.Font("Calibri", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SalesButton.ForeColor = System.Drawing.Color.White;
+            this.SalesButton.Location = new System.Drawing.Point(0, 256);
+            this.SalesButton.Name = "SalesButton";
+            this.SalesButton.Size = new System.Drawing.Size(248, 44);
+            this.SalesButton.TabIndex = 3;
+            this.SalesButton.Text = "Sales";
+            this.SalesButton.UseVisualStyleBackColor = true;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
@@ -200,6 +217,7 @@ namespace CopyLane
 		private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button ExitButton;
         private System.Windows.Forms.Button MaxMinForm;
+        private System.Windows.Forms.Button SalesButton;
     }
 }
 

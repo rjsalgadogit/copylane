@@ -14,50 +14,43 @@ namespace CopyLane.CustomControls.PartialViews
 {
 	public partial class SubtotalView : UserControl
 	{
-		private POSPanel PosPanel;
+		private POSPanel _posPanel;
 
 		public SubtotalView(POSPanel posPanel)
 		{
 			InitializeComponent();
+			_posPanel = posPanel;
 
 			this.Dock = DockStyle.Bottom;
-			this.PosPanel = posPanel;
 
 			SetAllControlsOnSameClickEvent();
 		}
 
 		private void Subtotal_Click(object sender, EventArgs e)
 		{
-			var payment = !string.IsNullOrEmpty(PosPanel.Payment.Text) ? Convert.ToDecimal(PosPanel.Payment.Text) : 0;
-			var subtotal = !string.IsNullOrEmpty(Subtotal.Text) ? Convert.ToDecimal(Subtotal.Text) : 0;
+            var subtotal = !string.IsNullOrEmpty(Subtotal.Text) ? Convert.ToDecimal(Subtotal.Text) : 0;
 
-			if (payment > subtotal)
-			{
-				if (subtotal > 0)
+			if (subtotal > 0)
+            {
+				using (var popup = new PaymentPopup(this))
 				{
-					var change = (subtotal - payment) * -1;     // added (-1) to remove negative
-
-					// pass parameter to another form
-					using (var popup = new PaymentPopup(PosPanel, change, payment, subtotal))
+					var result = popup.ShowDialog();
+					if (result == DialogResult.OK)
 					{
-						var result = popup.ShowDialog();
-						if (result == DialogResult.OK)
+						using (var popup2 = new ChangePopup(popup.change))
 						{
-							// clear transaction
-							Subtotal.Text = "0.00";
-							PosPanel.Payment.Clear();
-							PosPanel.panel3.Controls.Clear();
+							var result2 = popup2.ShowDialog();
+							if (result2 == DialogResult.OK)
+							{
+								Subtotal.Text = "0.00";
+								_posPanel.panel3.Controls.Clear();
+							}
 						}
 					}
 				}
-				else
-					MessageBox.Show(" No transaction available."
-						, "Warning"
-						, MessageBoxButtons.OK
-						, MessageBoxIcon.Warning);
 			}
 			else
-				MessageBox.Show(" Payment is not enough."
+				MessageBox.Show(" No transaction available."
 					, "Warning"
 					, MessageBoxButtons.OK
 					, MessageBoxIcon.Warning);

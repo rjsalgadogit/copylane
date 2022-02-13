@@ -73,6 +73,12 @@
     <Compile Include="CustomControls\PartialViews\SubtotalView.Designer.cs">
       <DependentUpon>SubtotalView.cs</DependentUpon>
     </Compile>
+    <Compile Include="CustomForms\Popups\ChangePopup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CustomForms\Popups\ChangePopup.Designer.cs">
+      <DependentUpon>ChangePopup.cs</DependentUpon>
+    </Compile>
     <Compile Include="CustomForms\Popups\PaymentPopup.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -113,6 +119,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CustomControls\PartialViews\SubtotalView.resx">
       <DependentUpon>SubtotalView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomForms\Popups\ChangePopup.resx">
+      <DependentUpon>ChangePopup.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CustomForms\Popups\PaymentPopup.resx">
       <DependentUpon>PaymentPopup.cs</DependentUpon>
