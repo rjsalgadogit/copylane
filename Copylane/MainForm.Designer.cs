@@ -157,7 +157,6 @@ namespace CopyLane
             this.MaxMinForm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.MaxMinForm.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MaxMinForm.ForeColor = System.Drawing.Color.White;
-            this.MaxMinForm.Image = global::CopyLane.Properties.Resources.maximize_white;
             this.MaxMinForm.Location = new System.Drawing.Point(1226, 0);
             this.MaxMinForm.Name = "MaxMinForm";
             this.MaxMinForm.Size = new System.Drawing.Size(39, 30);
