@@ -16,9 +16,9 @@ namespace CopyLane.CustomForms.Popups
     public partial class PaymentPopup : Form
     {
         private SubtotalView _subtotalView;
+        public string change;
         private bool mouseDown;
         private Point lastLocation;
-        public string change;
 
         public PaymentPopup(SubtotalView subtotalView)
         {

@@ -144,7 +144,7 @@ namespace CopyLane.CustomControls.Contents
             this.SearchProduct.Name = "SearchProduct";
             this.SearchProduct.Size = new System.Drawing.Size(209, 27);
             this.SearchProduct.TabIndex = 3;
-            this.SearchProduct.KeyDown += new System.Windows.Forms.KeyEventHandler(this.SearchProduct_KeyDown);
+            this.SearchProduct.TextChanged += new System.EventHandler(this.SearchProduct_TextChanged);
             // 
             // label1
             // 
