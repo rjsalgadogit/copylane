@@ -111,7 +111,7 @@ namespace CopyLane.CustomForms.Popups
         private void Payment_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
-                Process.PerformClick();
+                this.Process.PerformClick();
         }
 
         private bool SaveTransaction(decimal change, decimal payment, decimal subtotal)

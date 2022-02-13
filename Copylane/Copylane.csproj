@@ -85,17 +85,17 @@
     <Compile Include="CustomForms\Popups\PaymentPopup.Designer.cs">
       <DependentUpon>PaymentPopup.cs</DependentUpon>
     </Compile>
+    <Compile Include="CustomForms\Popups\ProductDetailsPopup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CustomForms\Popups\ProductDetailsPopup.Designer.cs">
+      <DependentUpon>ProductDetailsPopup.cs</DependentUpon>
+    </Compile>
     <Compile Include="CustomForms\Popups\ProductEditPopup.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="CustomForms\Popups\ProductEditPopup.Designer.cs">
       <DependentUpon>ProductEditPopup.cs</DependentUpon>
-    </Compile>
-    <Compile Include="CustomForms\Popups\ProductPreviewPopup.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="CustomForms\Popups\ProductPreviewPopup.Designer.cs">
-      <DependentUpon>ProductPreviewPopup.cs</DependentUpon>
     </Compile>
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
@@ -126,11 +126,11 @@
     <EmbeddedResource Include="CustomForms\Popups\PaymentPopup.resx">
       <DependentUpon>PaymentPopup.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="CustomForms\Popups\ProductDetailsPopup.resx">
+      <DependentUpon>ProductDetailsPopup.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CustomForms\Popups\ProductEditPopup.resx">
       <DependentUpon>ProductEditPopup.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="CustomForms\Popups\ProductPreviewPopup.resx">
-      <DependentUpon>ProductPreviewPopup.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>

@@ -16,43 +16,62 @@ namespace CopyLane.CustomControls.PartialViews
 {
 	public partial class ProductPreview : UserControl
 	{
-		public POSPanel PosPanel { get; set; }
-		public ProductModel Product { get; set; }
+		public POSPanel _posPanel;
+		public ProductModel _productModel;
 
-		public ProductPreview(ProductModel product, POSPanel posPanel)
+		public ProductPreview(ProductModel productModel, POSPanel posPanel)
 		{
 			InitializeComponent();
 
 			this.Dock = DockStyle.Top;
+			
+			_posPanel = posPanel;
+			_productModel = productModel;
+			_productModel.Total = productModel.Price;
 
-			Product = product;
-			Product.Total = product.Price;
-			PosPanel = posPanel;
-
-			Updatevalues(product);
+			Updatevalues(_productModel);
+			SetAllControlsOnSameClickEvent();
 		}
 
 		private void ProductPreview_DoubleClick(object sender, EventArgs e)
 		{
-			using (var formPopup = new ProductPreviewPopup(Product))
-			{
-				var result = formPopup.ShowDialog();
+			using (var popup = new ProductDetailsPopup(_productModel))
+            {
+				var result = popup.ShowDialog();
+
 				if (result == DialogResult.OK)
-				{
-					Updatevalues(formPopup.Product);
-					PosPanel.ComputeSubtotal();
-				}
-			}
+                {
+					Updatevalues(popup._productModel);
+					_posPanel.ComputeSubtotal();
+                }
+            }
 		}
 
-		private void Updatevalues(ProductModel product)
+		private void Updatevalues(ProductModel productModel)
 		{
-			this.label1.Text = product.Description;
-			this.label2.Text = $"x {product.Qty}";
-			this.label3.Text = (product.Total + product.Additional - product.Discount).ToString("#,##0.00");
+			this.label1.Text = productModel.Description;
+			this.label2.Text = $"x {productModel.Qty}";
+			this.label3.Text = (productModel.Total + productModel.Additional - productModel.Discount).ToString("#,##0.00");
 
-			Product.Qty = product.Qty;
-			Product.Total = product.Total;
+			_productModel.Qty = _productModel.Qty;
+			_productModel.Total = _productModel.Total;
+		}
+
+		private void SetAllControlsOnSameClickEvent()
+        {
+			this.DoubleClick += new EventHandler(ProductPreview_DoubleClick);
+
+			// loop all controls inside of each panels
+			// and set click event
+			foreach (var control in this.Controls.OfType<Control>().OrderBy(x => x.TabIndex))
+			{
+				foreach (var subControl in control.Controls.OfType<Control>().OrderBy(x => x.TabIndex))
+				{
+					subControl.DoubleClick += new EventHandler(ProductPreview_DoubleClick);
+				}
+
+				control.DoubleClick += new EventHandler(ProductPreview_DoubleClick);
+			}
 		}
 	}
 }

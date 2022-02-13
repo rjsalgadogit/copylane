@@ -168,14 +168,14 @@ namespace CopyLane.CustomControls.Contents
 
 		public void ComputeSubtotal()
 		{
-			var subtotal = panel3.Controls.OfType<ProductPreview>().OrderBy(x => x.TabIndex).Sum(x => x.Product.Total);
+			var subtotal = panel3.Controls.OfType<ProductPreview>().OrderBy(x => x.TabIndex).Sum(x => x._productModel.Total);
 			SubtotalView.Subtotal.Text = subtotal.ToString("#,##0.00");
 
 			GlobalVariables.ProductList = new List<ProductModel>();
 
 			foreach (var item in panel3.Controls.OfType<ProductPreview>().OrderBy(x => x.TabIndex))
 			{
-				GlobalVariables.ProductList.Add(item.Product);
+				GlobalVariables.ProductList.Add(item._productModel);
 			}
 		}
 
