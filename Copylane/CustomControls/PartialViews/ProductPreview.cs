@@ -29,7 +29,7 @@ namespace CopyLane.CustomControls.PartialViews
 			
 			_posPanel = posPanel;
 			_productModel = productModel;
-			_productModel.Total = productModel.Price;
+			_productModel.Total = productModel.Total;
 
 			Updatevalues(_productModel);
 			SetAllControlsOnSameClickEvent();
@@ -61,8 +61,6 @@ namespace CopyLane.CustomControls.PartialViews
 
 		private void SetAllControlsOnSameClickEvent()
         {
-			//this.DoubleClick += new EventHandler(ProductPreview_DoubleClick);
-
 			// loop all controls inside of each panels
 			// and set click event
 			foreach (var control in this.Controls.OfType<Control>().OrderBy(x => x.TabIndex))

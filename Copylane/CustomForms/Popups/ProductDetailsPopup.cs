@@ -26,7 +26,7 @@ namespace CopyLane.CustomForms.Popups
             this.Price.Text = $"PHP   {productModel.Price}";
             this.Total.Text = productModel.Total.ToString("#,##0.00");
             this.Quantity.Text = productModel.Qty.ToString();
-            this.Charge.Text = $"Charge  (P  {productModel.Total.ToString("#,##0.00")})";
+            this.Charge.Text = productModel.Total > 0 ? $"Charge  (P  {productModel.Total.ToString("#,##0.00")})" : $"Charge  (P  {productModel.Price.ToString("#,##0.00")})";
         }
 
         private void ProductDetailsPopup_Load(object sender, EventArgs e)
@@ -124,6 +124,25 @@ namespace CopyLane.CustomForms.Popups
         {
             this.DialogResult = DialogResult.Cancel;
             this.Close();
+        }
+
+        private void ProductDetailsPopup_KeyDown(object sender, KeyEventArgs e)
+        {
+            //NOTE: set KeyPreview = True
+
+            if (e.KeyCode == Keys.Escape)
+                this.Cancel.PerformClick();
+
+            switch (e.KeyCode)
+            {
+                case Keys.Enter:
+                    this.Charge.PerformClick();
+                    break;
+
+                case Keys.Escape:
+                    this.Cancel.PerformClick();
+                    break;
+            }
         }
     }
 }

@@ -30,6 +30,7 @@ namespace CopyLane.CustomForms.Popups
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.Cancel = new System.Windows.Forms.Button();
             this.Description = new System.Windows.Forms.Label();
             this.Price = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -38,7 +39,6 @@ namespace CopyLane.CustomForms.Popups
             this.label1 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.Charge = new System.Windows.Forms.Button();
-            this.Cancel = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -55,6 +55,22 @@ namespace CopyLane.CustomForms.Popups
             this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
             this.panel1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseMove);
             this.panel1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseUp);
+            // 
+            // Cancel
+            // 
+            this.Cancel.BackColor = System.Drawing.Color.Transparent;
+            this.Cancel.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Cancel.Dock = System.Windows.Forms.DockStyle.Right;
+            this.Cancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Cancel.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Cancel.ForeColor = System.Drawing.Color.DarkGray;
+            this.Cancel.Location = new System.Drawing.Point(438, 0);
+            this.Cancel.Name = "Cancel";
+            this.Cancel.Size = new System.Drawing.Size(38, 30);
+            this.Cancel.TabIndex = 5;
+            this.Cancel.Text = "X";
+            this.Cancel.UseVisualStyleBackColor = false;
+            this.Cancel.Click += new System.EventHandler(this.Cancel_Click);
             // 
             // Description
             // 
@@ -160,22 +176,6 @@ namespace CopyLane.CustomForms.Popups
             this.Charge.UseVisualStyleBackColor = false;
             this.Charge.Click += new System.EventHandler(this.Charge_Click);
             // 
-            // Cancel
-            // 
-            this.Cancel.BackColor = System.Drawing.Color.Transparent;
-            this.Cancel.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Cancel.Dock = System.Windows.Forms.DockStyle.Right;
-            this.Cancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Cancel.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Cancel.ForeColor = System.Drawing.Color.DarkGray;
-            this.Cancel.Location = new System.Drawing.Point(438, 0);
-            this.Cancel.Name = "Cancel";
-            this.Cancel.Size = new System.Drawing.Size(38, 30);
-            this.Cancel.TabIndex = 5;
-            this.Cancel.Text = "X";
-            this.Cancel.UseVisualStyleBackColor = false;
-            this.Cancel.Click += new System.EventHandler(this.Cancel_Click);
-            // 
             // ProductDetailsPopup
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
@@ -194,11 +194,13 @@ namespace CopyLane.CustomForms.Popups
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Calibri", 11.25F);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.KeyPreview = true;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "ProductDetailsPopup";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "ProductDetailsPopup";
             this.Load += new System.EventHandler(this.ProductDetailsPopup_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.ProductDetailsPopup_KeyDown);
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();

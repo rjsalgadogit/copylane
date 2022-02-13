@@ -91,6 +91,11 @@ namespace CopyLane
 					_posPanel.SubtotalView.SubtotalPerformClick();
 					break;
 			}
+
+			if (e.Alt && e.KeyCode == Keys.Enter)
+            {
+				_posPanel.SubtotalView.SubtotalPerformClick();
+			}
 		}
 
         private void ExitButton_Click(object sender, EventArgs e)

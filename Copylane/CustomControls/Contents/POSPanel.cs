@@ -1,4 +1,5 @@
 ﻿using CopyLane.CustomControls.PartialViews;
+using CopyLane.CustomForms.Popups;
 using CopyLane.Models;
 using CopyLane.Models.Global;
 using CopyLane.Services;
@@ -44,11 +45,10 @@ namespace CopyLane.CustomControls.Contents
 			var product = productService.GetProductByKey(new ProductModel { ShortcutKey = "F1" });
 
 			if (product != null)
-			{
+            {
 				product.Qty = 1;
-				panel3.Controls.Add(new ProductPreview(product, this));
-				ComputeSubtotal();
-			}
+				AddItemToTheList(product);
+            }
 			else
 				MessageBox.Show(" No product available", "Notice", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 		}
@@ -61,8 +61,7 @@ namespace CopyLane.CustomControls.Contents
 			if (product != null)
 			{
 				product.Qty = 1;
-				panel3.Controls.Add(new ProductPreview(product, this));
-				ComputeSubtotal();
+				AddItemToTheList(product);
 			}
 			else
 				MessageBox.Show(" No product available", "Notice", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -76,8 +75,7 @@ namespace CopyLane.CustomControls.Contents
 			if (product != null)
 			{
 				product.Qty = 1;
-				panel3.Controls.Add(new ProductPreview(product, this));
-				ComputeSubtotal();
+				AddItemToTheList(product);
 			}
 			else
 				MessageBox.Show(" No product available", "Notice", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -91,8 +89,7 @@ namespace CopyLane.CustomControls.Contents
 			if (product != null)
 			{
 				product.Qty = 1;
-				panel3.Controls.Add(new ProductPreview(product, this));
-				ComputeSubtotal();
+				AddItemToTheList(product);
 			}
 			else
 				MessageBox.Show(" No product available", "Notice", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -196,6 +193,20 @@ namespace CopyLane.CustomControls.Contents
 			}
 		}
 
-		#endregion
-	}
+		private void AddItemToTheList(ProductModel product)
+        {
+			using (var popup = new ProductDetailsPopup(product))
+			{
+				var result = popup.ShowDialog();
+
+				if (result == DialogResult.OK)
+				{
+					this.panel3.Controls.Add(new ProductPreview(popup._productModel, this));
+					ComputeSubtotal();
+				}
+			}
+		}
+
+        #endregion
+    }
 }

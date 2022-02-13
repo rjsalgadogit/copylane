@@ -112,6 +112,8 @@ namespace CopyLane.CustomForms.Popups
         {
             if (e.KeyCode == Keys.Enter)
                 this.Process.PerformClick();
+            else if (e.KeyCode == Keys.Escape)
+                this.Cancel.PerformClick();
         }
 
         private bool SaveTransaction(decimal change, decimal payment, decimal subtotal)
