@@ -21,6 +21,8 @@ namespace CopyLane.CustomForms.Popups
         {
             InitializeComponent();
             this.SearchProduct.Select();
+
+            //NOTE: set DataGridView.StandardProperty = True (to disable tabstop on each column)
         }
 
         private void ProductListPopup_Load(object sender, EventArgs e)
@@ -87,6 +89,22 @@ namespace CopyLane.CustomForms.Popups
                     this.DialogResult = DialogResult.Cancel;
                     this.Close();
                     break;
+            }
+        }
+
+        private void dataGridView1_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyData == Keys.Enter)
+            {
+                MessageBox.Show("Testing");
+            }
+        }
+
+        private void SearchProduct_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                MessageBox.Show("Testing");
             }
         }
     }

@@ -51,7 +51,7 @@ namespace CopyLane.CustomForms.Popups
             this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(860, 30);
-            this.panel1.TabIndex = 2;
+            this.panel1.TabIndex = 10;
             this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
             this.panel1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseMove);
             this.panel1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseUp);
@@ -63,12 +63,12 @@ namespace CopyLane.CustomForms.Popups
             this.Cancel.Dock = System.Windows.Forms.DockStyle.Right;
             this.Cancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Cancel.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Cancel.ForeColor = System.Drawing.Color.White;
+            this.Cancel.ForeColor = System.Drawing.Color.Black;
             this.Cancel.Location = new System.Drawing.Point(809, 0);
             this.Cancel.Margin = new System.Windows.Forms.Padding(4);
             this.Cancel.Name = "Cancel";
             this.Cancel.Size = new System.Drawing.Size(51, 30);
-            this.Cancel.TabIndex = 6;
+            this.Cancel.TabIndex = 3;
             this.Cancel.Text = "X";
             this.Cancel.UseVisualStyleBackColor = false;
             this.Cancel.Click += new System.EventHandler(this.Cancel_Click);
@@ -80,8 +80,9 @@ namespace CopyLane.CustomForms.Popups
             this.SearchProduct.Margin = new System.Windows.Forms.Padding(4);
             this.SearchProduct.Name = "SearchProduct";
             this.SearchProduct.Size = new System.Drawing.Size(398, 31);
-            this.SearchProduct.TabIndex = 11;
+            this.SearchProduct.TabIndex = 0;
             this.SearchProduct.TextChanged += new System.EventHandler(this.SearchProduct_TextChanged);
+            this.SearchProduct.KeyDown += new System.Windows.Forms.KeyEventHandler(this.SearchProduct_KeyDown);
             // 
             // dataGridView1
             // 
@@ -95,11 +96,15 @@ namespace CopyLane.CustomForms.Popups
             this.dataGridView1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.dataGridView1.Location = new System.Drawing.Point(13, 90);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
+            this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(834, 440);
-            this.dataGridView1.TabIndex = 12;
+            this.dataGridView1.StandardTab = true;
+            this.dataGridView1.TabIndex = 1;
+            this.dataGridView1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dataGridView1_KeyDown);
             // 
             // ID
             // 

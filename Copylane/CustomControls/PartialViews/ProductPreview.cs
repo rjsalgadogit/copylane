@@ -77,6 +77,7 @@ namespace CopyLane.CustomControls.PartialViews
         private void Remove_Click(object sender, EventArgs e)
         {
 			_posPanel.panel3.Controls.Remove(this);
-        }
+			_posPanel.ComputeSubtotal();
+		}
     }
 }

@@ -19,9 +19,11 @@ namespace CopyLane.CustomControls.Contents
 		{
 			InitializeComponent();
 			this.Dock = DockStyle.Fill;
+
+			//NOTE: set DataGridView.StandardProperty = True (to disable tabstop on each column)
 		}
 
-        private void ProductPanel_Load(object sender, EventArgs e)
+		private void ProductPanel_Load(object sender, EventArgs e)
         {
 			LoadProductGrid();
 		}

@@ -166,7 +166,7 @@ namespace CopyLane.CustomForms.Popups
             this.Charge.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.Charge.FlatAppearance.BorderSize = 0;
             this.Charge.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Charge.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Charge.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Charge.ForeColor = System.Drawing.Color.White;
             this.Charge.Location = new System.Drawing.Point(0, 222);
             this.Charge.Name = "Charge";

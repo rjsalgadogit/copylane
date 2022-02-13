@@ -69,49 +69,56 @@ namespace CopyLane
 		{
 			//NOTE: set KeyPreview = True
 
-			switch (e.KeyCode)
-			{
-				case Keys.F1:
-					_posPanel.KeyAction(Keys.F1);
-					break;
-
-				case Keys.F2:
-					_posPanel.KeyAction(Keys.F2);
-					break;
-
-				case Keys.F3:
-					_posPanel.KeyAction(Keys.F3);
-					break;
-
-				case Keys.F4:
-					_posPanel.KeyAction(Keys.F4);
-					break;
-
-				case Keys.Enter:
+			if (e.Control)
+            {
+				if (e.Control && e.KeyCode == Keys.Enter)
+				{
 					_posPanel.SubtotalView.SubtotalPerformClick();
-					break;
-
-				case Keys.Escape:
-					if (_posPanel.panel3.Controls.Count > 0)
-                    {
-						var result = MessageBox.Show(" Do you want to clear Transactions?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
-						if (result == DialogResult.Yes)
-                        {
-							_posPanel.ClearTransaction();
-                        }
-                    }
-					break;
+					return;
+				}
+				else if (e.Control && e.KeyCode == Keys.S)
+				{
+					_posPanel.Search.PerformClick();
+					return;
+				}
 			}
+            else
+            {
+				switch (e.KeyCode)
+				{
+					case Keys.F1:
+						_posPanel.KeyAction(Keys.F1);
+						break;
 
-			if (e.Control && e.KeyCode == Keys.Enter)
-            {
-				_posPanel.SubtotalView.SubtotalPerformClick();
+					case Keys.F2:
+						_posPanel.KeyAction(Keys.F2);
+						break;
+
+					case Keys.F3:
+						_posPanel.KeyAction(Keys.F3);
+						break;
+
+					case Keys.F4:
+						_posPanel.KeyAction(Keys.F4);
+						break;
+
+					case Keys.Enter:
+						_posPanel.SubtotalView.SubtotalPerformClick();
+						break;
+
+					case Keys.Escape:
+						if (_posPanel.panel3.Controls.Count > 0)
+						{
+							var result = MessageBox.Show(" Do you want to clear Transactions?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+							if (result == DialogResult.Yes)
+							{
+								_posPanel.ClearTransaction();
+							}
+						}
+						break;
+				}
 			}
-			else if (e.Control && e.KeyCode == Keys.S)
-            {
-				_posPanel.Search.PerformClick();
-            }
 		}
 
         private void ExitButton_Click(object sender, EventArgs e)
@@ -124,15 +131,16 @@ namespace CopyLane
 			if (this.WindowState == FormWindowState.Normal)
 			{
 				this.WindowState = FormWindowState.Maximized;
-				var listPanelHeight = _posPanel.panel1.Height - 153;
-				_posPanel.panel3.Height = listPanelHeight;
-				MaxMinForm.Text = "-";
+				this.MaxMinForm.Text = "-";
+
+				_posPanel.panel3.Height = 718;
 			}
 			else
 			{
 				this.WindowState = FormWindowState.Normal;
-				_posPanel.panel3.Height = 565;
-				MaxMinForm.Text = "[ ]";
+				this.MaxMinForm.Text = "[ ]";
+
+				_posPanel.panel3.Height = 617;
 			}
 		}
     }

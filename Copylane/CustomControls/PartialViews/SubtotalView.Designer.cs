@@ -67,7 +67,7 @@ namespace CopyLane.CustomControls.PartialViews
             // 
             this.panel5.Controls.Add(this.label5);
             this.panel5.Controls.Add(this.Subtotal);
-            this.panel5.Location = new System.Drawing.Point(139, 30);
+            this.panel5.Location = new System.Drawing.Point(146, 35);
             this.panel5.Name = "panel5";
             this.panel5.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.panel5.Size = new System.Drawing.Size(272, 54);
@@ -78,13 +78,13 @@ namespace CopyLane.CustomControls.PartialViews
             this.label5.AutoSize = true;
             this.label5.Dock = System.Windows.Forms.DockStyle.Right;
             this.label5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label5.Font = new System.Drawing.Font("Calibri", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Font = new System.Drawing.Font("Calibri", 33.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(111, 0);
+            this.label5.Location = new System.Drawing.Point(119, 0);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
             this.label5.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.label5.Size = new System.Drawing.Size(51, 59);
+            this.label5.Size = new System.Drawing.Size(48, 55);
             this.label5.TabIndex = 8;
             this.label5.Text = "P";
             // 
@@ -93,25 +93,25 @@ namespace CopyLane.CustomControls.PartialViews
             this.Subtotal.AutoSize = true;
             this.Subtotal.Dock = System.Windows.Forms.DockStyle.Right;
             this.Subtotal.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Subtotal.Font = new System.Drawing.Font("Calibri", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Subtotal.Font = new System.Drawing.Font("Calibri", 33.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Subtotal.ForeColor = System.Drawing.Color.White;
-            this.Subtotal.Location = new System.Drawing.Point(162, 0);
+            this.Subtotal.Location = new System.Drawing.Point(167, 0);
             this.Subtotal.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Subtotal.Name = "Subtotal";
             this.Subtotal.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.Subtotal.Size = new System.Drawing.Size(110, 59);
+            this.Subtotal.Size = new System.Drawing.Size(105, 55);
             this.Subtotal.TabIndex = 10;
             this.Subtotal.Text = "0.00";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Calibri", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Font = new System.Drawing.Font("Calibri", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.White;
             this.label6.Location = new System.Drawing.Point(13, 48);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(134, 36);
+            this.label6.Size = new System.Drawing.Size(125, 33);
             this.label6.TabIndex = 14;
             this.label6.Text = "SUBTOTAL";
             // 
