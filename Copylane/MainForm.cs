@@ -90,12 +90,28 @@ namespace CopyLane
 				case Keys.Enter:
 					_posPanel.SubtotalView.SubtotalPerformClick();
 					break;
+
+				case Keys.Escape:
+					if (_posPanel.panel3.Controls.Count > 0)
+                    {
+						var result = MessageBox.Show(" Do you want to clear Transactions?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+						if (result == DialogResult.Yes)
+                        {
+							_posPanel.ClearTransaction();
+                        }
+                    }
+					break;
 			}
 
-			if (e.Alt && e.KeyCode == Keys.Enter)
+			if (e.Control && e.KeyCode == Keys.Enter)
             {
 				_posPanel.SubtotalView.SubtotalPerformClick();
 			}
+			else if (e.Control && e.KeyCode == Keys.S)
+            {
+				_posPanel.Search.PerformClick();
+            }
 		}
 
         private void ExitButton_Click(object sender, EventArgs e)

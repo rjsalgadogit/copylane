@@ -42,8 +42,7 @@ namespace CopyLane.CustomControls.PartialViews
 							var result2 = popup2.ShowDialog();
 							if (result2 == DialogResult.OK)
 							{
-								Subtotal.Text = "0.00";
-								_posPanel.panel3.Controls.Clear();
+								_posPanel.ClearTransaction();
 							}
 						}
 					}
@@ -58,8 +57,6 @@ namespace CopyLane.CustomControls.PartialViews
 
 		private void SetAllControlsOnSameClickEvent()
 		{
-			this.Click += new EventHandler(Subtotal_Click);
-
 			// loop all controls inside of each panels
 			// and set click event
 			foreach (var control in this.Controls.OfType<Control>().OrderBy(x => x.TabIndex))

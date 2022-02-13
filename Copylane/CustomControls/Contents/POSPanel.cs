@@ -95,6 +95,49 @@ namespace CopyLane.CustomControls.Contents
 				MessageBox.Show(" No product available", "Notice", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 		}
 
+		private void F5_Click(object sender, EventArgs e)
+		{
+
+		}
+
+		private void F6_Click(object sender, EventArgs e)
+		{
+
+		}
+
+		private void F7_Click(object sender, EventArgs e)
+		{
+
+		}
+
+		private void F8_Click(object sender, EventArgs e)
+		{
+
+		}
+
+		private void F9_Click(object sender, EventArgs e)
+		{
+
+		}
+
+		private void F10_Click(object sender, EventArgs e)
+		{
+
+		}
+
+		private void F11_Click(object sender, EventArgs e)
+		{
+
+		}
+
+		private void Search_Click(object sender, EventArgs e)
+		{
+			using (var popup = new ProductListPopup())
+			{
+				var result = popup.ShowDialog();
+			}
+		}
+
 		private void Payment_KeyPress(object sender, KeyPressEventArgs e)
 		{
 			// only allow numbers
@@ -207,34 +250,11 @@ namespace CopyLane.CustomControls.Contents
 			}
 		}
 
+		public void ClearTransaction()
+        {
+			this.panel3.Controls.Clear();
+			this.SubtotalView.Subtotal.Text = "0.00";
+        }
         #endregion
-
-        private void Search_Click(object sender, EventArgs e)
-        {
-			using (var popup = new ProductListPopup())
-            {
-				var result = popup.ShowDialog();
-            }
-        }
-
-        private void F5_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void F6_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void F7_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void F8_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }

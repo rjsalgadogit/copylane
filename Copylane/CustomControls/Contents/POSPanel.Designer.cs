@@ -77,7 +77,7 @@ namespace CopyLane.CustomControls.Contents
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel3.Location = new System.Drawing.Point(0, 0);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(425, 634);
+            this.panel3.Size = new System.Drawing.Size(425, 602);
             this.panel3.TabIndex = 4;
             // 
             // panel2
@@ -186,6 +186,7 @@ namespace CopyLane.CustomControls.Contents
             this.F11.TabIndex = 11;
             this.F11.Text = "No product";
             this.F11.UseVisualStyleBackColor = true;
+            this.F11.Click += new System.EventHandler(this.F11_Click);
             // 
             // F10
             // 
@@ -196,6 +197,7 @@ namespace CopyLane.CustomControls.Contents
             this.F10.TabIndex = 10;
             this.F10.Text = "No product";
             this.F10.UseVisualStyleBackColor = true;
+            this.F10.Click += new System.EventHandler(this.F10_Click);
             // 
             // F9
             // 
@@ -206,6 +208,7 @@ namespace CopyLane.CustomControls.Contents
             this.F9.TabIndex = 9;
             this.F9.Text = "No product";
             this.F9.UseVisualStyleBackColor = true;
+            this.F9.Click += new System.EventHandler(this.F9_Click);
             // 
             // label8
             // 
