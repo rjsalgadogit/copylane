@@ -37,9 +37,9 @@ namespace CopyLane.CustomControls.Contents
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.button7 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
+            this.F11 = new System.Windows.Forms.Button();
+            this.F10 = new System.Windows.Forms.Button();
+            this.F9 = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -89,9 +89,9 @@ namespace CopyLane.CustomControls.Contents
             this.panel2.Controls.Add(this.label11);
             this.panel2.Controls.Add(this.label10);
             this.panel2.Controls.Add(this.label9);
-            this.panel2.Controls.Add(this.button7);
-            this.panel2.Controls.Add(this.button6);
-            this.panel2.Controls.Add(this.button5);
+            this.panel2.Controls.Add(this.F11);
+            this.panel2.Controls.Add(this.F10);
+            this.panel2.Controls.Add(this.F9);
             this.panel2.Controls.Add(this.label8);
             this.panel2.Controls.Add(this.label7);
             this.panel2.Controls.Add(this.label6);
@@ -177,35 +177,35 @@ namespace CopyLane.CustomControls.Contents
             this.label9.TabIndex = 23;
             this.label9.Text = "F9";
             // 
-            // button7
+            // F11
             // 
-            this.button7.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button7.Location = new System.Drawing.Point(319, 303);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(150, 115);
-            this.button7.TabIndex = 11;
-            this.button7.Text = "No product";
-            this.button7.UseVisualStyleBackColor = true;
+            this.F11.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.F11.Location = new System.Drawing.Point(319, 303);
+            this.F11.Name = "F11";
+            this.F11.Size = new System.Drawing.Size(150, 115);
+            this.F11.TabIndex = 11;
+            this.F11.Text = "No product";
+            this.F11.UseVisualStyleBackColor = true;
             // 
-            // button6
+            // F10
             // 
-            this.button6.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button6.Location = new System.Drawing.Point(163, 303);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(150, 115);
-            this.button6.TabIndex = 10;
-            this.button6.Text = "No product";
-            this.button6.UseVisualStyleBackColor = true;
+            this.F10.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.F10.Location = new System.Drawing.Point(163, 303);
+            this.F10.Name = "F10";
+            this.F10.Size = new System.Drawing.Size(150, 115);
+            this.F10.TabIndex = 10;
+            this.F10.Text = "No product";
+            this.F10.UseVisualStyleBackColor = true;
             // 
-            // button5
+            // F9
             // 
-            this.button5.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button5.Location = new System.Drawing.Point(7, 303);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(150, 115);
-            this.button5.TabIndex = 9;
-            this.button5.Text = "No product";
-            this.button5.UseVisualStyleBackColor = true;
+            this.F9.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.F9.Location = new System.Drawing.Point(7, 303);
+            this.F9.Name = "F9";
+            this.F9.Size = new System.Drawing.Size(150, 115);
+            this.F9.TabIndex = 9;
+            this.F9.Text = "No product";
+            this.F9.UseVisualStyleBackColor = true;
             // 
             // label8
             // 
@@ -268,6 +268,7 @@ namespace CopyLane.CustomControls.Contents
             this.F8.TabIndex = 8;
             this.F8.Text = "No product";
             this.F8.UseVisualStyleBackColor = true;
+            this.F8.Click += new System.EventHandler(this.F8_Click);
             // 
             // F7
             // 
@@ -278,6 +279,7 @@ namespace CopyLane.CustomControls.Contents
             this.F7.TabIndex = 7;
             this.F7.Text = "No product";
             this.F7.UseVisualStyleBackColor = true;
+            this.F7.Click += new System.EventHandler(this.F7_Click);
             // 
             // F6
             // 
@@ -288,6 +290,7 @@ namespace CopyLane.CustomControls.Contents
             this.F6.TabIndex = 6;
             this.F6.Text = "No product";
             this.F6.UseVisualStyleBackColor = true;
+            this.F6.Click += new System.EventHandler(this.F6_Click);
             // 
             // F5
             // 
@@ -298,6 +301,7 @@ namespace CopyLane.CustomControls.Contents
             this.F5.TabIndex = 5;
             this.F5.Text = "No product";
             this.F5.UseVisualStyleBackColor = true;
+            this.F5.Click += new System.EventHandler(this.F5_Click);
             // 
             // label4
             // 
@@ -431,9 +435,9 @@ namespace CopyLane.CustomControls.Contents
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
-        public System.Windows.Forms.Button button7;
-        public System.Windows.Forms.Button button6;
-        public System.Windows.Forms.Button button5;
+        public System.Windows.Forms.Button F11;
+        public System.Windows.Forms.Button F10;
+        public System.Windows.Forms.Button F9;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;

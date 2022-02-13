@@ -211,6 +211,29 @@ namespace CopyLane.CustomControls.Contents
 
         private void Search_Click(object sender, EventArgs e)
         {
+			using (var popup = new ProductListPopup())
+            {
+				var result = popup.ShowDialog();
+            }
+        }
+
+        private void F5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void F6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void F7_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void F8_Click(object sender, EventArgs e)
+        {
 
         }
     }
