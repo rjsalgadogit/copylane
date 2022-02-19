@@ -177,5 +177,20 @@
   <ItemGroup>
     <None Include="Resources\cross_12_white.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cross_12.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\stop_12.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\copy_12.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\minus_12.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cart_14.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -131,16 +131,16 @@ namespace CopyLane
 			if (this.WindowState == FormWindowState.Normal)
 			{
 				this.WindowState = FormWindowState.Maximized;
-				this.MaxMinForm.Image = Properties.Resources.normal_12_white;
+                this.MaxMinForm.Image = Properties.Resources.copy_12;
 
-				_posPanel.panel3.Height = 718;
+                _posPanel.panel3.Height = 718;
 			}
 			else
 			{
 				this.WindowState = FormWindowState.Normal;
-				this.MaxMinForm.Image = Properties.Resources.square_12_white;
+                this.MaxMinForm.Image = Properties.Resources.stop_12;
 
-				_posPanel.panel3.Height = 617;
+                _posPanel.panel3.Height = 617;
 			}
         }
 
@@ -159,5 +159,10 @@ namespace CopyLane
 				_posPanel.panel3.Height = 617;
 			}
 		}
+
+        private void MinButton_Click(object sender, EventArgs e)
+        {
+			this.WindowState = FormWindowState.Minimized;
+        }
     }
 }

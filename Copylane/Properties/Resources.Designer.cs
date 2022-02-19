@@ -63,9 +63,9 @@ namespace CopyLane.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap cross_12_white {
+        internal static System.Drawing.Bitmap copy_12 {
             get {
-                object obj = ResourceManager.GetObject("cross_12_white", resourceCulture);
+                object obj = ResourceManager.GetObject("copy_12", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -73,9 +73,9 @@ namespace CopyLane.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap normal_12_white {
+        internal static System.Drawing.Bitmap cross_12 {
             get {
-                object obj = ResourceManager.GetObject("normal_12_white", resourceCulture);
+                object obj = ResourceManager.GetObject("cross_12", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -83,9 +83,19 @@ namespace CopyLane.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap square_12_white {
+        internal static System.Drawing.Bitmap minus_12 {
             get {
-                object obj = ResourceManager.GetObject("square_12_white", resourceCulture);
+                object obj = ResourceManager.GetObject("minus_12", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap stop_12 {
+            get {
+                object obj = ResourceManager.GetObject("stop_12", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

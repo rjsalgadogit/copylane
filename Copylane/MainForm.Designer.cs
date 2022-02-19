@@ -30,15 +30,16 @@ namespace CopyLane
 		private void InitializeComponent()
 		{
             this.panel1 = new System.Windows.Forms.Panel();
-            this.MaxMinForm = new System.Windows.Forms.Button();
-            this.ExitButton = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.SalesButton = new System.Windows.Forms.Button();
             this.ProductsButton = new System.Windows.Forms.Button();
-            this.POSButton = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.POSButton = new System.Windows.Forms.Button();
+            this.MinButton = new System.Windows.Forms.Button();
+            this.MaxMinForm = new System.Windows.Forms.Button();
+            this.ExitButton = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -47,6 +48,7 @@ namespace CopyLane
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(38)))));
+            this.panel1.Controls.Add(this.MinButton);
             this.panel1.Controls.Add(this.MaxMinForm);
             this.panel1.Controls.Add(this.ExitButton);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
@@ -58,40 +60,6 @@ namespace CopyLane
             this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
             this.panel1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseMove);
             this.panel1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseUp);
-            // 
-            // MaxMinForm
-            // 
-            this.MaxMinForm.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.MaxMinForm.Dock = System.Windows.Forms.DockStyle.Right;
-            this.MaxMinForm.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.MaxMinForm.FlatAppearance.BorderSize = 0;
-            this.MaxMinForm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.MaxMinForm.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MaxMinForm.ForeColor = System.Drawing.Color.White;
-            this.MaxMinForm.Image = global::CopyLane.Properties.Resources.square_12_white;
-            this.MaxMinForm.Location = new System.Drawing.Point(1226, 0);
-            this.MaxMinForm.Name = "MaxMinForm";
-            this.MaxMinForm.Size = new System.Drawing.Size(39, 30);
-            this.MaxMinForm.TabIndex = 105;
-            this.MaxMinForm.UseVisualStyleBackColor = true;
-            this.MaxMinForm.Click += new System.EventHandler(this.MaxMinForm_Click);
-            // 
-            // ExitButton
-            // 
-            this.ExitButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ExitButton.Dock = System.Windows.Forms.DockStyle.Right;
-            this.ExitButton.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.ExitButton.FlatAppearance.BorderSize = 0;
-            this.ExitButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ExitButton.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ExitButton.ForeColor = System.Drawing.Color.White;
-            this.ExitButton.Image = global::CopyLane.Properties.Resources.cross_12_white;
-            this.ExitButton.Location = new System.Drawing.Point(1265, 0);
-            this.ExitButton.Name = "ExitButton";
-            this.ExitButton.Size = new System.Drawing.Size(39, 30);
-            this.ExitButton.TabIndex = 104;
-            this.ExitButton.UseVisualStyleBackColor = true;
-            this.ExitButton.Click += new System.EventHandler(this.ExitButton_Click);
             // 
             // panel2
             // 
@@ -119,6 +87,7 @@ namespace CopyLane
             this.SalesButton.Size = new System.Drawing.Size(248, 44);
             this.SalesButton.TabIndex = 103;
             this.SalesButton.Text = "Sales";
+            this.SalesButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.SalesButton.UseVisualStyleBackColor = true;
             // 
             // ProductsButton
@@ -134,24 +103,9 @@ namespace CopyLane
             this.ProductsButton.Size = new System.Drawing.Size(248, 44);
             this.ProductsButton.TabIndex = 102;
             this.ProductsButton.Text = "Products";
+            this.ProductsButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.ProductsButton.UseVisualStyleBackColor = true;
             this.ProductsButton.Click += new System.EventHandler(this.ProductsButton_Click);
-            // 
-            // POSButton
-            // 
-            this.POSButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.POSButton.Dock = System.Windows.Forms.DockStyle.Top;
-            this.POSButton.FlatAppearance.BorderSize = 0;
-            this.POSButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.POSButton.Font = new System.Drawing.Font("Calibri", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.POSButton.ForeColor = System.Drawing.Color.White;
-            this.POSButton.Location = new System.Drawing.Point(0, 168);
-            this.POSButton.Name = "POSButton";
-            this.POSButton.Size = new System.Drawing.Size(248, 44);
-            this.POSButton.TabIndex = 101;
-            this.POSButton.Text = "Point of Sale";
-            this.POSButton.UseVisualStyleBackColor = true;
-            this.POSButton.Click += new System.EventHandler(this.POSButton_Click);
             // 
             // panel4
             // 
@@ -181,6 +135,74 @@ namespace CopyLane
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1056, 718);
             this.panel3.TabIndex = 150;
+            // 
+            // POSButton
+            // 
+            this.POSButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.POSButton.Dock = System.Windows.Forms.DockStyle.Top;
+            this.POSButton.FlatAppearance.BorderSize = 0;
+            this.POSButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.POSButton.Font = new System.Drawing.Font("Calibri", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.POSButton.ForeColor = System.Drawing.Color.White;
+            this.POSButton.Location = new System.Drawing.Point(0, 168);
+            this.POSButton.Name = "POSButton";
+            this.POSButton.Size = new System.Drawing.Size(248, 44);
+            this.POSButton.TabIndex = 101;
+            this.POSButton.Text = "Point of Sale";
+            this.POSButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.POSButton.UseVisualStyleBackColor = true;
+            this.POSButton.Click += new System.EventHandler(this.POSButton_Click);
+            // 
+            // MinButton
+            // 
+            this.MinButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.MinButton.Dock = System.Windows.Forms.DockStyle.Right;
+            this.MinButton.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.MinButton.FlatAppearance.BorderSize = 0;
+            this.MinButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.MinButton.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MinButton.ForeColor = System.Drawing.Color.White;
+            this.MinButton.Image = global::CopyLane.Properties.Resources.minus_12;
+            this.MinButton.Location = new System.Drawing.Point(1187, 0);
+            this.MinButton.Name = "MinButton";
+            this.MinButton.Size = new System.Drawing.Size(39, 30);
+            this.MinButton.TabIndex = 106;
+            this.MinButton.UseVisualStyleBackColor = true;
+            this.MinButton.Click += new System.EventHandler(this.MinButton_Click);
+            // 
+            // MaxMinForm
+            // 
+            this.MaxMinForm.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.MaxMinForm.Dock = System.Windows.Forms.DockStyle.Right;
+            this.MaxMinForm.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.MaxMinForm.FlatAppearance.BorderSize = 0;
+            this.MaxMinForm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.MaxMinForm.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MaxMinForm.ForeColor = System.Drawing.Color.White;
+            this.MaxMinForm.Image = global::CopyLane.Properties.Resources.stop_12;
+            this.MaxMinForm.Location = new System.Drawing.Point(1226, 0);
+            this.MaxMinForm.Name = "MaxMinForm";
+            this.MaxMinForm.Size = new System.Drawing.Size(39, 30);
+            this.MaxMinForm.TabIndex = 105;
+            this.MaxMinForm.UseVisualStyleBackColor = true;
+            this.MaxMinForm.Click += new System.EventHandler(this.MaxMinForm_Click);
+            // 
+            // ExitButton
+            // 
+            this.ExitButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ExitButton.Dock = System.Windows.Forms.DockStyle.Right;
+            this.ExitButton.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.ExitButton.FlatAppearance.BorderSize = 0;
+            this.ExitButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ExitButton.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ExitButton.ForeColor = System.Drawing.Color.White;
+            this.ExitButton.Image = global::CopyLane.Properties.Resources.cross_12;
+            this.ExitButton.Location = new System.Drawing.Point(1265, 0);
+            this.ExitButton.Name = "ExitButton";
+            this.ExitButton.Size = new System.Drawing.Size(39, 30);
+            this.ExitButton.TabIndex = 104;
+            this.ExitButton.UseVisualStyleBackColor = true;
+            this.ExitButton.Click += new System.EventHandler(this.ExitButton_Click);
             // 
             // MainForm
             // 
@@ -219,6 +241,7 @@ namespace CopyLane
         private System.Windows.Forms.Button ExitButton;
         private System.Windows.Forms.Button MaxMinForm;
         private System.Windows.Forms.Button SalesButton;
+        private System.Windows.Forms.Button MinButton;
     }
 }
 
