@@ -58,17 +58,18 @@ namespace CopyLane.CustomForms.Popups
             // 
             // Cancel
             // 
-            this.Cancel.BackColor = System.Drawing.Color.Transparent;
+            this.Cancel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(38)))));
             this.Cancel.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Cancel.Dock = System.Windows.Forms.DockStyle.Right;
+            this.Cancel.FlatAppearance.BorderSize = 0;
             this.Cancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Cancel.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Cancel.ForeColor = System.Drawing.Color.DarkGray;
-            this.Cancel.Location = new System.Drawing.Point(438, 0);
+            this.Cancel.Image = global::CopyLane.Properties.Resources.cross_12;
+            this.Cancel.Location = new System.Drawing.Point(437, 0);
             this.Cancel.Name = "Cancel";
-            this.Cancel.Size = new System.Drawing.Size(38, 30);
+            this.Cancel.Size = new System.Drawing.Size(39, 30);
             this.Cancel.TabIndex = 5;
-            this.Cancel.Text = "X";
             this.Cancel.UseVisualStyleBackColor = false;
             this.Cancel.Click += new System.EventHandler(this.Cancel_Click);
             // 

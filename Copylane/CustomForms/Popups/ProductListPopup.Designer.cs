@@ -37,8 +37,10 @@ namespace CopyLane.CustomForms.Popups
             this.Description = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Price = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label1 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -58,25 +60,26 @@ namespace CopyLane.CustomForms.Popups
             // 
             // Cancel
             // 
-            this.Cancel.BackColor = System.Drawing.Color.Transparent;
+            this.Cancel.BackColor = System.Drawing.Color.OrangeRed;
             this.Cancel.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Cancel.Dock = System.Windows.Forms.DockStyle.Right;
+            this.Cancel.FlatAppearance.BorderSize = 0;
             this.Cancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Cancel.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Cancel.ForeColor = System.Drawing.Color.Black;
-            this.Cancel.Location = new System.Drawing.Point(809, 0);
+            this.Cancel.ForeColor = System.Drawing.Color.Transparent;
+            this.Cancel.Image = global::CopyLane.Properties.Resources.cross_12;
+            this.Cancel.Location = new System.Drawing.Point(821, 0);
             this.Cancel.Margin = new System.Windows.Forms.Padding(4);
             this.Cancel.Name = "Cancel";
-            this.Cancel.Size = new System.Drawing.Size(51, 30);
+            this.Cancel.Size = new System.Drawing.Size(39, 30);
             this.Cancel.TabIndex = 3;
-            this.Cancel.Text = "X";
             this.Cancel.UseVisualStyleBackColor = false;
             this.Cancel.Click += new System.EventHandler(this.Cancel_Click);
             // 
             // SearchProduct
             // 
             this.SearchProduct.Font = new System.Drawing.Font("Calibri Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SearchProduct.Location = new System.Drawing.Point(136, 47);
+            this.SearchProduct.Location = new System.Drawing.Point(136, 51);
             this.SearchProduct.Margin = new System.Windows.Forms.Padding(4);
             this.SearchProduct.Name = "SearchProduct";
             this.SearchProduct.Size = new System.Drawing.Size(398, 31);
@@ -133,12 +136,22 @@ namespace CopyLane.CustomForms.Popups
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Calibri", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(13, 52);
+            this.label1.Location = new System.Drawing.Point(13, 56);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(115, 21);
             this.label1.TabIndex = 13;
             this.label1.Text = "Search Product";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::CopyLane.Properties.Resources.search_w_16;
+            this.pictureBox1.Location = new System.Drawing.Point(541, 51);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(37, 31);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBox1.TabIndex = 14;
+            this.pictureBox1.TabStop = false;
             // 
             // ProductListPopup
             // 
@@ -146,6 +159,7 @@ namespace CopyLane.CustomForms.Popups
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
             this.ClientSize = new System.Drawing.Size(860, 543);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.SearchProduct);
@@ -161,6 +175,7 @@ namespace CopyLane.CustomForms.Popups
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.ProductListPopup_KeyDown);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -176,5 +191,6 @@ namespace CopyLane.CustomForms.Popups
         private System.Windows.Forms.DataGridViewTextBoxColumn ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn Description;
         private System.Windows.Forms.DataGridViewTextBoxColumn Price;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

@@ -33,7 +33,6 @@ namespace CopyLane.CustomControls.Contents
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label12 = new System.Windows.Forms.Label();
-            this.Search = new System.Windows.Forms.Button();
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
@@ -56,6 +55,7 @@ namespace CopyLane.CustomControls.Contents
             this.F2 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.F1 = new System.Windows.Forms.Button();
+            this.Search = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -126,17 +126,6 @@ namespace CopyLane.CustomControls.Contents
             this.label12.Size = new System.Drawing.Size(49, 19);
             this.label12.TabIndex = 27;
             this.label12.Text = "Ctrl + S";
-            // 
-            // Search
-            // 
-            this.Search.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Search.Location = new System.Drawing.Point(7, 10);
-            this.Search.Name = "Search";
-            this.Search.Size = new System.Drawing.Size(616, 45);
-            this.Search.TabIndex = 0;
-            this.Search.Text = "Search Product";
-            this.Search.UseVisualStyleBackColor = true;
-            this.Search.Click += new System.EventHandler(this.Search_Click);
             // 
             // label11
             // 
@@ -401,6 +390,20 @@ namespace CopyLane.CustomControls.Contents
             this.F1.Text = "No product";
             this.F1.UseVisualStyleBackColor = true;
             this.F1.Click += new System.EventHandler(this.F1_Click);
+            // 
+            // Search
+            // 
+            this.Search.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Search.Image = global::CopyLane.Properties.Resources.search_16;
+            this.Search.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.Search.Location = new System.Drawing.Point(7, 10);
+            this.Search.Name = "Search";
+            this.Search.Size = new System.Drawing.Size(616, 45);
+            this.Search.TabIndex = 0;
+            this.Search.Text = "   Search Product";
+            this.Search.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.Search.UseVisualStyleBackColor = true;
+            this.Search.Click += new System.EventHandler(this.Search_Click);
             // 
             // POSPanel
             // 

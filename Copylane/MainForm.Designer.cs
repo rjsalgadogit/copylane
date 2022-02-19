@@ -31,11 +31,11 @@ namespace CopyLane
 		{
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.SalesButton = new System.Windows.Forms.Button();
-            this.ProductsButton = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.SalesButton = new System.Windows.Forms.Button();
+            this.ProductsButton = new System.Windows.Forms.Button();
             this.POSButton = new System.Windows.Forms.Button();
             this.MinButton = new System.Windows.Forms.Button();
             this.MaxMinForm = new System.Windows.Forms.Button();
@@ -74,6 +74,35 @@ namespace CopyLane
             this.panel2.Size = new System.Drawing.Size(248, 718);
             this.panel2.TabIndex = 150;
             // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(38)))));
+            this.panel4.Controls.Add(this.label1);
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel4.Location = new System.Drawing.Point(0, 0);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(248, 168);
+            this.panel4.TabIndex = 0;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Calibri", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(12, 18);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(150, 72);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Your \r\nShop Name";
+            // 
+            // panel3
+            // 
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel3.Location = new System.Drawing.Point(248, 30);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(1056, 718);
+            this.panel3.TabIndex = 150;
+            // 
             // SalesButton
             // 
             this.SalesButton.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -86,8 +115,9 @@ namespace CopyLane
             this.SalesButton.Name = "SalesButton";
             this.SalesButton.Size = new System.Drawing.Size(248, 44);
             this.SalesButton.TabIndex = 103;
-            this.SalesButton.Text = "Sales";
+            this.SalesButton.Text = "   Sales      ";
             this.SalesButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.SalesButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.SalesButton.UseVisualStyleBackColor = true;
             // 
             // ProductsButton
@@ -102,39 +132,11 @@ namespace CopyLane
             this.ProductsButton.Name = "ProductsButton";
             this.ProductsButton.Size = new System.Drawing.Size(248, 44);
             this.ProductsButton.TabIndex = 102;
-            this.ProductsButton.Text = "Products";
+            this.ProductsButton.Text = "   Products";
             this.ProductsButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.ProductsButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.ProductsButton.UseVisualStyleBackColor = true;
             this.ProductsButton.Click += new System.EventHandler(this.ProductsButton_Click);
-            // 
-            // panel4
-            // 
-            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(38)))));
-            this.panel4.Controls.Add(this.label1);
-            this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel4.Location = new System.Drawing.Point(0, 0);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(248, 168);
-            this.panel4.TabIndex = 0;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Yu Gothic UI Semibold", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(39, 63);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(172, 45);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Copy Lane";
-            // 
-            // panel3
-            // 
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel3.Location = new System.Drawing.Point(248, 30);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1056, 718);
-            this.panel3.TabIndex = 150;
             // 
             // POSButton
             // 
@@ -148,8 +150,9 @@ namespace CopyLane
             this.POSButton.Name = "POSButton";
             this.POSButton.Size = new System.Drawing.Size(248, 44);
             this.POSButton.TabIndex = 101;
-            this.POSButton.Text = "Point of Sale";
+            this.POSButton.Text = "   Cart        ";
             this.POSButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.POSButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.POSButton.UseVisualStyleBackColor = true;
             this.POSButton.Click += new System.EventHandler(this.POSButton_Click);
             // 

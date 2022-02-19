@@ -169,15 +169,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\normal_12_white.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\square_12_white.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\cross_12_white.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\cross_12.png" />
   </ItemGroup>
   <ItemGroup>
@@ -190,7 +181,19 @@
     <None Include="Resources\minus_12.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\cart_14.png" />
+    <None Include="Resources\cart_24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\document_24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\chart_24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\search_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\search_w_16.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
