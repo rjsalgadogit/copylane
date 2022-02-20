@@ -34,8 +34,8 @@ namespace CopyLane
             this.panel4 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.ProductButton = new System.Windows.Forms.Button();
             this.SalesButton = new System.Windows.Forms.Button();
-            this.ProductsButton = new System.Windows.Forms.Button();
             this.POSButton = new System.Windows.Forms.Button();
             this.MinButton = new System.Windows.Forms.Button();
             this.MaxMinForm = new System.Windows.Forms.Button();
@@ -64,8 +64,8 @@ namespace CopyLane
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.panel2.Controls.Add(this.ProductButton);
             this.panel2.Controls.Add(this.SalesButton);
-            this.panel2.Controls.Add(this.ProductsButton);
             this.panel2.Controls.Add(this.POSButton);
             this.panel2.Controls.Add(this.panel4);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
@@ -103,6 +103,25 @@ namespace CopyLane
             this.panel3.Size = new System.Drawing.Size(1056, 718);
             this.panel3.TabIndex = 150;
             // 
+            // ProductButton
+            // 
+            this.ProductButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ProductButton.Dock = System.Windows.Forms.DockStyle.Top;
+            this.ProductButton.FlatAppearance.BorderSize = 0;
+            this.ProductButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ProductButton.Font = new System.Drawing.Font("Calibri", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ProductButton.ForeColor = System.Drawing.Color.White;
+            this.ProductButton.Image = global::CopyLane.Properties.Resources.document_20;
+            this.ProductButton.Location = new System.Drawing.Point(0, 256);
+            this.ProductButton.Name = "ProductButton";
+            this.ProductButton.Size = new System.Drawing.Size(248, 44);
+            this.ProductButton.TabIndex = 102;
+            this.ProductButton.Text = "   Products ";
+            this.ProductButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.ProductButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.ProductButton.UseVisualStyleBackColor = true;
+            this.ProductButton.Click += new System.EventHandler(this.SalesButton_Click);
+            // 
             // SalesButton
             // 
             this.SalesButton.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -111,7 +130,8 @@ namespace CopyLane
             this.SalesButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.SalesButton.Font = new System.Drawing.Font("Calibri", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SalesButton.ForeColor = System.Drawing.Color.White;
-            this.SalesButton.Location = new System.Drawing.Point(0, 256);
+            this.SalesButton.Image = global::CopyLane.Properties.Resources.chart_20;
+            this.SalesButton.Location = new System.Drawing.Point(0, 212);
             this.SalesButton.Name = "SalesButton";
             this.SalesButton.Size = new System.Drawing.Size(248, 44);
             this.SalesButton.TabIndex = 103;
@@ -119,24 +139,7 @@ namespace CopyLane
             this.SalesButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.SalesButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.SalesButton.UseVisualStyleBackColor = true;
-            // 
-            // ProductsButton
-            // 
-            this.ProductsButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ProductsButton.Dock = System.Windows.Forms.DockStyle.Top;
-            this.ProductsButton.FlatAppearance.BorderSize = 0;
-            this.ProductsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ProductsButton.Font = new System.Drawing.Font("Calibri", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ProductsButton.ForeColor = System.Drawing.Color.White;
-            this.ProductsButton.Location = new System.Drawing.Point(0, 212);
-            this.ProductsButton.Name = "ProductsButton";
-            this.ProductsButton.Size = new System.Drawing.Size(248, 44);
-            this.ProductsButton.TabIndex = 102;
-            this.ProductsButton.Text = "   Products";
-            this.ProductsButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ProductsButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.ProductsButton.UseVisualStyleBackColor = true;
-            this.ProductsButton.Click += new System.EventHandler(this.ProductsButton_Click);
+            this.SalesButton.Click += new System.EventHandler(this.ProductsButton_Click);
             // 
             // POSButton
             // 
@@ -146,12 +149,12 @@ namespace CopyLane
             this.POSButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.POSButton.Font = new System.Drawing.Font("Calibri", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.POSButton.ForeColor = System.Drawing.Color.White;
+            this.POSButton.Image = global::CopyLane.Properties.Resources.cart_20;
             this.POSButton.Location = new System.Drawing.Point(0, 168);
             this.POSButton.Name = "POSButton";
             this.POSButton.Size = new System.Drawing.Size(248, 44);
             this.POSButton.TabIndex = 101;
             this.POSButton.Text = "   Cart        ";
-            this.POSButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.POSButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.POSButton.UseVisualStyleBackColor = true;
             this.POSButton.Click += new System.EventHandler(this.POSButton_Click);
@@ -238,12 +241,12 @@ namespace CopyLane
 		private System.Windows.Forms.Panel panel2;
 		private System.Windows.Forms.Panel panel4;
 		private System.Windows.Forms.Panel panel3;
-		private System.Windows.Forms.Button ProductsButton;
+		private System.Windows.Forms.Button SalesButton;
 		private System.Windows.Forms.Button POSButton;
 		private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button ExitButton;
         private System.Windows.Forms.Button MaxMinForm;
-        private System.Windows.Forms.Button SalesButton;
+        private System.Windows.Forms.Button ProductButton;
         private System.Windows.Forms.Button MinButton;
     }
 }

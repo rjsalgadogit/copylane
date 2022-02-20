@@ -128,41 +128,44 @@ namespace CopyLane
 
         private void MaxMinForm_Click(object sender, EventArgs e)
         {
-			if (this.WindowState == FormWindowState.Normal)
-			{
-				this.WindowState = FormWindowState.Maximized;
-                this.MaxMinForm.Image = Properties.Resources.copy_12;
+			OnResizeUI();
 
-                _posPanel.panel3.Height = 718;
-			}
-			else
-			{
-				this.WindowState = FormWindowState.Normal;
-                this.MaxMinForm.Image = Properties.Resources.stop_12;
-
-                _posPanel.panel3.Height = 617;
-			}
-        }
+		}
 
         private void panel1_MouseDoubleClick(object sender, MouseEventArgs e)
         {
-			if (this.WindowState == FormWindowState.Normal)
-			{
-				this.WindowState = FormWindowState.Maximized;
-
-				_posPanel.panel3.Height = 718;
-			}
-			else
-			{
-				this.WindowState = FormWindowState.Normal;
-
-				_posPanel.panel3.Height = 617;
-			}
+			OnResizeUI();
 		}
 
         private void MinButton_Click(object sender, EventArgs e)
         {
 			this.WindowState = FormWindowState.Minimized;
         }
+
+        private void SalesButton_Click(object sender, EventArgs e)
+        {
+			panel3.Controls.Clear();
+			panel3.Controls.Add(new ProductPanel());
+		}
+
+		private void OnResizeUI()
+        {
+			if (this.WindowState == FormWindowState.Normal)
+			{
+				this.WindowState = FormWindowState.Maximized;
+				this.MaxMinForm.Image = Properties.Resources.copy_12;
+
+				_posPanel.panel3.Height = 718;
+				panel2.Width = 300;
+			}
+			else
+			{
+				this.WindowState = FormWindowState.Normal;
+				this.MaxMinForm.Image = Properties.Resources.stop_12;
+
+				_posPanel.panel3.Height = 617;
+				panel2.Width = 248;
+			}
+		}
     }
 }
