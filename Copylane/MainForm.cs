@@ -62,7 +62,7 @@ namespace CopyLane
 		private void ProductsButton_Click(object sender, EventArgs e)
 		{
 			panel3.Controls.Clear();
-			panel3.Controls.Add(new ProductPanel());
+			panel3.Controls.Add(new SalesPanel());
 		}
 
 		private void MainForm_KeyDown(object sender, KeyEventArgs e)

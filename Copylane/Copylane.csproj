@@ -61,6 +61,12 @@
     <Compile Include="CustomControls\Contents\ProductPanel.Designer.cs">
       <DependentUpon>ProductPanel.cs</DependentUpon>
     </Compile>
+    <Compile Include="CustomControls\Contents\SalesPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CustomControls\Contents\SalesPanel.Designer.cs">
+      <DependentUpon>SalesPanel.cs</DependentUpon>
+    </Compile>
     <Compile Include="CustomControls\PartialViews\ProductPreview.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -124,6 +130,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CustomControls\Contents\ProductPanel.resx">
       <DependentUpon>ProductPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomControls\Contents\SalesPanel.resx">
+      <DependentUpon>SalesPanel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CustomControls\PartialViews\ProductPreview.resx">
       <DependentUpon>ProductPreview.cs</DependentUpon>
