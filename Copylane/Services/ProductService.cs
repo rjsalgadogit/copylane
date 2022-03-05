@@ -13,9 +13,9 @@ namespace CopyLane.Services
 {
 	public class ProductService
 	{
-		public string Server { get; set; }
-		public string Database { get; set; }
-		public string ConnectionString { get; set; }
+		private string Server { get; set; }
+		private string Database { get; set; }
+		private string ConnectionString { get; set; }
 
 		public ProductService()
 		{

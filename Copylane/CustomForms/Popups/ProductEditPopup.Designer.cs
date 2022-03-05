@@ -131,7 +131,7 @@ namespace CopyLane.CustomForms.Popups
             this.Save.ForeColor = System.Drawing.Color.White;
             this.Save.Location = new System.Drawing.Point(296, 167);
             this.Save.Name = "Save";
-            this.Save.Size = new System.Drawing.Size(111, 39);
+            this.Save.Size = new System.Drawing.Size(111, 32);
             this.Save.TabIndex = 8;
             this.Save.Text = "Save";
             this.Save.UseVisualStyleBackColor = false;
@@ -145,7 +145,7 @@ namespace CopyLane.CustomForms.Popups
             this.Cancel.ForeColor = System.Drawing.Color.White;
             this.Cancel.Location = new System.Drawing.Point(416, 167);
             this.Cancel.Name = "Cancel";
-            this.Cancel.Size = new System.Drawing.Size(111, 39);
+            this.Cancel.Size = new System.Drawing.Size(111, 32);
             this.Cancel.TabIndex = 9;
             this.Cancel.Text = "Cancel";
             this.Cancel.UseVisualStyleBackColor = true;
@@ -157,7 +157,7 @@ namespace CopyLane.CustomForms.Popups
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(564, 30);
+            this.panel1.Size = new System.Drawing.Size(556, 30);
             this.panel1.TabIndex = 10;
             this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
             this.panel1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseMove);
@@ -168,7 +168,7 @@ namespace CopyLane.CustomForms.Popups
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
-            this.ClientSize = new System.Drawing.Size(564, 219);
+            this.ClientSize = new System.Drawing.Size(556, 219);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.Cancel);
             this.Controls.Add(this.Save);
