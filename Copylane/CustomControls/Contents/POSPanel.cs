@@ -132,7 +132,7 @@ namespace CopyLane.CustomControls.Contents
 				AddItemToTheList(product);
 			}
 			else
-				MessageBox.Show(" No product available", "Notice", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+				MessageBox.Show(" No product available.", "Notice", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 		}
 
 		private void ArrangeButtonUI(ProductService productService)

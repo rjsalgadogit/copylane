@@ -79,7 +79,7 @@ namespace CopyLane.CustomForms.Popups
             // SearchProduct
             // 
             this.SearchProduct.Font = new System.Drawing.Font("Calibri Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SearchProduct.Location = new System.Drawing.Point(138, 59);
+            this.SearchProduct.Location = new System.Drawing.Point(138, 47);
             this.SearchProduct.Margin = new System.Windows.Forms.Padding(4);
             this.SearchProduct.Name = "SearchProduct";
             this.SearchProduct.Size = new System.Drawing.Size(398, 31);
@@ -97,14 +97,14 @@ namespace CopyLane.CustomForms.Popups
             this.Description,
             this.Price});
             this.dataGridView1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.dataGridView1.Location = new System.Drawing.Point(13, 102);
+            this.dataGridView1.Location = new System.Drawing.Point(13, 91);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(834, 428);
+            this.dataGridView1.Size = new System.Drawing.Size(834, 439);
             this.dataGridView1.StandardTab = true;
             this.dataGridView1.TabIndex = 1;
             this.dataGridView1.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_CellMouseDoubleClick);
@@ -136,7 +136,7 @@ namespace CopyLane.CustomForms.Popups
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Calibri", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(13, 64);
+            this.label1.Location = new System.Drawing.Point(13, 52);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(115, 21);
@@ -146,7 +146,7 @@ namespace CopyLane.CustomForms.Popups
             // pictureBox1
             // 
             this.pictureBox1.Image = global::CopyLane.Properties.Resources.search_w_16;
-            this.pictureBox1.Location = new System.Drawing.Point(537, 59);
+            this.pictureBox1.Location = new System.Drawing.Point(537, 47);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(37, 31);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
