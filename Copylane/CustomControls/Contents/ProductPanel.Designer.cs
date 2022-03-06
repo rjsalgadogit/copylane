@@ -119,7 +119,7 @@ namespace CopyLane.CustomControls.Contents
             this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(12, 15);
+            this.button1.Location = new System.Drawing.Point(12, 18);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(103, 32);
             this.button1.TabIndex = 1;
@@ -132,7 +132,7 @@ namespace CopyLane.CustomControls.Contents
             this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(121, 15);
+            this.button2.Location = new System.Drawing.Point(121, 18);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 32);
             this.button2.TabIndex = 2;
@@ -143,7 +143,7 @@ namespace CopyLane.CustomControls.Contents
             // SearchProduct
             // 
             this.SearchProduct.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SearchProduct.Location = new System.Drawing.Point(833, 20);
+            this.SearchProduct.Location = new System.Drawing.Point(833, 23);
             this.SearchProduct.Name = "SearchProduct";
             this.SearchProduct.Size = new System.Drawing.Size(209, 27);
             this.SearchProduct.TabIndex = 3;
@@ -153,7 +153,7 @@ namespace CopyLane.CustomControls.Contents
             // 
             this.label1.AutoSize = true;
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(727, 24);
+            this.label1.Location = new System.Drawing.Point(727, 27);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(100, 18);
             this.label1.TabIndex = 4;
@@ -166,7 +166,7 @@ namespace CopyLane.CustomControls.Contents
             this.button3.FlatAppearance.BorderSize = 0;
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Location = new System.Drawing.Point(202, 15);
+            this.button3.Location = new System.Drawing.Point(202, 18);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(75, 32);
             this.button3.TabIndex = 5;

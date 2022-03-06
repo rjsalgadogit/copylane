@@ -1,4 +1,5 @@
-﻿using CopyLane.Models;
+﻿using CopyLane.CustomForms.Popups;
+using CopyLane.Models;
 using CopyLane.Services;
 using System;
 using System.Collections.Generic;
@@ -17,6 +18,8 @@ namespace CopyLane.CustomControls.Contents
         public SalesPanel()
         {
             InitializeComponent();
+            LoadTransactionGrid(null, null);
+
             this.label1.Text = DateTime.Now.ToString("dddd, dd MMMM yyyy");
         }
 
@@ -27,21 +30,32 @@ namespace CopyLane.CustomControls.Contents
 
         private void SalesDateBtn_Click(object sender, EventArgs e)
         {
-            LoadTransactionGrid(null, null);
+            using (var popup = new SalesDatePopup())
+            {
+                var result = popup.ShowDialog();
+
+                if (result == DialogResult.OK)
+                {
+                    LoadTransactionGrid(popup.dateTimePicker1.Value, popup.dateTimePicker2.Value);
+                }
+            }
         }
 
         private void LoadTransactionGrid(DateTime? from, DateTime? to)
         {
             var transactions = new List<TransactionModel>();
             var salesService = new SalesService();
+            decimal totalSales = 0;
 
             if (from.HasValue && to.HasValue)
             {
                 transactions = salesService.GetTransactionByDate(from, to);
+                this.label1.Text = $"{from.Value.ToString("dddd, dd MMMM yyyy")}  -  {to.Value.ToString("dddd, dd MMMM yyyy")}";
             }
             else
             {
                 transactions = salesService.GetTransactionToday();
+                this.label1.Text = DateTime.Now.ToString("dddd, dd MMMM yyyy");
             }
 
             dataGridView1.Rows.Clear();
@@ -54,7 +68,11 @@ namespace CopyLane.CustomControls.Contents
                     , transact.Change
                     , transact.Subtotal
                     , transact.Date);
+
+                totalSales = totalSales + transact.Subtotal;
             }
+
+            this.label4.Text = totalSales.ToString();
         }
     }
 }
