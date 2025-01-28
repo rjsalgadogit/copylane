@@ -1,4 +1,3 @@
-using CopyLane.Infrastructure.Services.Interfaces;
 using Microsoft.AspNetCore.SignalR.Client;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;

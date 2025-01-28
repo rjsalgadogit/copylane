@@ -1,7 +1,6 @@
-using CopyLane.Infrastructure.Services.Interfaces;
+using CopyLane.Core.Services.Interfaces;
 using CopyLane.Server.Models.Enums;
 using CopyLane.Server.Views.UserControls;
-using CopyLane.SignalR;
 
 namespace CopyLane.Server
 {

@@ -1,5 +1,5 @@
-using CopyLane.Infrastructure.Services;
-using CopyLane.Infrastructure.Services.Interfaces;
+using CopyLane.Core.Services;
+using CopyLane.Core.Services.Interfaces;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 

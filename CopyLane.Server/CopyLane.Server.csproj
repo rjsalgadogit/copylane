@@ -11,10 +11,13 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.Extensions.Configuration" Version="9.0.1" />
     <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="9.0.1" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="9.0.1" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\CopyLane.Infrastructure\CopyLane.Infrastructure.csproj" />
+    <ProjectReference Include="..\CopyLane.Client\CopyLane.Client.csproj" />
+    <ProjectReference Include="..\CopyLane.Core\CopyLane.Core.csproj" />
+    <ProjectReference Include="..\CopyLane.SignalR\CopyLane.SignalR.csproj" />
   </ItemGroup>
 
   <ItemGroup>

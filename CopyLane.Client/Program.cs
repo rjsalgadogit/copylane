@@ -1,5 +1,3 @@
-using CopyLane.Infrastructure.Services;
-using CopyLane.Infrastructure.Services.Interfaces;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace CopyLane.Client

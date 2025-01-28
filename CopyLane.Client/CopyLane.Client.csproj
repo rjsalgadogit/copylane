@@ -9,7 +9,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\CopyLane.Infrastructure\CopyLane.Infrastructure.csproj" />
+    <PackageReference Include="Microsoft.AspNetCore.SignalR.Client" Version="9.0.1" />
   </ItemGroup>
 
 </Project>
