@@ -9,7 +9,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\CopyLane.SignalR\CopyLane.SignalR.csproj" />
+    <ProjectReference Include="..\CopyLane.Infrastructure\CopyLane.Infrastructure.csproj" />
   </ItemGroup>
 
   <ItemGroup>

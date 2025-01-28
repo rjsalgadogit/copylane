@@ -1,3 +1,4 @@
+using CopyLane.Infrastructure.Services.Interfaces;
 using CopyLane.Server.Models.Enums;
 using CopyLane.Server.Views.UserControls;
 using CopyLane.SignalR;
@@ -6,19 +7,18 @@ namespace CopyLane.Server
 {
     public partial class MainForm : Form
     {
-        private SignalRServer _signalRServer { get; set; }
+        private readonly IServerService _serverService;
 
-        public MainForm()
+        public MainForm(IServerService serverService)
         {
             InitializeComponent();
-            _signalRServer = new SignalRServer();
+            _serverService = serverService;
         }
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-            // Run the server in a separate thread to avoid blocking UI
-            _signalRServer.Start();
             ButtonTabHome.PerformClick();
+            _serverService.Start("localhost", "5055");
         }
 
         private void AddUCControls(UserControl userControl)

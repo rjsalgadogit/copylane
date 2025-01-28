@@ -7,7 +7,14 @@ namespace CopyLane.SignalR
 {
     public class SignalRServer
     {
-        public SignalRServer() { }
+        private readonly string _port;
+        private readonly string _ipAddress;
+
+        public SignalRServer(string ipAddress, string port) 
+        { 
+            _ipAddress = ipAddress;
+            _port = port;
+        }
 
         public void Start()
         {
@@ -43,7 +50,7 @@ namespace CopyLane.SignalR
                                 endpoints.MapHub<SignalRHub>("/signalr-hub"); // Map the SignalR hub to "/myHub"
                             });
                         })
-                        .UseUrls("http://localhost:5055"); // Listen on localhost:5055
+                        .UseUrls($"http://{_ipAddress}:{_port}"); // Listen on localhost:5055
                 })
                 .Build();
 

@@ -9,7 +9,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CopyLane.Server", "CopyLane
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CopyLane.Client", "CopyLane.Client\CopyLane.Client.csproj", "{0AA5EA1A-051D-4C24-91C9-BD178A5A9A72}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CopyLane.SignalR", "CopyLane.SignalR\CopyLane.SignalR.csproj", "{C639F145-CF3A-4A97-AF9D-BF84757CB288}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CopyLane.SignalR", "CopyLane.SignalR\CopyLane.SignalR.csproj", "{C639F145-CF3A-4A97-AF9D-BF84757CB288}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CopyLane.Infrastructure", "CopyLane.Infrastructure\CopyLane.Infrastructure.csproj", "{92707356-4C0C-4F80-9A2F-DC12765AB6B5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{C639F145-CF3A-4A97-AF9D-BF84757CB288}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C639F145-CF3A-4A97-AF9D-BF84757CB288}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C639F145-CF3A-4A97-AF9D-BF84757CB288}.Release|Any CPU.Build.0 = Release|Any CPU
+		{92707356-4C0C-4F80-9A2F-DC12765AB6B5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{92707356-4C0C-4F80-9A2F-DC12765AB6B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{92707356-4C0C-4F80-9A2F-DC12765AB6B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{92707356-4C0C-4F80-9A2F-DC12765AB6B5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
