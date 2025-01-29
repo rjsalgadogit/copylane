@@ -12,7 +12,7 @@ using System.Threading.Tasks;
 
 namespace Sequel.Service
 {
-    internal class SequelService<T> : ISequelService<T>
+    public class SequelService<T> : ISequelService<T>
     {
         /// <summary>
 		/// The sequel service base service implement on .net standard

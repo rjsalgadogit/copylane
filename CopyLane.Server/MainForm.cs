@@ -1,3 +1,4 @@
+using CopyLane.Core.Repositories.Interfaces;
 using CopyLane.Core.Services.Interfaces;
 using CopyLane.Server.Models.Enums;
 using CopyLane.Server.Views.UserControls;
@@ -7,15 +8,19 @@ namespace CopyLane.Server
     public partial class MainForm : Form
     {
         private readonly IServerService _serverService;
+        private readonly IClientRepository _clientRepository;
 
-        public MainForm(IServerService serverService)
+        public MainForm(IServerService serverService, IClientRepository clientRepository)
         {
             InitializeComponent();
             _serverService = serverService;
+            _clientRepository = clientRepository;
         }
 
-        private void MainForm_Load(object sender, EventArgs e)
+        private async void MainForm_Load(object sender, EventArgs e)
         {
+            await _clientRepository.GetData();
+
             ButtonTabHome.PerformClick();
             _serverService.Start("localhost", "5055");
         }

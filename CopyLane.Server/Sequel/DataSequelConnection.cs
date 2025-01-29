@@ -9,7 +9,7 @@ namespace CopyLane.Server.Sequel
 
         public DataSequelConnection(IConfiguration config)
         {
-            _connectionString = config.GetValue<string>("ConnectionStrings:DataConnection");
+            _connectionString = config.GetValue<string>("ConnectionStrings:DataConnection", "");
         }
 
         public string ConnectionString => _connectionString;

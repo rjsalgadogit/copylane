@@ -7,12 +7,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Models\" />
-    <Folder Include="Repositories\Interfaces\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\CopyLane.SignalR\CopyLane.SignalR.csproj" />
+    <ProjectReference Include="..\Sequel.Service\Sequel.Service.csproj" />
   </ItemGroup>
 
 </Project>

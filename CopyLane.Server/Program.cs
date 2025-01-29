@@ -1,8 +1,11 @@
+using CopyLane.Core.Repositories;
+using CopyLane.Core.Repositories.Interfaces;
 using CopyLane.Core.Services;
 using CopyLane.Core.Services.Interfaces;
 using CopyLane.Server.Sequel;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Sequel.Service;
 using Sequel.Service.Interfaces;
 
 namespace CopyLane.Server
@@ -30,18 +33,13 @@ namespace CopyLane.Server
 
             // Dependency Injection
             var serviceCollection = new ServiceCollection();
-            ConfigureServices(serviceCollection);
+            serviceCollection.AddLogging();
+            serviceCollection.AddSingleton(_configuration);
+            Registration.Register(serviceCollection);
             _serviceProvider = serviceCollection.BuildServiceProvider();
 
             //Application.Run(new MainForm());
             Application.Run(_serviceProvider.GetRequiredService<MainForm>());
-        }
-
-        private static void ConfigureServices(IServiceCollection services)
-        {
-            services.AddTransient<MainForm>();
-            services.AddTransient<ISequelConnection, DataSequelConnection>();
-            services.AddTransient<IServerService, ServerService>();
         }
     }
 }
