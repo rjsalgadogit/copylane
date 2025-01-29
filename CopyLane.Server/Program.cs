@@ -1,7 +1,9 @@
 using CopyLane.Core.Services;
 using CopyLane.Core.Services.Interfaces;
+using CopyLane.Server.Sequel;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Sequel.Service.Interfaces;
 
 namespace CopyLane.Server
 {
@@ -38,6 +40,7 @@ namespace CopyLane.Server
         private static void ConfigureServices(IServiceCollection services)
         {
             services.AddTransient<MainForm>();
+            services.AddTransient<ISequelConnection, DataSequelConnection>();
             services.AddTransient<IServerService, ServerService>();
         }
     }

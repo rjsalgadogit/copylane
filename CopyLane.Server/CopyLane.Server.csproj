@@ -18,6 +18,7 @@
     <ProjectReference Include="..\CopyLane.Client\CopyLane.Client.csproj" />
     <ProjectReference Include="..\CopyLane.Core\CopyLane.Core.csproj" />
     <ProjectReference Include="..\CopyLane.SignalR\CopyLane.SignalR.csproj" />
+    <ProjectReference Include="..\Sequel.Service\Sequel.Service.csproj" />
   </ItemGroup>
 
   <ItemGroup>
